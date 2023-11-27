@@ -1,6 +1,16 @@
 package org.delicious.Sandwich;
 
 
+public enum ToppingType {
+    REGULAR,
+    SAUCE,
+    SIDE,
+    MEAT, // Premium
+    CHEESE // Premium
+}
+
+
+
 public class Toppings {
     private String name;
     private ToppingType type;
