@@ -1,4 +1,6 @@
 package org.delicious.Order;
 
-public class OrderedItem {
+public interface OrderedItem {
+    double getPrice();
+    String getOrderInformation();
 }

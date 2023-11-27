@@ -1,4 +1,4 @@
 package org.delicious.Sides;
 
-public enum Beverages {
+public enum ChipSize {
 }

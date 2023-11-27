@@ -1,4 +1,5 @@
 package org.delicious.Order;
 
-public class RecieptManager {
+public class ReceiptManager {
 }
+
