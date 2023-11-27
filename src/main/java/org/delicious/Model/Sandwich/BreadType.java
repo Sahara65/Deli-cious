@@ -1,4 +1,4 @@
-package org.delicious.Sandwich;
+package org.delicious.Model.Sandwich;
 
 public enum BreadType {
     WHITE("White", 5.50),

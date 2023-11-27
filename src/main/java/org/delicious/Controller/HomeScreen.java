@@ -1,11 +1,11 @@
-package org.delicious.Applications;
+package org.delicious.Controller;
 
 import java.util.Scanner;
 
-import org.delicious.Beautification.AnimatedPrompts;
-import org.delicious.Beautification.ProgressBar;
+import org.delicious.View.AnimatedPrompts;
+import org.delicious.View.ProgressBar;
 
-import static org.delicious.Beautification.AnsiColorCodes.*;
+import static org.delicious.View.AnsiColorCodes.*;
 //AnimatedPrompts.animatePrompt("Welcome to DELI-cious! What would you like to order?");
 
 public class HomeScreen {

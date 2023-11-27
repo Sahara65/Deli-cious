@@ -1,4 +1,4 @@
-package org.delicious.Sandwich;
+package org.delicious.Model.Sandwich;
 
 public enum RegularToppings {
     LETTUCE("Lettuce", 0.0),
