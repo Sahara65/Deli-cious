@@ -1,4 +1,4 @@
 package org.delicious.Sandwich;
 
-public enum RegularTopping {
+public enum PremiumToppings {
 }
