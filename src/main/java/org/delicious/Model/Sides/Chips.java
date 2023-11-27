@@ -1,4 +1,8 @@
 package org.delicious.Model.Sides;
 
-public enum Chips {
+import org.delicious.Model.Order.OrderedItem;
+
+public class Chips implements OrderedItem {
+    
+
 }
