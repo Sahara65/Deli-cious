@@ -1,4 +1,6 @@
 package org.delicious.Sandwich;
 
-public enum Sandwich {
+public class Sandwich {
+    private Bread bread;
+
 }
