@@ -10,16 +10,16 @@ import java.util.List;
 
 public class Sandwich {
     private final BreadSize size;
-    private final BreadType breadType; // Enum for the type of bread
-    private final List<PremiumToppings> premiumToppings; // List of Premium Toppings
-    private final List<RegularToppings> regularToppings; // List of Regular Toppings
+    private final BreadType breadType;
+    private final List<PremiumToppings> premiumToppings;
+    private final List<RegularToppings> regularToppings;
 
     // Constructor
     public Sandwich(BreadSize size, BreadType breadType) {
         this.size = size;
         this.breadType = breadType;
-        this.premiumToppings = new ArrayList<>(); // Initialize the premium toppings list
-        this.regularToppings = new ArrayList<>(); // Initialize the regular toppings list
+        this.premiumToppings = new ArrayList<>();
+        this.regularToppings = new ArrayList<>();
     }
 
 
@@ -35,17 +35,17 @@ public class Sandwich {
 
 
     public double calculatePrice() {
-        double price = breadType.getPrice(); // Base price from the type of bread
-        // Add additional cost for premium toppings
+        double price = breadType.getPrice();
+
         for (PremiumToppings topping : premiumToppings) {
-            // Assume a fixed additional cost for premium toppings or calculate as needed
-            price += /* additional cost for premium topping */;
+
+            price += 0; /* additional cost for premium topping */;
         }
-        // Regular toppings can be assumed to be included in the base price
+
         return price;
     }
 
-    // ToString method for easy printing
+
     @Override
     public String toString() {
         return "Sandwich{" +

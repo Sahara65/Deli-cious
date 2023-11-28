@@ -1,9 +1,9 @@
 package org.delicious.Model.Sandwich;
 
 public enum BreadSize {
-    Four_Inches(4),
-    Eight_Inches(8),
-    Twelve_Inches(12);
+    FOUR_INCHES(4),
+    EIGHT_INCHES(8),
+    TWELVE_INCHES(12);
 
     private final int size;
 

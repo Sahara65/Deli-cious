@@ -1,10 +1,8 @@
 package org.delicious.Model.Sandwich;
 
 
-
 public class Toppings {
-    private String name;
-    private ToppingType type;
+
     private double price;
 
     // Constructor
@@ -49,7 +47,7 @@ public class Toppings {
         return type == ToppingType.MEAT || type == ToppingType.CHEESE;
     }
 
-    // ToString method for easy printing
+
     @Override
     public String toString() {
         return "Toppings{" +
