@@ -1,6 +1,5 @@
 package org.delicious.Sandwich;
 
-
 public enum ToppingType {
     REGULAR,
     SAUCE,
@@ -9,8 +8,6 @@ public enum ToppingType {
     CHEESE // Premium
 }
 
-
-
 public class Toppings {
     private String name;
     private ToppingType type;
@@ -18,38 +15,38 @@ public class Toppings {
 
     // Constructor
     public Toppings(String name, ToppingType type, double price) {
-        this.setName(name);
-        this.setType(type);
-        this.setPrice(price);
+        this.name = name;
+        this.type = type;
+        this.price = price;
     }
 
-    // Private Getter for name
-    private String getName() {
+    // Public Getter for name
+    public String getName() {
         return name;
     }
 
-    // Private Setter for name
-    private void setName(String name) {
+    // Public Setter for name
+    public void setName(String name) {
         this.name = name;
     }
 
-    // Private Getter for type
-    private ToppingType getType() {
+    // Public Getter for type
+    public ToppingType getType() {
         return type;
     }
 
-    // Private Setter for type
-    private void setType(ToppingType type) {
+    // Public Setter for type
+    public void setType(ToppingType type) {
         this.type = type;
     }
 
-    // Private Getter for price
-    private double getPrice() {
+    // Public Getter for price
+    public double getPrice() {
         return price;
     }
 
-    // Private Setter for price
-    private void setPrice(double price) {
+    // Public Setter for price
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -62,10 +59,10 @@ public class Toppings {
     @Override
     public String toString() {
         return "Toppings{" +
-               "name='" + this.getName() + '\'' +
-               ", type=" + this.getType() +
-               ", price=" + this.getPrice() +
-               ", isPremium=" + this.isPremium() +
+               "name='" + name + '\'' +
+               ", type=" + type +
+               ", price=" + price +
+               ", isPremium=" + isPremium() +
                '}';
     }
 }
