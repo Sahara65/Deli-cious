@@ -4,12 +4,6 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-/**
- * Abstract Class that handles file i/o
- *
- * @author (Solution)
- * @version (a version number or a date)
- */
 public abstract class DataLoader
 {
 
