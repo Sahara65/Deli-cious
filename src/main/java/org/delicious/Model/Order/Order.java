@@ -17,6 +17,4 @@ public class Order {
     public void removeItemsCart(OrderedItem items){
         itemsInCart.remove(items);
     }
-
-
 }
