@@ -49,10 +49,10 @@ public class Sandwich {
     @Override
     public String toString() {
         return "Sandwich{" +
-               "size=" + size +
-               ", breadType=" + breadType +
-               ", premiumToppings=" + premiumToppings +
-               ", regularToppings=" + regularToppings +
-               '}';
+                "size=" + size +
+                ", breadType=" + breadType +
+                ", premiumToppings=" + premiumToppings +
+                ", regularToppings=" + regularToppings +
+                '}';
     }
 }

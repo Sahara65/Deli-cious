@@ -59,10 +59,10 @@ public class Toppings {
     @Override
     public String toString() {
         return "Toppings{" +
-               "name='" + name + '\'' +
-               ", type=" + type +
-               ", price=" + price +
-               ", isPremium=" + isPremium() +
-               '}';
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", price=" + price +
+                ", isPremium=" + isPremium() +
+                '}';
     }
 }

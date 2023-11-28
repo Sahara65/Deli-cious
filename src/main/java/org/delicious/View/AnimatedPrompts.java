@@ -1,4 +1,4 @@
-package org.delicious.Beautification;
+package org.delicious.View;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package org.delicious.Applications;
+package org.delicious.Controller;
 
 import java.util.Scanner;
 

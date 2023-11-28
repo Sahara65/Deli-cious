@@ -1,4 +1,4 @@
-package org.delicious.Applications;
+package org.delicious.Controller;
 
 public class Main {
     public static void main(String[] args) {
