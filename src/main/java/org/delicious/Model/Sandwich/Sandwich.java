@@ -8,19 +8,23 @@ import org.delicious.Model.Sandwich.RegularToppings;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich {
-    private final BreadSize size;
-    private final BreadType breadType;
-    private final List<PremiumToppings> premiumToppings;
-    private final List<RegularToppings> regularToppings;
 
-    // Constructor
+public class Sandwich {
+    private BreadSize size;
+    private BreadType breadType;
+    private List<PremiumToppings> premiumToppings;
+    private List<RegularToppings> regularToppings;
+    private boolean isToasted;
+
+
     public Sandwich(BreadSize size, BreadType breadType) {
         this.size = size;
         this.breadType = breadType;
         this.premiumToppings = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
+        this.isToasted = false;
     }
+
 
 
 
@@ -39,10 +43,29 @@ public class Sandwich {
 
         for (PremiumToppings topping : premiumToppings) {
 
-            price += 0; /* additional cost for premium topping */;
+            price += topping.getPrice();
+
         }
 
         return price;
+    }
+
+
+    public String getDetailedDescription() {
+        StringBuilder description = new StringBuilder();
+        description.append("Sandwich - ").append(size).append(", ").append(breadType.getName());
+        if (isToasted) {
+            description.append(", Toasted");
+        }
+        description.append("\nPremium Toppings: ");
+        for (PremiumToppings topping : premiumToppings) {
+            description.append(topping.getName()).append(", ");
+        }
+        description.append("\nRegular Toppings: ");
+        for (RegularToppings topping : regularToppings) {
+            description.append(topping.getName()).append(", ");
+        }
+        return description.toString().trim();
     }
 
 
@@ -53,6 +76,7 @@ public class Sandwich {
                 ", breadType=" + breadType +
                 ", premiumToppings=" + premiumToppings +
                 ", regularToppings=" + regularToppings +
+                ", isToasted=" + isToasted +
                 '}';
     }
 }
