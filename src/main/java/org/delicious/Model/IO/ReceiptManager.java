@@ -29,7 +29,7 @@ public class ReceiptManager {
         StringBuilder summary = new StringBuilder();
         double totalCost = 0.0;
 
-        for (OrderedItem item : currentOrder.getItemsInCart()) {
+        for (OrderedItem item : currentOrder.getItems()) {
             summary.append(item.getOrderInformation()).append("\n");
             totalCost += item.getPrice();
         }

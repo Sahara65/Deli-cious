@@ -4,22 +4,22 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Order {
-    private final List<OrderedItem> itemsInCart;
+    private final List<OrderedItem> items;
 
     public Order() {
-        itemsInCart = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
     public void addItemsCart(OrderedItem item) {
-        itemsInCart.add(item);
+        items.add(item);
     }
 
     public void removeItemsCart(OrderedItem item) {
-        itemsInCart.remove(item);
+        items.remove(item);
     }
 
     // Getter for itemsInCart
-    public List<OrderedItem> getItemsInCart() {
-        return itemsInCart;
+    public List<OrderedItem> getItems() {
+        return items;
     }
 }
