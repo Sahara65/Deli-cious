@@ -1,23 +1,16 @@
-
 package org.delicious.Model.Sandwich;
-
-import org.delicious.Model.Sandwich.BreadSize;
-import org.delicious.Model.Sandwich.BreadType;
-import org.delicious.Model.Sandwich.PremiumToppings;
-import org.delicious.Model.Sandwich.RegularToppings;
-
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-// Dipesh's Code
 public class Sandwich {
     private final BreadSize size;
     private final BreadType breadType;
     private final List<PremiumToppings> premiumToppings;
     private final List<RegularToppings> regularToppings;
     private final boolean isToasted;
-
+    private Map<String, Double> toppingPrices;
 
     public Sandwich(BreadSize size, BreadType breadType) {
         this.size = size;
@@ -25,6 +18,10 @@ public class Sandwich {
         this.premiumToppings = new ArrayList<>();
         this.regularToppings = new ArrayList<>();
         this.isToasted = false;
+    }
+
+    public void setToppingPrices(Map<String, Double> toppingPrices) {
+        this.toppingPrices = toppingPrices;
     }
 
     public void addPremiumTopping(PremiumToppings topping) {
@@ -36,10 +33,12 @@ public class Sandwich {
     }
 
     public double calculatePrice() {
-        double price = breadType.getPrice();
-
+        double price = 0.0;
+        String breadKey = size.toString() + "_BREAD";
+        price += toppingPrices.getOrDefault(breadKey, 0.0);
         for (PremiumToppings topping : premiumToppings) {
-            price += topping.getPrice();
+            String toppingKey = size.toString() + "_" + topping.getPremiumToppingsName().toUpperCase();
+            price += toppingPrices.getOrDefault(toppingKey, 0.0);
         }
         return price;
     }
