@@ -1,4 +1,5 @@
 package org.delicious.Model.IO;
+
 import java.util.HashMap;
 
 public class PriceLoader extends DataLoader {
@@ -14,5 +15,7 @@ public class PriceLoader extends DataLoader {
         prices.put(itemName, price);
     }
 
-    public HashMap<String, Double> getPrices() { return prices;}
+    public HashMap<String, Double> getPrices() {
+        return prices;
+    }
 }

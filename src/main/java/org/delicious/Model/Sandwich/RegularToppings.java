@@ -18,15 +18,15 @@ public enum RegularToppings {
     Au_Jus("Au Jus"),
     Sauce("Mushroom");
 
-    private final String getRegularToppingsName;
+    private final String regularToppingsName;
 
 
     RegularToppings(String getRegularToppings) {
-        this.getRegularToppingsName = getRegularToppings;
+        this.regularToppingsName = getRegularToppings;
     }
 
-    public String getGetRegularToppingsName() {
-        return getRegularToppingsName;
+    public String getRegularToppingsName() {
+        return regularToppingsName;
     }
 }
 
