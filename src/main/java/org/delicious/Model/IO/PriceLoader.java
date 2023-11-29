@@ -3,7 +3,7 @@ package org.delicious.Model.IO;
 import java.util.HashMap;
 
 public class PriceLoader extends DataLoader {
-    private HashMap<String, Double> prices = new HashMap<>();
+    private final HashMap<String, Double> prices = new HashMap<>();
 
     public void parseAndLoadLine(String data) {
         String[] priceLineArray = data.split(",");
