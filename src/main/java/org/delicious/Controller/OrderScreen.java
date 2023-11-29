@@ -2,11 +2,12 @@ package org.delicious.Controller;
 
 import java.util.Scanner;
 
+import static org.delicious.Controller.HomeScreen.userInputs;
 import static org.delicious.View.AnsiColorCodes.red;
 import static org.delicious.View.AnsiColorCodes.reset;
 
 public class OrderScreen {
-    public void display() {
+    public static void display(Scanner scanner) {
 
 
         System.out.println("""
@@ -27,15 +28,15 @@ public class OrderScreen {
                 0. Cancel Order and Return to Home.
                 """);
 
-        Scanner scanner = new Scanner(System.in);
-        int userChoice = scanner.nextInt();
 
-        switch(userChoice) {
-//            case 1 -> addSandwich();
-//            case 2 -> addBeverage();
-//            case 3 -> addChips();
-//            case 4 -> goCheckout();
-            case 0 -> {new HomeScreen().display();
+
+        switch(userInputs(scanner)) {
+            case 1 -> addSandwich();
+            case 2 -> addDrink();
+            case 3 -> addChips();
+            case 4 -> goCheckout();
+            case 0 -> {
+                HomeScreen.display(scanner);
                 System.out.println(red + """                 
                                                 
                         ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
@@ -55,5 +56,23 @@ public class OrderScreen {
 
             default -> System.out.println("Invalid Input! Please type only numbers 0-4.");
         }
+    }
+
+
+
+    private void addSandwich(){
+
+    }
+
+    private void addDrink(){
+
+    }
+
+    private void addChips(){
+
+    }
+
+    private void goCheckout(){
+
     }
 }
