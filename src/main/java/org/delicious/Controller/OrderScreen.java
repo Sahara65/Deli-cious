@@ -2,6 +2,7 @@ package org.delicious.Controller;
 
 import org.delicious.Model.Sandwich.BreadSize;
 import org.delicious.Model.Sandwich.BreadType;
+import org.delicious.Model.Sandwich.CheeseTopping;
 import org.delicious.Model.Sandwich.MeatTopping;
 
 import java.util.Scanner;
@@ -186,7 +187,17 @@ public class OrderScreen {
                 1. Heck yeah!
                 2. No thanks.
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))){
+            case 1 -> {
+                System.out.println("You have selected extra meat!");
+//                MeatTopping meatChoice = MeatTopping.EXTRA_MEAT;
+            }
+            case 2 -> {
+                System.out.println("You have selected no extra meat!");
+//                MeatTopping meatChoice = MeatTopping.NO_EXTRA_MEAT;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
 
         // Cheese 🧀
         System.out.println("""
@@ -198,7 +209,28 @@ public class OrderScreen {
                 4. Swiss Cheese
                 5. No Cheese
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))){
+            case 1 -> {
+                System.out.println("You have selected American Cheese!");
+                CheeseTopping cheeseChoice = CheeseTopping.AMERICAN;
+            }
+            case 2 -> {
+                System.out.println("You have selected Provolone Cheese!");
+                CheeseTopping cheeseChoice = CheeseTopping.PROVOLONE;
+            }
+            case 3 -> {
+                System.out.println("You have selected Cheddar Cheese!");
+                CheeseTopping cheeseChoice = CheeseTopping.CHEDDAR;
+            }
+            case 4 -> {
+                System.out.println("You have selected Swiss Cheese!");
+                CheeseTopping cheeseChoice = CheeseTopping.SWISS;
+            }
+            case 5 -> {
+                System.out.println("You have selected no cheese!");
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
+        }
 
         // Extra Cheese
         System.out.println("""
@@ -207,7 +239,17 @@ public class OrderScreen {
                 1. Heck yeah! Cheese it up!!
                 2. No thanks.
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))){
+            case 1 -> {
+                System.out.println("You have selected extra cheese!");
+//                CheeseTopping cheeseChoice = CheeseTopping.EXTRA_CHEESE;
+            }
+            case 2 -> {
+                System.out.println("You have selected no extra cheese!");
+//                CheeseTopping cheeseChoice = CheeseTopping.NO_EXTRA_CHEESE;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
 
         // Toppings 🥬
         System.out.println("""
