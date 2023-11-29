@@ -1,53 +1,64 @@
-
 package org.delicious.Model.Sandwich;
 
-import org.delicious.Model.IO.PriceLoader;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Sandwich {
     private final BreadSize size;
     private final BreadType breadType;
+    private final List<PremiumToppings> premiumToppings;
+    private final List<RegularToppings> regularToppings;
     private final boolean isToasted;
-    private final List<PremiumTopping> premiumToppings;
-    private final List<RegularTopping> regularToppings;
+    private Map<String, Double> toppingPrices;
 
-
-    public Sandwich(BreadSize size, BreadType breadType, boolean isToasted) {
+    public Sandwich(BreadSize size, BreadType breadType) {
         this.size = size;
         this.breadType = breadType;
+        this.premiumToppings = new ArrayList<>();
+        this.regularToppings = new ArrayList<>();
         this.isToasted = false;
-        this.premiumToppings = new ArrayList<PremiumTopping>();
-        this.regularToppings = new ArrayList<RegularTopping>();
     }
 
+    public void setToppingPrices(Map<String, Double> toppingPrices) {
+        this.toppingPrices = toppingPrices;
+    }
 
-    public void addPremiumTopping(PremiumTopping topping) {
+    public void addPremiumTopping(PremiumToppings topping) {
         this.premiumToppings.add(topping);
     }
 
-
-    public void addRegularTopping(RegularTopping topping) {
+    public void addRegularTopping(RegularToppings topping) {
         this.regularToppings.add(topping);
     }
 
-
-    public double getPrice() {
-        PriceLoader loader = new PriceLoader();
-        HashMap<String, Double> map = loader.getPrices();
-        double price = breadType.getPrice();
-
-        for (PremiumTopping topping : premiumToppings) {
-
-            price += map.get(size + "_" + topping.toString());
-
+    public double calculatePrice() {
+        double price = 0.0;
+        String breadKey = size.toString() + "_BREAD";
+        price += toppingPrices.getOrDefault(breadKey, 0.0);
+        for (PremiumToppings topping : premiumToppings) {
+            String toppingKey = size.toString() + "_" + topping.getPremiumToppingsName().toUpperCase();
+            price += toppingPrices.getOrDefault(toppingKey, 0.0);
         }
-
         return price;
     }
 
+    public String getDetailedDescription() {
+        StringBuilder description = new StringBuilder();
+        description.append("Sandwich - ").append(size).append(", ").append(breadType.getName());
+        if (isToasted) {
+            description.append(", Toasted");
+        }
+        description.append("\nPremium Toppings: ");
+        for (PremiumToppings topping : premiumToppings) {
+            description.append(topping.getPremiumToppingsName()).append(", ");
+        }
+        description.append("\nRegular Toppings: ");
+        for (RegularToppings topping : regularToppings) {
+            description.append(topping.getRegularToppingsName()).append(", ");
+        }
+        return description.toString().trim();
+    }
 
     @Override
     public String toString() {
