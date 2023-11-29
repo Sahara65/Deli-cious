@@ -1,13 +1,13 @@
 package org.delicious.Model.IO;
 
-        import org.delicious.Model.Order.Order;
-        import org.delicious.Model.Order.OrderedItem;
+import org.delicious.Model.Order.Order;
+import org.delicious.Model.Order.OrderedItem;
 
-        import java.io.BufferedWriter;
-        import java.io.FileWriter;
-        import java.io.IOException;
-        import java.time.LocalDateTime;
-        import java.time.format.DateTimeFormatter;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ReceiptManager {
 
