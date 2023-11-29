@@ -1,5 +1,9 @@
 package org.delicious.Controller;
 
+import org.delicious.Model.Sandwich.BreadSize;
+import org.delicious.Model.Sandwich.BreadType;
+import org.delicious.Model.Sandwich.MeatTopping;
+
 import java.util.Scanner;
 
 import static org.delicious.Controller.HomeScreen.userInputs;
@@ -61,37 +65,82 @@ public class OrderScreen {
         // Bread 🍞
         System.out.println("""
                 Please select your desired bread!
-                
+                                
                 1. White Bread
                 2. Wheat Bread
                 3. Rye Bread
                 4. Wrap
                 """);
-        userInputs(new Scanner(System.in));
+
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected White Bread!");
+                BreadType breadChoice = BreadType.WHITE;
+            }
+            case 2 -> {
+                System.out.println("You have selected Wheat Bread!");
+                BreadType breadChoice = BreadType.WHEAT;
+            }
+            case 3 -> {
+                System.out.println("You have selected Rye Bread!");
+                BreadType breadChoice = BreadType.RYE;
+            }
+            case 4 -> {
+                System.out.println("You have selected Wrap!");
+                BreadType breadChoice = BreadType.WRAP;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-4.");
+        }
 
         // Toasted 🔥
         System.out.println("""
                 Would you like your sandwich toasted?
-                
+                                
                 1. Heck yeah!
                 2. No thanks.
                 """);
-        userInputs(new Scanner(System.in));
+
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected toasted!");
+//                Toasted toastChoice = Toasted.TOASTED;
+            }
+            case 2 -> {
+                System.out.println("You have selected not toasted!");
+//                Toasted toastChoice = Toasted.NOT_TOASTED;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
 
         // Size 📏
         System.out.println("""
                 Please select your desired sandwich size!
-                
+                                
                 1. 4 inches
                 2. 8 inches
                 3. 12 inches
                 """);
-        userInputs(new Scanner(System.in));
+
+        switch (userInputs(new Scanner(System.in))){
+            case 1 -> {
+                System.out.println("You have selected 4 inches!");
+                BreadSize sizeChoice = BreadSize.FOUR_INCH;
+            }
+            case 2 -> {
+                System.out.println("You have selected 8 inches!");
+                BreadSize sizeChoice = BreadSize.EIGHT_INCH;
+            }
+            case 3 -> {
+                System.out.println("You have selected 12 inches!");
+                BreadSize sizeChoice = BreadSize.TWELVE_INCH;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-3.");
+        }
 
         // Meat 🥩
         System.out.println("""
                 Please select your desired meat!
-                
+                                
                 1. Steak
                 2. Ham
                 3. Salami
@@ -100,12 +149,40 @@ public class OrderScreen {
                 6. Bacon
                 7. No Meat
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))){
+            case 1 -> {
+                System.out.println("You have selected Steak!");
+                MeatTopping meatChoice = MeatTopping.STEAK;
+            }
+            case 2 -> {
+                System.out.println("You have selected Ham!");
+                MeatTopping meatChoice = MeatTopping.HAM;
+            }
+            case 3 -> {
+                System.out.println("You have selected Salami!");
+                MeatTopping meatChoice = MeatTopping.SALAMI;
+            }
+            case 4 -> {
+                System.out.println("You have selected Roast Beef!");
+                MeatTopping meatChoice = MeatTopping.ROAST_BEEF;
+            }
+            case 5 -> {
+                System.out.println("You have selected Chicken!");
+                MeatTopping meatChoice = MeatTopping.CHICKEN;
+            }
+            case 6 -> {
+                System.out.println("You have selected Bacon!");
+                MeatTopping meatChoice = MeatTopping.BACON;
+            }
+            case 7 -> {
+                System.out.println("You have selected no meat!");
+            }
+        }
 
         // Extra Meat
         System.out.println("""
                 Would you like extra meat?
-                
+                                
                 1. Heck yeah!
                 2. No thanks.
                 """);
@@ -114,7 +191,7 @@ public class OrderScreen {
         // Cheese 🧀
         System.out.println("""
                 Please select your desired cheese!
-                
+                                
                 1. American Cheese
                 2. Provolone Cheese
                 3. Cheddar Cheese
@@ -126,7 +203,7 @@ public class OrderScreen {
         // Extra Cheese
         System.out.println("""
                 Would you like extra cheese?
-                
+                                
                 1. Heck yeah! Cheese it up!!
                 2. No thanks.
                 """);
@@ -135,7 +212,7 @@ public class OrderScreen {
         // Toppings 🥬
         System.out.println("""
                 Please select your desired toppings!
-                
+                                
                 1. Lettuce
                 2. Peppers
                 3. Onions
@@ -152,7 +229,7 @@ public class OrderScreen {
         // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
-                
+                                
                 1. Mayo
                 2. Mustard
                 3. Ketchup
@@ -166,7 +243,7 @@ public class OrderScreen {
         // Sides
         System.out.println("""
                 Please select your desired sides!
-                
+                                
                 1. Au Jus
                 2. Sauce
                 """);
@@ -177,7 +254,7 @@ public class OrderScreen {
         // Drink 🥤
         System.out.println("""
                 Please select your drink!
-                
+                                
                 1. Coke Cola
                 2. Sprite
                 3. Fanta
@@ -192,7 +269,7 @@ public class OrderScreen {
         // Chips 🍟
         System.out.println("""
                 Please select your chips!
-                
+                                
                 1. Lays
                 2. Cheetos
                 3. Doritos

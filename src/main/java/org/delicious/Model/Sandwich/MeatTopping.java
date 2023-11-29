@@ -6,8 +6,7 @@ public enum MeatTopping {
     CHICKEN("Chicken"),
     SALAMI("Salami"),
     ROAST_BEEF("Roast Beef"),
-    BACON("Bacon"),
-    ;
+    BACON("Bacon");
 
     private final String toppingName;
 
