@@ -1,6 +1,9 @@
 package org.delicious.Controller;
 
 import org.delicious.Model.Sandwich.*;
+import org.delicious.Model.Sides.ChipType;
+import org.delicious.Model.Sides.Drink;
+import org.delicious.Model.Sides.DrinkType;
 
 import java.util.Scanner;
 
@@ -147,6 +150,7 @@ public class OrderScreen {
                 6. Bacon
                 7. No Meat
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Steak!");
@@ -184,6 +188,7 @@ public class OrderScreen {
                 1. Heck yeah!
                 2. No thanks.
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected extra meat!");
@@ -206,6 +211,7 @@ public class OrderScreen {
                 4. Swiss Cheese
                 5. No Cheese
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected American Cheese!");
@@ -236,6 +242,7 @@ public class OrderScreen {
                 1. Heck yeah! Cheese it up!!
                 2. No thanks.
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected extra cheese!");
@@ -263,6 +270,7 @@ public class OrderScreen {
                 9. Mushrooms
                 10. No Toppings
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lettuce!");
@@ -303,6 +311,7 @@ public class OrderScreen {
             case 10 -> {
                 System.out.println("You have selected no toppings!");
             }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
         }
 
         // Sauce 🫙
@@ -317,6 +326,7 @@ public class OrderScreen {
                 6. Vinaigrette
                 7. No Sauce
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Mayo!");
@@ -345,6 +355,7 @@ public class OrderScreen {
             case 7 -> {
                 System.out.println("You have selected no sauce!");
             }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
         }
 
         // Sides
@@ -354,6 +365,7 @@ public class OrderScreen {
                 1. Au Jus
                 2. Sauce
                 """);
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
@@ -379,7 +391,34 @@ public class OrderScreen {
                 5. Pepsi
                 6. Dr. Pepper
                 """);
-        userInputs(new Scanner(System.in));
+
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Coke Cola!");
+                DrinkType drinkChoice = DrinkType.COKE_COLA;
+            }
+            case 2 -> {
+                System.out.println("You have selected Sprite!");
+                DrinkType drinkChoice = DrinkType.SPRITE;
+            }
+            case 3 -> {
+                System.out.println("You have selected Fanta!");
+                DrinkType drinkChoice = DrinkType.FANTA;
+            }
+            case 4 -> {
+                System.out.println("You have selected Water!");
+                DrinkType drinkChoice = DrinkType.WATER;
+            }
+            case 5 -> {
+                System.out.println("You have selected Pepsi!");
+                DrinkType drinkChoice = DrinkType.PEPSI;
+            }
+            case 6 -> {
+                System.out.println("You have selected Dr. Pepper!");
+                DrinkType drinkChoice = DrinkType.DR_PEPPER;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-6.");
+        }
     }
 
     private static void addChips() {
@@ -393,7 +432,30 @@ public class OrderScreen {
                 4. Popcorn
                 5. Nachos
                 """);
-        userInputs(new Scanner(System.in));
+
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Lays!");
+                ChipType chipsChoice = ChipType.LAYS;
+            }
+            case 2 -> {
+                System.out.println("You have selected Cheetos!");
+                ChipType chipsChoice = ChipType.CHEETOS;
+            }
+            case 3 -> {
+                System.out.println("You have selected Doritos!");
+                ChipType chipsChoice = ChipType.DORITOS;
+            }
+            case 4 -> {
+                System.out.println("You have selected Popcorn!");
+                ChipType chipsChoice = ChipType.POPCORN;
+            }
+            case 5 -> {
+                System.out.println("You have selected Nachos!");
+                ChipType chipsChoice = ChipType.NACHOS;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
+        }
     }
 
     private static void goCheckout() {
