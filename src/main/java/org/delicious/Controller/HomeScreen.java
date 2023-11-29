@@ -6,7 +6,6 @@ import org.delicious.View.AnimatedPrompts;
 import org.delicious.View.ProgressBar;
 
 import static org.delicious.View.AnsiColorCodes.*;
-//AnimatedPrompts.animatePrompt("Welcome to DELI-cious! What would you like to order?");
 
 public class HomeScreen {
     public static void display(Scanner scanner) {
@@ -52,7 +51,6 @@ public class HomeScreen {
                             ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░░░░░░███████╗██╔╝╚██╗██║░░░██║░░░██║██║░╚███║╚██████╔╝██╗██╗██╗
                             ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                             """ + reset);
-
                     System.exit(0);
                 }
                 default -> {

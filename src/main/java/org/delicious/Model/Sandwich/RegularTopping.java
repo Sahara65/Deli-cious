@@ -1,6 +1,6 @@
 package org.delicious.Model.Sandwich;
 
-public enum RegularToppings {
+public enum RegularTopping {
     LETTUCE("Lettuce"),
     ONION("Onion"),
     TOMATO("Tomato"),
@@ -18,15 +18,14 @@ public enum RegularToppings {
     Au_Jus("Au Jus"),
     Sauce("Mushroom");
 
-    private final String regularToppingsName;
+    private final String getRegularToppingsName;
 
-
-    RegularToppings(String getRegularToppings) {
-        this.regularToppingsName = getRegularToppings;
+    RegularTopping(String getRegularToppings) {
+        this.getRegularToppingsName = getRegularToppings;
     }
 
-    public String getRegularToppingsName() {
-        return regularToppingsName;
+    public String getGetRegularToppingsName() {
+        return getRegularToppingsName;
     }
 }
 
