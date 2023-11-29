@@ -1,51 +1,65 @@
-package org.delicious.Sandwich;
+
+package org.delicious.Model.Sandwich;
 
 import org.delicious.Model.Sandwich.BreadSize;
 import org.delicious.Model.Sandwich.BreadType;
 import org.delicious.Model.Sandwich.PremiumToppings;
 import org.delicious.Model.Sandwich.RegularToppings;
+
 import java.util.ArrayList;
 import java.util.List;
 
+// Dipesh's Code
 public class Sandwich {
-    private BreadSize size; // Enum for the size of the sandwich
-    private BreadType breadType; // Enum for the type of bread
-    private List<PremiumToppings> premiumToppings; // List of Premium Toppings
-    private List<RegularToppings> regularToppings; // List of Regular Toppings
+    private final BreadSize size;
+    private final BreadType breadType;
+    private final List<PremiumToppings> premiumToppings;
+    private final List<RegularToppings> regularToppings;
+    private final boolean isToasted;
 
-    // Constructor
+
     public Sandwich(BreadSize size, BreadType breadType) {
         this.size = size;
         this.breadType = breadType;
-        this.premiumToppings = new ArrayList<>(); // Initialize the premium toppings list
-        this.regularToppings = new ArrayList<>(); // Initialize the regular toppings list
+        this.premiumToppings = new ArrayList<>();
+        this.regularToppings = new ArrayList<>();
+        this.isToasted = false;
     }
 
-    // Getters and setters for size, breadType, premiumToppings, and regularToppings...
-
-    // Method to add a premium topping
     public void addPremiumTopping(PremiumToppings topping) {
         this.premiumToppings.add(topping);
     }
 
-    // Method to add a regular topping
     public void addRegularTopping(RegularToppings topping) {
         this.regularToppings.add(topping);
     }
 
-    // Method to calculate the price of the sandwich
     public double calculatePrice() {
-        double price = breadType.getPrice(); // Base price from the type of bread
-        // Add additional cost for premium toppings
+        double price = breadType.getPrice();
+
         for (PremiumToppings topping : premiumToppings) {
-            // Assume a fixed additional cost for premium toppings or calculate as needed
-            price += /* additional cost for premium topping */;
+            price += topping.getPrice();
         }
-        // Regular toppings can be assumed to be included in the base price
         return price;
     }
 
-    // ToString method for easy printing
+    public String getDetailedDescription() {
+        StringBuilder description = new StringBuilder();
+        description.append("Sandwich - ").append(size).append(", ").append(breadType.getName());
+        if (isToasted) {
+            description.append(", Toasted");
+        }
+        description.append("\nPremium Toppings: ");
+        for (PremiumToppings topping : premiumToppings) {
+            description.append(topping.getPremiumToppingsName()).append(", ");
+        }
+        description.append("\nRegular Toppings: ");
+        for (RegularToppings topping : regularToppings) {
+            description.append(topping.getRegularToppingsName()).append(", ");
+        }
+        return description.toString().trim();
+    }
+
     @Override
     public String toString() {
         return "Sandwich{" +
@@ -53,6 +67,7 @@ public class Sandwich {
                 ", breadType=" + breadType +
                 ", premiumToppings=" + premiumToppings +
                 ", regularToppings=" + regularToppings +
+                ", isToasted=" + isToasted +
                 '}';
     }
 }

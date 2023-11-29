@@ -2,20 +2,20 @@ package org.delicious.Model.Sides;
 
 import org.delicious.Model.Order.OrderedItem;
 
-public enum Drink implements OrderedItem {
-    ;
+public class Drink {
     private DrinkType type;
-    private String name;
-    private double price;
+    private DrinkSize size;
 
-
-    @Override
-    public double getPrice() {
-        return 0;
+    public Drink(DrinkType type, DrinkSize size) {
+        this.type = type;
+        this.size = size;
     }
 
-    @Override
-    public String getOrderInformation() {
-        return null;
+    public DrinkType getType() {
+        return type;
+    }
+
+    public DrinkSize getSize() {
+        return size;
     }
 }

@@ -13,14 +13,14 @@ public enum PremiumToppings {
     PROVOLONE("Provolone Cheese"),
     SWISS("Swiss");
 
-    private final String getPremiumToppingsName;
+    private final String premiumToppingsName;
 
     PremiumToppings(String getPremiumToppingsName) {
-        this.getPremiumToppingsName = getPremiumToppingsName;
+        this.premiumToppingsName = getPremiumToppingsName;
     }
 
-    public String getGetPremiumToppingsName() {
-        return getPremiumToppingsName;
+    public String getPremiumToppingsName() {
+        return premiumToppingsName;
     }
 
 }
