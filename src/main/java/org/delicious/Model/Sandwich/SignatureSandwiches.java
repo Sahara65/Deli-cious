@@ -5,8 +5,8 @@ public class SignatureSandwiches {
     public static Sandwich createBLTSandwich(){
 
         Sandwich blt = new Sandwich(BreadSize.EIGHT_INCH, BreadType.WHITE, false);
-        //blt.addPremiumTopping(PremiumTopping.BACON);
-        //blt.addRegularTopping(RegularTopping.LETTUCE);
+        blt.addPremiumTopping(new PremiumTopping(MeatTopping.BACON, true));
+        blt.addRegularTopping(RegularTopping.LETTUCE);
         blt.addRegularTopping(RegularTopping.TOMATO);
         blt.addRegularTopping(RegularTopping.MAYO);
         return blt;
