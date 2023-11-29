@@ -2,7 +2,7 @@ package org.delicious.Model.Sides;
 
 import org.delicious.Model.Order.OrderedItem;
 
-public class Chips {
+public class Chips{
     private final ChipType type;
 
     public Chips(ChipType type) {
