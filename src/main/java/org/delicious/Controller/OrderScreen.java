@@ -2,6 +2,9 @@ package org.delicious.Controller;
 
 import java.util.Scanner;
 
+import static org.delicious.View.AnsiColorCodes.red;
+import static org.delicious.View.AnsiColorCodes.reset;
+
 public class OrderScreen {
     public void display() {
 
@@ -21,7 +24,7 @@ public class OrderScreen {
                 2. Add a Drink!
                 3. Add Chips!
                 4. Checkout!
-                0. Cancel Order
+                0. Cancel Order and Return to Home.
                 """);
 
         Scanner scanner = new Scanner(System.in);
@@ -32,8 +35,25 @@ public class OrderScreen {
 //            case 2 -> addBeverage();
 //            case 3 -> addChips();
 //            case 4 -> goCheckout();
-            case 0 -> new HomeScreen().display();
-            default -> System.out.println("Invalid Input!");
+            case 0 -> {new HomeScreen().display();
+                System.out.println(red + """                 
+                                                
+                        ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
+                        ████╗░██║██╔══██╗░██║░░██╗░░██║
+                        ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
+                        ██║╚████║██║░░██║░░████╔═████║░
+                        ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░
+                        ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░
+                                                
+                        ██████╗░███████╗████████╗██╗░░░██╗██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░░░░░░░░░░
+                        ██╔══██╗██╔════╝╚══██╔══╝██║░░░██║██╔══██╗████╗░██║██║████╗░██║██╔════╝░░░░░░░░░░
+                        ██████╔╝█████╗░░░░░██║░░░██║░░░██║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░░░░░░░░░░
+                        ██╔══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗░░░░░░░░░
+                        ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
+                        ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
+                        """ + reset);}
+
+            default -> System.out.println("Invalid Input! Please type only numbers 0-4.");
         }
     }
 }
