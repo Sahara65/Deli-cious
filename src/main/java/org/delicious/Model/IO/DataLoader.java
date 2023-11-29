@@ -37,4 +37,3 @@ public abstract class DataLoader
 
     public abstract void parseAndLoadLine(String data);
 }
-
