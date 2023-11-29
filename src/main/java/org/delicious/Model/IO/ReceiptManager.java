@@ -3,11 +3,12 @@ package org.delicious.Model.IO;
 import org.delicious.Model.Order.Order;
 import org.delicious.Model.Order.OrderedItem;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class ReceiptManager {
 
@@ -32,6 +33,7 @@ public class ReceiptManager {
             summary.append(item.getOrderInformation()).append("\n");
             totalCost += item.getPrice();
         }
+
         summary.append("Total Cost: $").append(totalCost);
         return summary.toString();
     }
@@ -48,4 +50,24 @@ public class ReceiptManager {
             throw new IOException("Error writing to receipt file: " + e.getMessage(), e);
         }
     }
+
+    public static Map<String, Double> loadPrices(String csvFileName) throws IOException {
+        Map<String, Double> prices = new HashMap<>();
+        try (Scanner scanner = new Scanner(new File(csvFileName))) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    String itemName = parts[0];
+                    double price = Double.parseDouble(parts[1]);
+                    prices.put(itemName, price);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new IOException("Price file not found: " + e.getMessage(), e);
+        }
+        return prices;
+    }
+
+    // Additional methods as per your application requirements
 }
