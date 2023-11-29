@@ -9,7 +9,7 @@ public class PremiumTopping extends Toppings{
     public PremiumTopping(Enum<?> toppingType, boolean isMeat) {
         this.toppingType = toppingType;
         this.isMeat = true;
-        this.type =
+        this.type = "";
     }
 
     public Enum<?> getToppingType() {
