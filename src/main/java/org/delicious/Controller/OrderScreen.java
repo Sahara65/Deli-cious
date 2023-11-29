@@ -61,6 +61,7 @@ public class OrderScreen {
         // Bread 🍞
         System.out.println("""
                 Please select your desired bread!
+                
                 1. White Bread
                 2. Wheat Bread
                 3. Rye Bread
@@ -71,6 +72,7 @@ public class OrderScreen {
         // Toasted 🔥
         System.out.println("""
                 Would you like your sandwich toasted?
+                
                 1. Heck yeah!
                 2. No thanks.
                 """);
@@ -79,6 +81,7 @@ public class OrderScreen {
         // Size 📏
         System.out.println("""
                 Please select your desired sandwich size!
+                
                 1. 4 inches
                 2. 8 inches
                 3. 12 inches
@@ -88,6 +91,7 @@ public class OrderScreen {
         // Meat 🥩
         System.out.println("""
                 Please select your desired meat!
+                
                 1. Steak
                 2. Ham
                 3. Salami
@@ -101,6 +105,7 @@ public class OrderScreen {
         // Extra Meat
         System.out.println("""
                 Would you like extra meat?
+                
                 1. Heck yeah!
                 2. No thanks.
                 """);
@@ -109,6 +114,7 @@ public class OrderScreen {
         // Cheese 🧀
         System.out.println("""
                 Please select your desired cheese!
+                
                 1. American Cheese
                 2. Provolone Cheese
                 3. Cheddar Cheese
@@ -120,6 +126,7 @@ public class OrderScreen {
         // Extra Cheese
         System.out.println("""
                 Would you like extra cheese?
+                
                 1. Heck yeah! Cheese it up!!
                 2. No thanks.
                 """);
@@ -128,6 +135,7 @@ public class OrderScreen {
         // Toppings 🥬
         System.out.println("""
                 Please select your desired toppings!
+                
                 1. Lettuce
                 2. Peppers
                 3. Onions
@@ -144,6 +152,7 @@ public class OrderScreen {
         // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
+                
                 1. Mayo
                 2. Mustard
                 3. Ketchup
@@ -157,6 +166,7 @@ public class OrderScreen {
         // Sides
         System.out.println("""
                 Please select your desired sides!
+                
                 1. Au Jus
                 2. Sauce
                 """);
@@ -167,6 +177,7 @@ public class OrderScreen {
         // Drink 🥤
         System.out.println("""
                 Please select your drink!
+                
                 1. Coke Cola
                 2. Sprite
                 3. Fanta
@@ -181,6 +192,7 @@ public class OrderScreen {
         // Chips 🍟
         System.out.println("""
                 Please select your chips!
+                
                 1. Lays
                 2. Cheetos
                 3. Doritos
