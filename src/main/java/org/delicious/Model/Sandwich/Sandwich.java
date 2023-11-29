@@ -1,72 +1,56 @@
 
 package org.delicious.Model.Sandwich;
 
-import org.delicious.Model.Sandwich.BreadSize;
-import org.delicious.Model.Sandwich.BreadType;
-import org.delicious.Model.Sandwich.PremiumToppings;
-import org.delicious.Model.Sandwich.RegularToppings;
+import org.delicious.Model.IO.PriceLoader;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-// Dipesh's Code
 public class Sandwich {
-    private BreadSize size;
-    private BreadType breadType;
-    private List<PremiumToppings> premiumToppings;
-    private List<RegularToppings> regularToppings;
-    private boolean isToasted;
+    private final BreadSize size;
+    private final BreadType breadType;
+    private final boolean isToasted;
+    private final List<PremiumTopping> premiumToppings;
+    private final List<RegularTopping> regularToppings;
 
 
-    public Sandwich(BreadSize size, BreadType breadType) {
+
+    public Sandwich(BreadSize size, BreadType breadType, boolean isToasted) {
         this.size = size;
         this.breadType = breadType;
-        this.premiumToppings = new ArrayList<>();
-        this.regularToppings = new ArrayList<>();
         this.isToasted = false;
+        this.premiumToppings = new ArrayList<PremiumTopping>();
+        this.regularToppings = new ArrayList<RegularTopping>();
     }
 
 
 
 
-    public void addPremiumTopping(PremiumToppings topping) {
+    public void addPremiumTopping(PremiumTopping topping) {
         this.premiumToppings.add(topping);
     }
 
 
-    public void addRegularTopping(RegularToppings topping) {
+    public void addRegularTopping(RegularTopping topping) {
         this.regularToppings.add(topping);
     }
 
 
-    public double calculatePrice() {
+    public double getPrice() {
+        PriceLoader loader = new PriceLoader();
+        HashMap<String, Double> map = loader.getPrices();
         double price = breadType.getPrice();
 
-        for (PremiumToppings topping : premiumToppings) {
+        for (PremiumTopping topping : premiumToppings) {
 
-            price += topping.getPrice();
+            price += map.get(size + "_" + topping.toString());
 
         }
 
         return price;
     }
 
-
-    public String getDetailedDescription() {
-        StringBuilder description = new StringBuilder();
-        description.append("Sandwich - ").append(size).append(", ").append(breadType.getName());
-        if (isToasted) {
-            description.append(", Toasted");
-        }
-        description.append("\nPremium Toppings: ");
-        for (PremiumToppings topping : premiumToppings) {
-            description.append(topping.getName()).append(", ");
-        }
-        description.append("\nRegular Toppings: ");
-        for (RegularToppings topping : regularToppings) {
-            description.append(topping.getName()).append(", ");
-        }
-        return description.toString().trim();
-    }
 
 
     @Override
