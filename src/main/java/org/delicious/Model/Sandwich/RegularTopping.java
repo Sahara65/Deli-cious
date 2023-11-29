@@ -2,6 +2,7 @@ package org.delicious.Model.Sandwich;
 
 public enum RegularTopping {
     LETTUCE("Lettuce"),
+    PEPPER("Peppers"),
     ONION("Onion"),
     TOMATO("Tomato"),
     JALAPENO("Jalapeno"),

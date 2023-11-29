@@ -1,9 +1,6 @@
 package org.delicious.Controller;
 
-import org.delicious.Model.Sandwich.BreadSize;
-import org.delicious.Model.Sandwich.BreadType;
-import org.delicious.Model.Sandwich.CheeseTopping;
-import org.delicious.Model.Sandwich.MeatTopping;
+import org.delicious.Model.Sandwich.*;
 
 import java.util.Scanner;
 
@@ -122,7 +119,7 @@ public class OrderScreen {
                 3. 12 inches
                 """);
 
-        switch (userInputs(new Scanner(System.in))){
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected 4 inches!");
                 BreadSize sizeChoice = BreadSize.FOUR_INCH;
@@ -150,7 +147,7 @@ public class OrderScreen {
                 6. Bacon
                 7. No Meat
                 """);
-        switch (userInputs(new Scanner(System.in))){
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Steak!");
                 MeatTopping meatChoice = MeatTopping.STEAK;
@@ -187,7 +184,7 @@ public class OrderScreen {
                 1. Heck yeah!
                 2. No thanks.
                 """);
-        switch (userInputs(new Scanner(System.in))){
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected extra meat!");
 //                MeatTopping meatChoice = MeatTopping.EXTRA_MEAT;
@@ -209,7 +206,7 @@ public class OrderScreen {
                 4. Swiss Cheese
                 5. No Cheese
                 """);
-        switch (userInputs(new Scanner(System.in))){
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected American Cheese!");
                 CheeseTopping cheeseChoice = CheeseTopping.AMERICAN;
@@ -239,7 +236,7 @@ public class OrderScreen {
                 1. Heck yeah! Cheese it up!!
                 2. No thanks.
                 """);
-        switch (userInputs(new Scanner(System.in))){
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected extra cheese!");
 //                CheeseTopping cheeseChoice = CheeseTopping.EXTRA_CHEESE;
@@ -266,7 +263,47 @@ public class OrderScreen {
                 9. Mushrooms
                 10. No Toppings
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Lettuce!");
+                RegularTopping toppingChoice = RegularTopping.LETTUCE;
+            }
+            case 2 -> {
+                System.out.println("You have selected Peppers!");
+                RegularTopping toppingChoice = RegularTopping.PEPPER;
+            }
+            case 3 -> {
+                System.out.println("You have selected Onions!");
+                RegularTopping toppingChoice = RegularTopping.ONION;
+            }
+            case 4 -> {
+                System.out.println("You have selected Tomatoes!");
+                RegularTopping toppingChoice = RegularTopping.TOMATO;
+            }
+            case 5 -> {
+                System.out.println("You have selected Jalapenos!");
+                RegularTopping toppingChoice = RegularTopping.JALAPENO;
+            }
+            case 6 -> {
+                System.out.println("You have selected Cucumbers!");
+                RegularTopping toppingChoice = RegularTopping.CUCUMBER;
+            }
+            case 7 -> {
+                System.out.println("You have selected Pickles!");
+                RegularTopping toppingChoice = RegularTopping.PICKLES;
+            }
+            case 8 -> {
+                System.out.println("You have selected Guacamole!");
+                RegularTopping toppingChoice = RegularTopping.GUACAMOLE;
+            }
+            case 9 -> {
+                System.out.println("You have selected Mushrooms!");
+                RegularTopping toppingChoice = RegularTopping.MUSHROOM;
+            }
+            case 10 -> {
+                System.out.println("You have selected no toppings!");
+            }
+        }
 
         // Sauce 🫙
         System.out.println("""
