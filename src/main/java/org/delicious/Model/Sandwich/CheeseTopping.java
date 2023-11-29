@@ -1,6 +1,6 @@
 package org.delicious.Model.Sandwich;
 
-public enum CheeseTopping{
+public enum CheeseTopping {
 
     AMERICAN("American Cheese"),
     CHEDDAR("Cheddar Cheese"),

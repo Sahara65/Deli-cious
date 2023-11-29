@@ -2,7 +2,7 @@ package org.delicious.Model.Sandwich;
 
 public class SignatureSandwiches {
 
-    public static Sandwich createBLTSandwich(){
+    public static Sandwich createBLTSandwich() {
 
         Sandwich blt = new Sandwich(BreadSize.EIGHT_INCH, BreadType.WHITE, false);
         blt.addPremiumTopping(new PremiumTopping(MeatTopping.BACON, true));
@@ -10,8 +10,6 @@ public class SignatureSandwiches {
         blt.addRegularTopping(RegularTopping.TOMATO);
         blt.addRegularTopping(RegularTopping.MAYO);
         return blt;
-
-
     }
 
     public static Sandwich createPhillyCheeseSteakSandwich() {
@@ -22,6 +20,4 @@ public class SignatureSandwiches {
         phillyCheeseSteak.addRegularTopping(RegularTopping.MUSHROOM);
         return phillyCheeseSteak;
     }
-
-
 }

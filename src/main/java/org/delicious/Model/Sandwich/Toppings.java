@@ -5,7 +5,6 @@ public abstract class Toppings {
 
     private double price;
 
-
     // Public Getter for price
     public double getPrice() {
         return price;
@@ -15,8 +14,6 @@ public abstract class Toppings {
     public void setPrice(double price) {
         this.price = price;
     }
-
-
 
     @Override
     public String toString() {
