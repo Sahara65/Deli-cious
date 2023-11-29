@@ -8,7 +8,6 @@ public class PriceLoader extends DataLoader {
     public void parseAndLoadLine(String data) {
         String[] priceLineArray = data.split(",");
 
-
         String itemName = priceLineArray[0];
         double price = Double.parseDouble(priceLineArray[1]);
 
