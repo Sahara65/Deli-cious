@@ -317,7 +317,35 @@ public class OrderScreen {
                 6. Vinaigrette
                 7. No Sauce
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Mayo!");
+                RegularTopping sauceChoice = RegularTopping.MAYO;
+            }
+            case 2 -> {
+                System.out.println("You have selected Mustard!");
+                RegularTopping sauceChoice = RegularTopping.MUSTARD;
+            }
+            case 3 -> {
+                System.out.println("You have selected Ketchup!");
+                RegularTopping sauceChoice = RegularTopping.KETCHUP;
+            }
+            case 4 -> {
+                System.out.println("You have selected Ranch!");
+                RegularTopping sauceChoice = RegularTopping.RANCH;
+            }
+            case 5 -> {
+                System.out.println("You have selected Thousand Islands!");
+                RegularTopping sauceChoice = RegularTopping.THOUSAND_ISLANDS;
+            }
+            case 6 -> {
+                System.out.println("You have selected Vinaigrette!");
+                RegularTopping sauceChoice = RegularTopping.VINAIGRETTE;
+            }
+            case 7 -> {
+                System.out.println("You have selected no sauce!");
+            }
+        }
 
         // Sides
         System.out.println("""
@@ -326,7 +354,17 @@ public class OrderScreen {
                 1. Au Jus
                 2. Sauce
                 """);
-        userInputs(new Scanner(System.in));
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Au Jus!");
+                RegularTopping auJusChoice = RegularTopping.AU_JUS;
+            }
+            case 2 -> {
+                System.out.println("You have selected Sauce!");
+                RegularTopping sauceChoice = RegularTopping.SAUCE;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
     }
 
     private static void addDrink() {

@@ -16,8 +16,8 @@ public enum RegularTopping {
     RANCH("Ranch"),
     THOUSAND_ISLANDS("Thousand Islands"),
     VINAIGRETTE("Vinaigrette"),
-    Au_Jus("Au Jus"),
-    Sauce("Mushroom");
+    AU_JUS("Au Jus"),
+    SAUCE("Mushroom");
 
     private final String getRegularToppingsName;
 
