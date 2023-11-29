@@ -1,5 +1,4 @@
 package org.delicious.Model.IO;
-
 import java.util.HashMap;
 
 public class PriceLoader extends DataLoader {
