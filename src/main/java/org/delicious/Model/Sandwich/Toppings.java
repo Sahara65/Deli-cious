@@ -1,7 +1,7 @@
 package org.delicious.Model.Sandwich;
 
 // Dipesh's Code
-public class Toppings {
+public abstract class Toppings {
     private double price;
 
     public Toppings(String name, ToppingType type, double price) {
