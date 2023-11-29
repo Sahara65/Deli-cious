@@ -1,7 +1,7 @@
 package org.delicious.Model.Sides;
 
 public enum DrinkType {
-    COKE_COLA("Coke Cola"),
+    COCA_COLA("Coke Cola"),
     SPRITE("Sprite"),
     FANTA("Fanta"),
     WATER("Water"),
