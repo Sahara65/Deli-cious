@@ -5,5 +5,3 @@ public interface OrderedItem {
 
     String getOrderInformation();
 }
-
-

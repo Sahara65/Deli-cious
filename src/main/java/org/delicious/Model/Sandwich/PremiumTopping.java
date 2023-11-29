@@ -1,11 +1,12 @@
 package org.delicious.Model.Sandwich;
 
-public class PremiumTopping extends Toppings{
+public class PremiumTopping extends Toppings {
     //Generic enum so we can use MeatTopping and CheeseTopping interchangeably
     private final Enum<?> toppingType;
     private boolean isExtra;
     private boolean isMeat;
     private final String type;
+
     public PremiumTopping(Enum<?> toppingType, boolean isMeat) {
         this.toppingType = toppingType;
         this.isMeat = true;
@@ -25,14 +26,14 @@ public class PremiumTopping extends Toppings{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 
         Class<?> enumClass = toppingType.getDeclaringClass();
 
 
-        if(isExtra){
+        if (isExtra) {
             return "EXTRA_" + toppingType.name().toUpperCase();
-        }else{
+        } else {
             return toppingType.name().toUpperCase();
         }
     }

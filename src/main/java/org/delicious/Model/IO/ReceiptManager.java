@@ -32,7 +32,6 @@ public class ReceiptManager {
             summary.append(item.getOrderInformation()).append("\n");
             totalCost += item.getPrice();
         }
-
         summary.append("Total Cost: $").append(totalCost);
         return summary.toString();
     }

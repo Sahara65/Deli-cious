@@ -15,7 +15,6 @@ public class Sandwich {
     private final List<RegularTopping> regularToppings;
 
 
-
     public Sandwich(BreadSize size, BreadType breadType, boolean isToasted) {
         this.size = size;
         this.breadType = breadType;
@@ -23,8 +22,6 @@ public class Sandwich {
         this.premiumToppings = new ArrayList<PremiumTopping>();
         this.regularToppings = new ArrayList<RegularTopping>();
     }
-
-
 
 
     public void addPremiumTopping(PremiumTopping topping) {
@@ -50,7 +47,6 @@ public class Sandwich {
 
         return price;
     }
-
 
 
     @Override

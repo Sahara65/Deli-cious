@@ -66,6 +66,23 @@ public class OrderScreen {
                 4. Wrap
                 """);
         userInputs(new Scanner(System.in));
+
+        System.out.println("""
+                Please select your desired sandwich size!
+                1. 4 inches
+                2. 8 inches
+                3. 12 inches
+                """);
+        userInputs(new Scanner(System.in));
+
+        System.out.println("""
+                Please select your desired meat!
+                1. White Bread
+                2. Wheat Bread
+                3. Rye Bread
+                4. Wrap
+                """);
+        userInputs(new Scanner(System.in));
     }
 
     private static void addDrink() {

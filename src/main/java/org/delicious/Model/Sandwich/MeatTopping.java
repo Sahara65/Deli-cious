@@ -1,6 +1,6 @@
 package org.delicious.Model.Sandwich;
 
-public enum MeatTopping{
+public enum MeatTopping {
     STEAK("Steak"),
     HAM("Ham"),
     CHICKEN("Chicken"),

@@ -20,7 +20,6 @@ public enum RegularTopping {
 
     private final String getRegularToppingsName;
 
-
     RegularTopping(String getRegularToppings) {
         this.getRegularToppingsName = getRegularToppings;
     }
