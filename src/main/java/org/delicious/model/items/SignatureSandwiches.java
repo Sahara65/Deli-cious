@@ -1,4 +1,4 @@
-package org.delicious.model.sandwich;
+package org.delicious.model.items;
 
 public class SignatureSandwiches {
 
@@ -21,4 +21,7 @@ public class SignatureSandwiches {
         return phillyCheeseSteak;
     }
          */
+
+        return new Sandwich(BreadSize.FOUR_INCH, BreadType.RYE);
+    }
 }

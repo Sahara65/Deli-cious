@@ -1,4 +1,4 @@
-package org.delicious.model.sandwich;
+package org.delicious.model.items   ;
 
 import java.util.ArrayList;
 import java.util.HashMap;
