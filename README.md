@@ -26,7 +26,7 @@ Price.csv: CSV file for managing prices of items.
 
 ## How to Run the Application:
 Run the application using your IDE or via the command line:
-java -jar path/to/delicious.jar
+java -jar path/to/delicious.jar,
 Follow the on-screen prompts to place orders.
 
 
