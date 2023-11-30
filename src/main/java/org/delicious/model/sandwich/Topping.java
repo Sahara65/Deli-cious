@@ -9,7 +9,6 @@ public abstract class Topping {
     // Public Getter for price
     public abstract double getName();
 
-
     @Override
     public String toString() {
         return "    -" + name.toUpperCase();

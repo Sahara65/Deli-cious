@@ -17,14 +17,13 @@ public class PremiumTopping {
     private double price;
 
 
-
-//make sure to check that the name exists in the ArrayLists before implementing the constructor
-    PremiumTopping(String name, boolean isExtra){
+    //make sure to check that the name exists in the ArrayLists before implementing the constructor
+    PremiumTopping(String name, boolean isExtra) {
         this.name = name;
         this.isExtra = isExtra;
-        if(MEAT.contains(name)){
+        if (MEAT.contains(name)) {
             this.typeOfTopping = "MEAT";
-        }else{
+        } else {
             this.typeOfTopping = "CHEESE";
         }
 
@@ -35,26 +34,25 @@ public class PremiumTopping {
          */
     }
 
-
-    void setExtra(boolean extra){
+    void setExtra(boolean extra) {
         this.isExtra = extra;
     }
 
-    boolean isExtra(){return this.isExtra;}
+    boolean isExtra() {
+        return this.isExtra;
+    }
 
-
-    public String toString(){
+    public String toString() {
         return "";
     }
 
-    public String priceLookupString(){
-        if(isExtra){
+    public String priceLookupString() {
+        if (isExtra) {
             return "EXTRA_" + typeOfTopping;
-        }else{
+        } else {
             return typeOfTopping;
         }
     }
-
 
     public ArrayList<String> getMEAT() {
         return MEAT;

@@ -11,15 +11,15 @@ public class Order {
     }
 
     public void addItemsCart(OrderedItem item) {
-        itemsInCart.add(item);
+        items.add(item);
     }
 
     public void removeItemsCart(OrderedItem item) {
-        itemsInCart.remove(item);
+        items.remove(item);
     }
 
     // Getter for itemsInCart
     public List<OrderedItem> getItemsInCart() {
-        return itemsInCart;
+        return items;
     }
 }
