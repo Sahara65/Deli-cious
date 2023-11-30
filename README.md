@@ -35,7 +35,8 @@ Fork the Repository: Create your own fork of the project.
 Make Changes: Implement your changes or improvements.
 Submit a Pull Request: Submit a PR for review and potential merge with the main project.
 
-## Sources; Google, offcial Java Documentations,etc.
-Credit; https://lucid.app/lucidchart/ .. for the UML diagram, all the group members Sahara, Ibrahim, Evie.
+## Sources and Credits
+ Sources; Google, offcial Java Documentations,etc.
+## Credit; https://lucid.app/lucidchart/ .. for the UML diagram, all the group members Sahara, Ibrahim, Evie.
 
 
