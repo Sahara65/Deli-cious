@@ -1,12 +1,12 @@
 package org.delicious.model.sides;
 
 public enum DrinkType {
-    Coke_Cola("Coke Cola"),
-    Sprite("Sprite"),
-    Fanta("Fanta"),
-    Water("Water"),
-    Pepsi("Pepsi"),
-    DrPepper("Dr. Pepper");
+    COCA_COLA("Coke Cola"),
+    SPRITE("Sprite"),
+    FANTA("Fanta"),
+    WATER("Water"),
+    PEPSI("Pepsi"),
+    DR_PEPPER("Dr. Pepper");
 
     private final String drinkName;
 
