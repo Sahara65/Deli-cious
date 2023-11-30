@@ -18,9 +18,8 @@ public class PremiumTopping {
 
 
     //make sure to check that the name exists in the ArrayLists before implementing the constructor
-    PremiumTopping(String name, boolean isExtra) {
+    public PremiumTopping(String name) {
         this.name = name;
-        this.isExtra = isExtra;
         if (MEAT.contains(name)) {
             this.typeOfTopping = "MEAT";
         } else {

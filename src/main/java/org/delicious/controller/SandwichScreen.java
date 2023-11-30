@@ -1,6 +1,10 @@
 package org.delicious.controller;
 
 import org.delicious.Model.Sandwich.*;
+import org.delicious.model.items.BreadSize;
+import org.delicious.model.items.BreadType;
+import org.delicious.model.items.PremiumTopping;
+import org.delicious.model.items.Topping;
 
 import java.util.Scanner;
 
@@ -99,27 +103,27 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Steak!");
-                MeatTopping meatChoice = MeatTopping.STEAK;
+                PremiumTopping meatChoice = new PremiumTopping("Steak");
             }
             case 2 -> {
                 System.out.println("You have selected Ham!");
-                MeatTopping meatChoice = MeatTopping.HAM;
+                PremiumTopping meatChoice = new PremiumTopping("Ham");
             }
             case 3 -> {
                 System.out.println("You have selected Salami!");
-                MeatTopping meatChoice = MeatTopping.SALAMI;
+                PremiumTopping meatChoice = new PremiumTopping("Chicken");
             }
             case 4 -> {
                 System.out.println("You have selected Roast Beef!");
-                MeatTopping meatChoice = MeatTopping.ROAST_BEEF;
+                PremiumTopping meatChoice = new PremiumTopping("Salami");
             }
             case 5 -> {
                 System.out.println("You have selected Chicken!");
-                MeatTopping meatChoice = MeatTopping.CHICKEN;
+                PremiumTopping meatChoice = new PremiumTopping("Roast Beef");
             }
             case 6 -> {
                 System.out.println("You have selected Bacon!");
-                MeatTopping meatChoice = MeatTopping.BACON;
+                PremiumTopping meatChoice = new PremiumTopping("Bacon");
             }
             case 7 -> {
                 System.out.println("You have selected no meat!");
@@ -136,8 +140,8 @@ public class SandwichScreen {
 
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
+                //meat;
                 System.out.println("You have selected extra meat!");
-//                MeatTopping meatChoice = MeatTopping.EXTRA_MEAT;
             }
             case 2 -> {
                 System.out.println("You have selected no extra meat!");

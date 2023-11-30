@@ -1,6 +1,6 @@
 package org.delicious.controller;
 
-import org.delicious.Model.Sides.DrinkType;
+import org.delicious.model.sides.DrinkType;
 
 import java.util.Scanner;
 
