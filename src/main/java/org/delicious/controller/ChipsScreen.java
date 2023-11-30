@@ -1,12 +1,13 @@
 package org.delicious.controller;
 
+import org.delicious.model.sides.ChipType;
+
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ChipsScreen {
-    public static void addChips() {
-        // Chips 🍟
+    public static ChipType addChips() {
         System.out.println("""
                 Please select your chips!
                                 
@@ -20,25 +21,26 @@ public class ChipsScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lays!");
-//                ChipType.setChipType(ChipType.LAYS);
+                return ChipType.LAYS;
             }
             case 2 -> {
                 System.out.println("You have selected Cheetos!");
-//                return ChipType.CHEETOS;
+                return ChipType.CHEETOS;
             }
             case 3 -> {
                 System.out.println("You have selected Doritos!");
-//                return ChipType.DORITOS;
+                return ChipType.DORITOS;
             }
             case 4 -> {
                 System.out.println("You have selected Popcorn!");
-//                return ChipType.POPCORN;
+                return ChipType.POPCORN;
             }
             case 5 -> {
                 System.out.println("You have selected Nachos!");
-//                return ChipType.NACHOS;
+                return ChipType.NACHOS;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
         }
+        return null;
     }
 }

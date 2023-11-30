@@ -1,7 +1,9 @@
 package org.delicious.controller;
 
-import org.delicious.Model.Sandwich.*;
+import org.delicious.model.sandwich.*;
+import org.delicious.model.sandwich.PremiumTopping.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
@@ -36,26 +38,6 @@ public class SandwichScreen {
                 BreadType breadChoice = BreadType.WRAP;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-4.");
-        }
-
-        // Toasted 🔥
-        System.out.println("""
-                Would you like your sandwich toasted?
-                                
-                1. Heck yeah!
-                2. No thanks.
-                """);
-
-        switch (userInputs(new Scanner(System.in))) {
-            case 1 -> {
-                System.out.println("You have selected toasted!");
-//                Toasted toastChoice = Toasted.TOASTED;
-            }
-            case 2 -> {
-                System.out.println("You have selected not toasted!");
-//                Toasted toastChoice = Toasted.NOT_TOASTED;
-            }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
 
         // Size 📏
@@ -96,33 +78,35 @@ public class SandwichScreen {
                 7. No Meat
                 """);
 
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Steak!");
-                MeatTopping meatChoice = MeatTopping.STEAK;
+//                MeatTopping meatChoice = MeatTopping.STEAK;
             }
             case 2 -> {
                 System.out.println("You have selected Ham!");
-                MeatTopping meatChoice = MeatTopping.HAM;
+//                MeatTopping meatChoice = MeatTopping.HAM;
             }
             case 3 -> {
                 System.out.println("You have selected Salami!");
-                MeatTopping meatChoice = MeatTopping.SALAMI;
+//                MeatTopping meatChoice = MeatTopping.SALAMI;
             }
             case 4 -> {
                 System.out.println("You have selected Roast Beef!");
-                MeatTopping meatChoice = MeatTopping.ROAST_BEEF;
+//                MeatTopping meatChoice = MeatTopping.ROAST_BEEF;
             }
             case 5 -> {
                 System.out.println("You have selected Chicken!");
-                MeatTopping meatChoice = MeatTopping.CHICKEN;
+//                MeatTopping meatChoice = MeatTopping.CHICKEN;
             }
             case 6 -> {
                 System.out.println("You have selected Bacon!");
-                MeatTopping meatChoice = MeatTopping.BACON;
+//                MeatTopping meatChoice = MeatTopping.BACON;
             }
             case 7 -> {
                 System.out.println("You have selected no meat!");
+
             }
         }
 
@@ -280,6 +264,7 @@ public class SandwichScreen {
             case 2 -> {
                 System.out.println("You have selected Mustard!");
                 RegularTopping sauceChoice = RegularTopping.MUSTARD;
+
             }
             case 3 -> {
                 System.out.println("You have selected Ketchup!");
@@ -319,6 +304,25 @@ public class SandwichScreen {
             case 2 -> {
                 System.out.println("You have selected Sauce!");
                 RegularTopping sauceChoice = RegularTopping.SAUCE;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
+        // Toasted 🔥
+        System.out.println("""
+                Would you like your sandwich toasted?
+                                
+                1. Heck yeah!
+                2. No thanks.
+                """);
+
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected toasted!");
+//                Toasted toastChoice = Toasted.TOASTED;
+            }
+            case 2 -> {
+                System.out.println("You have selected not toasted!");
+//                Toasted toastChoice = Toasted.NOT_TOASTED;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }

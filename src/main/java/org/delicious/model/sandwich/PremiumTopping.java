@@ -9,7 +9,7 @@ public class PremiumTopping {
             new ArrayList<>(List.of("Steak", "Ham", "Chicken", "Salami", "Roast Beef", "Bacon"));
     private static final ArrayList<String> CHEESE =
             new ArrayList<>(List.of("American Cheese", "Cheddar Cheese", "Provolone Cheese", "Swiss"));
-    //Making it so that reference can not be reassigned for the hashmap, not making it immutable
+    // Making it so that reference can not be reassigned for the hashmap, not making it immutable
     private static final HashMap<String, Integer> count = new HashMap<>();
     private String name;
     private boolean isExtra;
@@ -17,7 +17,7 @@ public class PremiumTopping {
     private double price;
 
 
-    //make sure to check that the name exists in the ArrayLists before implementing the constructor
+    // Make sure to check that the name exists in the ArrayLists before implementing the constructor
     PremiumTopping(String name, boolean isExtra) {
         this.name = name;
         this.isExtra = isExtra;
