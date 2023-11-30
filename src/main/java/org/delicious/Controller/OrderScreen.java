@@ -67,8 +67,6 @@ public class OrderScreen {
         }
     }
 
-    private static final List<String> orderEntries = new ArrayList<>();
-    private
     private static void goCheckout() {
     }
 }
