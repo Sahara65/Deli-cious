@@ -15,6 +15,10 @@ public class SandwichScreen {
         BreadSize breadSizeChoice = selectBreadSize();
         PremiumTopping meatChoice = selectMeat();
         PremiumTopping cheeseChoice = selectCheese();
+        RegularTopping toppingChoice = selectTopping();
+        RegularTopping sauceChoice = selectSauce();
+        RegularTopping sideChoice = selectSide();
+        boolean toastedChoice = selectToasted();
 
         Sandwich sandwich = new Sandwich(breadSizeChoice, breadChoice, meatChoice, cheeseChoice, );
     }
@@ -103,6 +107,7 @@ public class SandwichScreen {
             }
             case 2 -> {
                 System.out.println("You have selected Ham!");
+//                Sandwich.addTopping(meatChoice);
                 PremiumTopping meatChoice = new PremiumTopping("Ham");
             }
             case 3 -> {
@@ -126,7 +131,6 @@ public class SandwichScreen {
         return null;
     }
 
-
     private static boolean selectExtra() {
         // Extra Meat
         System.out.println("""
@@ -139,7 +143,6 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected extra!");
-
                 return true;
             }
             case 2 -> {
@@ -189,7 +192,7 @@ public class SandwichScreen {
         return null;
     }
 
-    /*
+    private static RegularTopping selectTopping() {
         // Toppings 🥬
         System.out.println("""
                 Please select your desired toppings!
@@ -248,7 +251,10 @@ public class SandwichScreen {
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
         }
+        return null;
+    }
 
+    private static RegularTopping selectSauce() {
         // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
@@ -293,7 +299,10 @@ public class SandwichScreen {
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
         }
+        return null;
+    }
 
+    private static RegularTopping selectSide() {
         // Sides
         System.out.println("""
                 Please select your desired sides!
@@ -302,7 +311,9 @@ public class SandwichScreen {
                 2. Sauce
                 """);
 
-        switch (userInputs(new Scanner(System.in))) {
+        switch (
+
+                userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
                 RegularTopping auJusChoice = RegularTopping.AU_JUS;
@@ -313,6 +324,10 @@ public class SandwichScreen {
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
+        return null;
+    }
+
+    private static boolean selectToasted() {
         // Toasted 🔥
         System.out.println("""
                 Would you like your sandwich toasted?
@@ -321,17 +336,17 @@ public class SandwichScreen {
                 2. No thanks.
                 """);
 
-        switch (userInputs(new Scanner(System.in))) {
+        switch (
+                userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected toasted!");
-//                Toasted toastChoice = Toasted.TOASTED;
+                return true;
             }
             case 2 -> {
                 System.out.println("You have selected not toasted!");
-//                Toasted toastChoice = Toasted.NOT_TOASTED;
+                return false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
     }
-    /*
 }
