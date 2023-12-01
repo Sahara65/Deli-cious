@@ -62,7 +62,7 @@ public class CliScreenMenu extends CliScreen{
 
     private void showCheckoutScreen() {
         System.out.println("Listing your Checkout Options:\n");
-        TempMain.
+        TempMain.checkoutScreen.show();
     }
 
 }

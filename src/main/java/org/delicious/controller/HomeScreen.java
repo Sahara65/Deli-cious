@@ -29,7 +29,7 @@ public class HomeScreen {
                                 
                 \033[1m𝖂𝖍𝖊𝖗𝖊 𝖞𝖔𝖚 𝖈𝖆𝖓 𝖌𝖊𝖙 𝖙𝖍𝖊𝖒 𝖋𝖆𝖒𝖔𝖚𝖘 𝕻𝖆𝖕𝖆❜𝖘 𝕾𝖚𝖇𝖘!\033[1m
                 """);
-        AnimatedPrompts.animatePrompt(bold + """
+        System.out.println(bold + """
                 𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗹𝗲𝗰𝘁 𝗮𝗻 𝗼𝗽𝘁𝗶𝗼𝗻 𝘁𝗼 𝗮𝗰𝗾𝘂𝗶𝗿𝗲 𝗮 𝗗𝗲𝗹𝗶𝗰𝗶𝗼𝘂𝘀 𝗦𝗮𝗻𝗱𝘄𝗶𝗰𝗵:
                 \s
                 1. 𝙉𝙚𝙬 𝙊𝙧𝙙𝙚𝙧
@@ -70,7 +70,10 @@ public class HomeScreen {
     }
 
     public static int userInputs(Scanner scanner) {
-        return scanner.nextInt();
+        int val =  scanner.nextInt();
+        scanner.nextLine();
+        return val;
+        // TODO - may be problem with newline?
     }
     public static int userCharInputs() {
         Scanner scanner = new Scanner(System.in);

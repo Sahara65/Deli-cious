@@ -42,7 +42,6 @@ public class Sandwich {
             String toppingKey = size.toString() + "_" + topping.priceLookupString();
             price += prices.getOrDefault(toppingKey, 0.0);
         }
-
         return price;
     }
 
