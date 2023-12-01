@@ -1,9 +1,6 @@
 package org.delicious.controllerwithpaulscreen;
 
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -38,7 +35,7 @@ import java.util.Scanner;
  *   doInputUntilDone()
  *
  */
-public class CLIScreen {
+public class CliScreen {
 
     // STATIC VARIABLES ------------------------------------
 
@@ -85,7 +82,7 @@ public class CLIScreen {
      * should initialize their own values for
      *
      */
-    public CLIScreen() {
+    public CliScreen() {
         scanner = new Scanner(System.in);
         menuPrompt = defaultPrompt;
         heading = defaultHeading;
@@ -191,32 +188,6 @@ public class CLIScreen {
 
     }
 
-    protected double requestDoubleInput(String prompt) {
-        String input = requestStringInput(prompt);
-        return Double.parseDouble(input);
-    }
-
-    /*
-    NOT NEEDED FOR OUR IMPLEMENTATION
-    protected LocalDate requestDateInput(String prompt) {
-        String input = requestStringInput(prompt);
-        if (input.equals("")) {
-            return LocalDate.now();
-        } else {
-            return LocalDate.parse(input);
-        }
-    }
-
-
-    protected LocalTime requestTimeInput(String prompt) {
-        String input = requestStringInput(prompt);
-        if (input.equals("")) {
-            return LocalTime.now();
-        } else {
-            return LocalTime.parse(input);
-        }
-    }
-     */
 
 
 }
