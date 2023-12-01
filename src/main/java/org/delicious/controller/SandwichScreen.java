@@ -15,13 +15,34 @@ public class SandwichScreen {
         PremiumTopping meatChoice = selectMeat();
         if (meatChoice != null) {
             sandwich.addTopping(meatChoice);
-            if (selectExtra()){
+            if (selectExtra()) {
                 PremiumTopping extraMeatChoice = new PremiumTopping(meatChoice.getName());
                 extraMeatChoice.setExtra(true);
                 sandwich.addTopping(extraMeatChoice);
             }
         }
+        PremiumTopping cheeseChoice = selectCheese();
+        if (cheeseChoice != null) {
+            sandwich.addTopping(cheeseChoice);
+            if (selectExtra()) {
+                PremiumTopping extraCheeseChoice = new PremiumTopping(cheeseChoice.getName());
+                extraCheeseChoice.setExtra(true);
+                sandwich.addTopping(extraCheeseChoice);
+            }
+        }
 
+        RegularTopping topping = selectTopping();
+        RegularTopping sauce = selectSauce();
+        RegularTopping side = selectSide();
+
+        sandwich.addTopping(topping);
+        sandwich.addTopping(sauce);
+        sandwich.addTopping(side);
+
+        boolean isToasted = selectToasted();
+        sandwich.setToasted(isToasted);
+
+        System.out.println("Your sandwich will cost:" + sandwich.getPrice());
     }
 
     private static BreadType selectBread() {
@@ -203,7 +224,6 @@ public class SandwichScreen {
             }
             case 5 -> {
                 System.out.println("You have selected no cheese!");
-                cheeseChoice = null;
 
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
@@ -228,7 +248,6 @@ public class SandwichScreen {
             }
             case 2 -> {
                 System.out.println("You have selected no extra!");
-                isExtra = false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
@@ -251,61 +270,50 @@ public class SandwichScreen {
                 9. Mushrooms
                 10. No Toppings
                 """);
-
+        RegularTopping toppingChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lettuce!");
-                RegularTopping toppingChoice = new RegularTopping("Lettuce");
-                selectSauce();
+                toppingChoice = new RegularTopping("Lettuce");
             }
             case 2 -> {
                 System.out.println("You have selected Peppers!");
-                RegularTopping toppingChoice = new RegularTopping("Peppers");
-                selectSauce();
+                toppingChoice = new RegularTopping("Peppers");
             }
             case 3 -> {
                 System.out.println("You have selected Onions!");
-                RegularTopping toppingChoice = new RegularTopping("Onions");
-                selectSauce();
+                toppingChoice = new RegularTopping("Onions");
             }
             case 4 -> {
                 System.out.println("You have selected Tomatoes!");
-                RegularTopping toppingChoice = new RegularTopping("Tomatoes");
-                selectSauce();
+                toppingChoice = new RegularTopping("Tomatoes");
             }
             case 5 -> {
                 System.out.println("You have selected Jalapenos!");
-                RegularTopping toppingChoice = new RegularTopping("Jalapenos");
-                selectSauce();
+                toppingChoice = new RegularTopping("Jalapenos");
             }
             case 6 -> {
                 System.out.println("You have selected Cucumbers!");
-                RegularTopping toppingChoice = new RegularTopping("Cucumbers");
-                selectSauce();
+                toppingChoice = new RegularTopping("Cucumbers");
             }
             case 7 -> {
                 System.out.println("You have selected Pickles!");
-                RegularTopping toppingChoice = new RegularTopping("Pickles");
-                selectSauce();
+                toppingChoice = new RegularTopping("Pickles");
             }
             case 8 -> {
                 System.out.println("You have selected Guacamole!");
-                RegularTopping toppingChoice = new RegularTopping("Guacamole");
-                selectSauce();
+                toppingChoice = new RegularTopping("Guacamole");
             }
             case 9 -> {
                 System.out.println("You have selected Mushrooms!");
-                RegularTopping toppingChoice = new RegularTopping("Mushrooms");
-                selectSauce();
+                toppingChoice = new RegularTopping("Mushrooms");
             }
             case 10 -> {
                 System.out.println("You have selected no toppings!");
-                RegularTopping toppingChoice = null;
-                selectSauce();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
         }
-        return null;
+        return toppingChoice;
     }
 
     private static RegularTopping selectSauce() {
@@ -322,41 +330,34 @@ public class SandwichScreen {
                 7. No Sauce
                 """);
 
+        RegularTopping sauceChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Mayo!");
-                RegularTopping sauceChoice = new RegularTopping("Mayo");
-                selectSide();
+                sauceChoice = new RegularTopping("Mayo");
             }
             case 2 -> {
                 System.out.println("You have selected Mustard!");
-                RegularTopping sauceChoice = new RegularTopping("Mustard");
-                selectSide();
+                sauceChoice = new RegularTopping("Mustard");
             }
             case 3 -> {
                 System.out.println("You have selected Ketchup!");
-                RegularTopping sauceChoice = new RegularTopping("Ketchup");
-                selectSide();
+                sauceChoice = new RegularTopping("Ketchup");
             }
             case 4 -> {
                 System.out.println("You have selected Ranch!");
-                RegularTopping sauceChoice = new RegularTopping("Ranch");
-                selectSide();
+                sauceChoice = new RegularTopping("Ranch");
             }
             case 5 -> {
                 System.out.println("You have selected Thousand Islands!");
-                RegularTopping sauceChoice = new RegularTopping("Thousand Islands");
-                selectSide();
+                sauceChoice = new RegularTopping("Thousand Islands");
             }
             case 6 -> {
                 System.out.println("You have selected Vinaigrette!");
-                RegularTopping sauceChoice = new RegularTopping("Vinaigrette");
-                selectSide();
+                sauceChoice = new RegularTopping("Vinaigrette");
             }
             case 7 -> {
                 System.out.println("You have selected no sauce!");
-                RegularTopping sauceChoice = null;
-                selectSide();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
         }
@@ -371,17 +372,15 @@ public class SandwichScreen {
                 1. Au Jus
                 2. Sauce
                 """);
-
+        RegularTopping sideChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
-                RegularTopping sideChoice = new RegularTopping("Au Jus");
-                selectToasted();
+                sideChoice = new RegularTopping("Au Jus");
             }
             case 2 -> {
                 System.out.println("You have selected Sauce!");
-                RegularTopping sideChoice = new RegularTopping("Sauce");
-                selectToasted();
+                sideChoice = new RegularTopping("Sauce");
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
