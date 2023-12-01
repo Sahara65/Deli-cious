@@ -1,15 +1,20 @@
 package org.delicious.controller;
 
+import org.delicious.model.io.ReceiptManager;
+import org.delicious.model.order.Order;
+
 import java.util.Scanner;
 
 import static org.delicious.controller.ChipsScreen.addChips;
 import static org.delicious.controller.DrinkScreen.addDrink;
 import static org.delicious.controller.HomeScreen.userInputs;
-import static org.delicious.controller.SandwichScreen.addSandwich;
+import static org.delicious.controller.SandwichScreen.createSandwich;
 import static org.delicious.view.AnsiColorCodes.red;
 import static org.delicious.view.AnsiColorCodes.reset;
 
 public class OrderScreen {
+    private static final Order currentOrder = new Order();
+
     public static void display(Scanner scanner) {
 
         System.out.println("""
@@ -32,10 +37,10 @@ public class OrderScreen {
 
         while (true) {
             switch (userInputs(scanner)) {
-                case 1 -> addSandwich();
+                case 1 -> createSandwich();
                 case 2 -> addDrink();
                 case 3 -> addChips();
-                case 4 -> goCheckout();
+                case 4 -> goCheckout(scanner);
                 case 0 -> {
                     HomeScreen.display(scanner);
                     System.out.println(red + """                 
@@ -60,6 +65,36 @@ public class OrderScreen {
         }
     }
 
-    private static void goCheckout() {
+    private static void goCheckout(Scanner scanner) {
+        if (currentOrder.getItemsInCart() == null) {
+            System.out.println("You have not ordered anything yet!");
+        }
+        String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
+
+        System.out.println(orderSummary);
+
+        System.out.println("Do you want to proceed with the checkout? (Y/N)");
+        char confirmation = (char) HomeScreen.userCharInputs();
+
+
+        if (Character.toLowerCase(confirmation) == 'y') {
+            System.out.println("""
+                    Thank you for your order!
+                    Your food will be prepared and delivered shortly!
+                    Have a fantastic day!
+                    """);
+
+            currentOrder.getItemsInCart().clear();
+            HomeScreen.display(scanner);
+        } else {
+            display(scanner);
+        }
+        if (Character.toLowerCase(confirmation) == 'n') {
+            HomeScreen.display(scanner);
+        }
+        else {
+            System.out.println("Invalid input! Please enter Y or N.");
+            goCheckout(scanner);
+        }
     }
 }

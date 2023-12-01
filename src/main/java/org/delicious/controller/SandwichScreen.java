@@ -1,15 +1,20 @@
 package org.delicious.controller;
 
-import org.delicious.model.items.BreadSize;
-import org.delicious.model.items.BreadType;
-import org.delicious.model.items.PremiumTopping;
+import org.delicious.model.items.*;
 
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class SandwichScreen {
-    static void addSandwich() {
+    public static void createSandwich() {
+        BreadType breadChoice = selectBread();
+        BreadSize breadSizeChoice = selectBreadSize();
+
+        Sandwich sandwich = new Sandwich(breadSizeChoice, breadChoice);
+    }
+
+    private static BreadType selectBread() {
         // Bread 🍞
         System.out.println("""
                 Please select your desired bread!
@@ -23,43 +28,30 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected White Bread!");
-                BreadType breadChoice = BreadType.WHITE;
+                BreadType type = BreadType.WHITE;
+                selectBreadSize();
             }
             case 2 -> {
                 System.out.println("You have selected Wheat Bread!");
-                BreadType breadChoice = BreadType.WHEAT;
+                BreadType type = BreadType.WHEAT;
+                selectBreadSize();
             }
             case 3 -> {
                 System.out.println("You have selected Rye Bread!");
-                BreadType breadChoice = BreadType.RYE;
+                BreadType type = BreadType.RYE;
+                selectBreadSize();
             }
             case 4 -> {
                 System.out.println("You have selected Wrap!");
-                BreadType breadChoice = BreadType.WRAP;
+                BreadType type = BreadType.WRAP;
+                selectBreadSize();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-4.");
         }
+        return null;
+    }
 
-        // Toasted 🔥
-        System.out.println("""
-                Would you like your sandwich toasted?
-                                
-                1. Heck yeah!
-                2. No thanks.
-                """);
-
-        switch (userInputs(new Scanner(System.in))) {
-            case 1 -> {
-                System.out.println("You have selected toasted!");
-//                Toasted toastChoice = Toasted.TOASTED;
-            }
-            case 2 -> {
-                System.out.println("You have selected not toasted!");
-//                Toasted toastChoice = Toasted.NOT_TOASTED;
-            }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
-        }
-
+    private static BreadSize selectBreadSize() {
         // Size 📏
         System.out.println("""
                 Please select your desired sandwich size!
@@ -72,19 +64,25 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected 4 inches!");
-                BreadSize sizeChoice = BreadSize.FOUR_INCH;
+                BreadSize size = BreadSize.FOUR_INCH;
+                selectMeat();
             }
             case 2 -> {
                 System.out.println("You have selected 8 inches!");
-                BreadSize sizeChoice = BreadSize.EIGHT_INCH;
+                BreadSize size = BreadSize.EIGHT_INCH;
+                selectMeat();
             }
             case 3 -> {
                 System.out.println("You have selected 12 inches!");
-                BreadSize sizeChoice = BreadSize.TWELVE_INCH;
+                BreadSize size = BreadSize.TWELVE_INCH;
+                selectMeat();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-3.");
         }
+        return null;
+    }
 
+    private static PremiumTopping selectMeat() {
         // Meat 🥩
         System.out.println("""
                 Please select your desired meat!
@@ -98,39 +96,50 @@ public class SandwichScreen {
                 7. No Meat
                 """);
 
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Steak!");
                 PremiumTopping meatChoice = new PremiumTopping("Steak");
+                selectExtra();
             }
             case 2 -> {
                 System.out.println("You have selected Ham!");
                 PremiumTopping meatChoice = new PremiumTopping("Ham");
+                selectExtra();
             }
             case 3 -> {
                 System.out.println("You have selected Salami!");
                 PremiumTopping meatChoice = new PremiumTopping("Chicken");
+                selectExtra();
             }
             case 4 -> {
                 System.out.println("You have selected Roast Beef!");
                 PremiumTopping meatChoice = new PremiumTopping("Salami");
+                selectExtra();
             }
             case 5 -> {
                 System.out.println("You have selected Chicken!");
                 PremiumTopping meatChoice = new PremiumTopping("Roast Beef");
+                selectExtra();
             }
             case 6 -> {
                 System.out.println("You have selected Bacon!");
                 PremiumTopping meatChoice = new PremiumTopping("Bacon");
+                selectExtra();
             }
             case 7 -> {
                 System.out.println("You have selected no meat!");
+                selectExtra();
             }
         }
+        return null;
+    }
 
+    private static boolean selectExtra() {
         // Extra Meat
         System.out.println("""
-                Would you like extra meat?
+                Would you like extra?
                                 
                 1. Heck yeah!
                 2. No thanks.
@@ -138,16 +147,19 @@ public class SandwichScreen {
 
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
-                //meat;
-                System.out.println("You have selected extra meat!");
+                System.out.println("You have selected extra!");
+                Boolean isExtra = true;
             }
             case 2 -> {
-                System.out.println("You have selected no extra meat!");
-//                MeatTopping meatChoice = MeatTopping.NO_EXTRA_MEAT;
+                System.out.println("You have selected no extra!");
+                Boolean isExtra = false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
+        return false;
+    }
 
+    private static PremiumTopping selectCheese() {
         // Cheese 🧀
         System.out.println("""
                 Please select your desired cheese!
@@ -162,46 +174,35 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected American Cheese!");
-                //CheeseTopping cheeseChoice = CheeseTopping.AMERICAN;
+                PremiumTopping cheeseChoice = new PremiumTopping("American Cheese");
+                selectTopping();
             }
             case 2 -> {
                 System.out.println("You have selected Provolone Cheese!");
-                //CheeseTopping cheeseChoice = CheeseTopping.PROVOLONE;
+                PremiumTopping cheeseChoice = new PremiumTopping("Provolone Cheese");
+                selectTopping();
             }
             case 3 -> {
                 System.out.println("You have selected Cheddar Cheese!");
-                //CheeseTopping cheeseChoice = CheeseTopping.CHEDDAR;
+                PremiumTopping cheeseChoice = new PremiumTopping("Cheddar Cheese");
+                selectTopping();
             }
             case 4 -> {
                 System.out.println("You have selected Swiss Cheese!");
-                //CheeseTopping cheeseChoice = CheeseTopping.SWISS;
+                PremiumTopping cheeseChoice = new PremiumTopping("Swiss Cheese");
+                selectTopping();
             }
             case 5 -> {
                 System.out.println("You have selected no cheese!");
+                PremiumTopping cheeseChoice = null;
+                selectTopping();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
         }
+        return null;
+    }
 
-        // Extra Cheese
-        System.out.println("""
-                Would you like extra cheese?
-                                
-                1. Heck yeah! Cheese it up!!
-                2. No thanks.
-                """);
-
-        switch (userInputs(new Scanner(System.in))) {
-            case 1 -> {
-                System.out.println("You have selected extra cheese!");
-//                CheeseTopping cheeseChoice = CheeseTopping.EXTRA_CHEESE;
-            }
-            case 2 -> {
-                System.out.println("You have selected no extra cheese!");
-//                CheeseTopping cheeseChoice = CheeseTopping.NO_EXTRA_CHEESE;
-            }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
-        }
-
+    private static RegularTopping selectTopping() {
         // Toppings 🥬
         System.out.println("""
                 Please select your desired toppings!
@@ -221,46 +222,60 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lettuce!");
-                //RegularTopping toppingChoice = RegularTopping.LETTUCE;
+                RegularTopping toppingChoice = new RegularTopping("Lettuce");
+                selectSauce();
             }
             case 2 -> {
                 System.out.println("You have selected Peppers!");
-                //RegularTopping toppingChoice = RegularTopping.PEPPER;
+                RegularTopping toppingChoice = new RegularTopping("Peppers");
+                selectSauce();
             }
             case 3 -> {
                 System.out.println("You have selected Onions!");
-                //RegularTopping toppingChoice = RegularTopping.ONION;
+                RegularTopping toppingChoice = new RegularTopping("Onions");
+                selectSauce();
             }
             case 4 -> {
                 System.out.println("You have selected Tomatoes!");
-                //RegularTopping toppingChoice = RegularTopping.TOMATO;
+                RegularTopping toppingChoice = new RegularTopping("Tomatoes");
+                selectSauce();
             }
             case 5 -> {
                 System.out.println("You have selected Jalapenos!");
-                //RegularTopping toppingChoice = RegularTopping.JALAPENO;
+                RegularTopping toppingChoice = new RegularTopping("Jalapenos");
+                selectSauce();
             }
             case 6 -> {
                 System.out.println("You have selected Cucumbers!");
-                //RegularTopping toppingChoice = RegularTopping.CUCUMBER;
+                RegularTopping toppingChoice = new RegularTopping("Cucumbers");
+                selectSauce();
             }
             case 7 -> {
                 System.out.println("You have selected Pickles!");
-                //RegularTopping toppingChoice = RegularTopping.PICKLES;
+                RegularTopping toppingChoice = new RegularTopping("Pickles");
+                selectSauce();
             }
             case 8 -> {
                 System.out.println("You have selected Guacamole!");
-                //RegularTopping toppingChoice = RegularTopping.GUACAMOLE;
+                RegularTopping toppingChoice = new RegularTopping("Guacamole");
+                selectSauce();
             }
             case 9 -> {
                 System.out.println("You have selected Mushrooms!");
-                //RegularTopping toppingChoice = RegularTopping.MUSHROOM;
+                RegularTopping toppingChoice = new RegularTopping("Mushrooms");
+                selectSauce();
             }
             case 10 -> {
                 System.out.println("You have selected no toppings!");
+                RegularTopping toppingChoice = null;
+                selectSauce();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
         }
+        return null;
+    }
 
+    private static RegularTopping selectSauce() {
         // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
@@ -277,34 +292,45 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Mayo!");
-                //RegularTopping sauceChoice = RegularTopping.MAYO;
+                RegularTopping sauceChoice = new RegularTopping("Mayo");
+                selectSide();
             }
             case 2 -> {
                 System.out.println("You have selected Mustard!");
-                //RegularTopping sauceChoice = RegularTopping.MUSTARD;
+                RegularTopping sauceChoice = new RegularTopping("Mustard");
+                selectSide();
             }
             case 3 -> {
                 System.out.println("You have selected Ketchup!");
-                //RegularTopping sauceChoice = RegularTopping.KETCHUP;
+                RegularTopping sauceChoice = new RegularTopping("Ketchup");
+                selectSide();
             }
             case 4 -> {
                 System.out.println("You have selected Ranch!");
-                //RegularTopping sauceChoice = RegularTopping.RANCH;
+                RegularTopping sauceChoice = new RegularTopping("Ranch");
+                selectSide();
             }
             case 5 -> {
                 System.out.println("You have selected Thousand Islands!");
-                //RegularTopping sauceChoice = RegularTopping.THOUSAND_ISLANDS;
+                RegularTopping sauceChoice = new RegularTopping("Thousand Islands");
+                selectSide();
             }
             case 6 -> {
                 System.out.println("You have selected Vinaigrette!");
-                //RegularTopping sauceChoice = RegularTopping.VINAIGRETTE;
+                RegularTopping sauceChoice = new RegularTopping("Vinaigrette");
+                selectSide();
             }
             case 7 -> {
                 System.out.println("You have selected no sauce!");
+                RegularTopping sauceChoice = null;
+                selectSide();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
         }
+        return null;
+    }
 
+    private static RegularTopping selectSide() {
         // Sides
         System.out.println("""
                 Please select your desired sides!
@@ -316,13 +342,40 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
-               // RegularTopping auJusChoice = RegularTopping.AU_JUS;
+                RegularTopping sideChoice = new RegularTopping("Au Jus");
+                selectToasted();
             }
             case 2 -> {
                 System.out.println("You have selected Sauce!");
-                // RegularTopping sauceChoice = RegularTopping.SAUCE;
+                RegularTopping sideChoice = new RegularTopping("Sauce");
+                selectToasted();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
+        return null;
+    }
+
+    private static boolean selectToasted() {
+        // Toasted 🔥
+        System.out.println("""
+                Would you like your sandwich toasted?
+                                
+                1. Heck yeah!
+                2. No thanks.
+                """);
+
+        switch (
+                userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected toasted!");
+                return true;
+            }
+            case 2 -> {
+                System.out.println("You have selected not toasted!");
+                return false;
+            }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
+        }
+        return false;
     }
 }

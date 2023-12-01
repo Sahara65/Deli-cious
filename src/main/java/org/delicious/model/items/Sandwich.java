@@ -22,7 +22,7 @@ public class Sandwich {
         this.price = 0.00;
     }
 
-    public Sandwich(BreadSize size, BreadType breadType, List<Topping> topping, boolean isToasted, double price){
+    public Sandwich(BreadSize size, BreadType breadType, List<Topping> topping, boolean isToasted, double price) {
         //finish later, will be used for custom sandwiches
     }
 
@@ -45,7 +45,6 @@ public class Sandwich {
 
         return price;
     }
-
 
     @Override
     public String toString() {
