@@ -4,10 +4,20 @@ package org.delicious.model.items;
 public abstract class Topping {
 
     private String name;
-    private double price;
 
-    // Public Getter for price
-    public abstract String getName();
+    public Topping(String name) {
+        this.name = name;
+    }
+// Public Getter for price
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public abstract double getPrice();
     public abstract String priceLookupString();

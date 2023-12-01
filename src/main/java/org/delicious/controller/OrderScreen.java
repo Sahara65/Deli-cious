@@ -27,22 +27,23 @@ public class OrderScreen {
                 ╚═╝░░░░░╚══════╝╚═╝░░╚═╝░╚════╝░╚══════╝░░░░░░░░╚═╝░░╚═╝╚═╝░░╚══╝░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝
                 """);
 
-        System.out.println("""
+
+        boolean running = true;
+        while (running) {
+            System.out.println("""
                 1. Add a Sandwich!
                 2. Add a Drink!
                 3. Add Chips!
                 4. Checkout!
                 0. Cancel Order and Return to Home.
                 """);
-
-        while (true) {
             switch (userInputs(scanner)) {
                 case 1 -> createSandwich();
                 case 2 -> addDrink();
                 case 3 -> addChips();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
-                    HomeScreen.display(scanner);
+                    // HomeScreen.display(scanner); // TODO - No , this is a recursive call
                     System.out.println(red + """                 
                                                     
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
@@ -59,6 +60,7 @@ public class OrderScreen {
                             ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
                             ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                             """ + reset);
+                    running = false;
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 0-4.");
             }

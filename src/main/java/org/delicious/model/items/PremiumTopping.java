@@ -3,23 +3,23 @@ package org.delicious.model.items   ;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-public class PremiumTopping {
+// TODO - Need to work on pricing
+public class PremiumTopping extends Topping {
     private static final ArrayList<String> MEAT =
             new ArrayList<>(List.of("Steak", "Ham", "Chicken", "Salami", "Roast Beef", "Bacon"));
     private static final ArrayList<String> CHEESE =
             new ArrayList<>(List.of("American Cheese", "Cheddar Cheese", "Provolone Cheese", "Swiss Cheese"));
     // Making it so that reference can not be reassigned for the hashmap, not making it immutable
-    private static final HashMap<String, Integer> count = new HashMap<>();
-    private String name;
+
     private boolean isExtra;
     private String typeOfTopping;
-    private double price;
+
 
 
     //make sure to check that the name exists in the ArrayLists before implementing the constructor
     public PremiumTopping(String name) {
-        this.name = name;
+        super(name);
+        // TODO for this test to work, make sure that contains works properly
         if (MEAT.contains(name)) {
             this.typeOfTopping = "MEAT";
         } else {
@@ -33,7 +33,7 @@ public class PremiumTopping {
          */
     }
 
-    void setExtra(boolean extra) {
+    public void setExtra(boolean extra) {
         this.isExtra = extra;
     }
 
@@ -53,19 +53,9 @@ public class PremiumTopping {
         }
     }
 
-    public ArrayList<String> getMEAT() {
-        return MEAT;
-    }
-
-    public ArrayList<String> getCHEESE() {
-        return CHEESE;
-    }
-
-    public HashMap<String, Integer> getCount() {
-        return count;
-    }
-
-    public String getName() {
-        return name;
+    @Override
+    public double getPrice() {
+        // TODO must return a price
+        return 0;
     }
 }
