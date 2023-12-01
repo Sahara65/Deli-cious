@@ -21,23 +21,23 @@ public class ChipsScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lays!");
-                return ChipType.LAYS;
+                ChipType chipChoice = ChipType.LAYS;
             }
             case 2 -> {
                 System.out.println("You have selected Cheetos!");
-                return ChipType.CHEETOS;
+                ChipType chipChoice = ChipType.CHEETOS;
             }
             case 3 -> {
                 System.out.println("You have selected Doritos!");
-                return ChipType.DORITOS;
+                ChipType chipChoice = ChipType.DORITOS;
             }
             case 4 -> {
                 System.out.println("You have selected Popcorn!");
-                return ChipType.POPCORN;
+                ChipType chipChoice = ChipType.POPCORN;
             }
             case 5 -> {
                 System.out.println("You have selected Nachos!");
-                return ChipType.NACHOS;
+                ChipType chipChoice = ChipType.NACHOS;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
         }

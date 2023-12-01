@@ -339,9 +339,7 @@ public class SandwichScreen {
                 2. Sauce
                 """);
 
-        switch (
-
-                userInputs(new Scanner(System.in))) {
+        switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
                 RegularTopping sideChoice = new RegularTopping("Au Jus");
