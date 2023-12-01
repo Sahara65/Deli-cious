@@ -72,5 +72,9 @@ public class HomeScreen {
     public static int userInputs(Scanner scanner) {
         return scanner.nextInt();
     }
+    public static int userCharInputs() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next().charAt(0);
+    }
 
 }

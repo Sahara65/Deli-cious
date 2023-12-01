@@ -8,7 +8,7 @@ public class PremiumTopping {
     private static final ArrayList<String> MEAT =
             new ArrayList<>(List.of("Steak", "Ham", "Chicken", "Salami", "Roast Beef", "Bacon"));
     private static final ArrayList<String> CHEESE =
-            new ArrayList<>(List.of("American Cheese", "Cheddar Cheese", "Provolone Cheese", "Swiss"));
+            new ArrayList<>(List.of("American Cheese", "Cheddar Cheese", "Provolone Cheese", "Swiss Cheese"));
     // Making it so that reference can not be reassigned for the hashmap, not making it immutable
     private static final HashMap<String, Integer> count = new HashMap<>();
     private String name;

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        public PremiumTopping meatChoice;
+        PremiumTopping meatChoice;
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         HomeScreen.display(scanner);
     }
