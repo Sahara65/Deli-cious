@@ -126,7 +126,6 @@ public class SandwichScreen {
             }
             case 7 -> {
                 System.out.println("You have selected no meat!");
-
             }
         }
         return meatChoice;
@@ -149,7 +148,6 @@ public class SandwichScreen {
             }
             case 2 -> {
                 System.out.println("You have selected no extra!");
-                isExtra = false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
@@ -188,7 +186,6 @@ public class SandwichScreen {
             }
             case 5 -> {
                 System.out.println("You have selected no cheese!");
-                cheeseChoice = null;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
         }
@@ -212,7 +209,6 @@ public class SandwichScreen {
             }
             case 2 -> {
                 System.out.println("You have selected no extra!");
-                isExtra = false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
@@ -337,22 +333,25 @@ public class SandwichScreen {
                                 
                 1. Au Jus
                 2. Sauce
+                3. No sides
                 """);
 
+        RegularTopping sideChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Au Jus!");
-                RegularTopping sideChoice = new RegularTopping("Au Jus");
-                selectToasted();
+                sideChoice = new RegularTopping("Au Jus");
             }
             case 2 -> {
                 System.out.println("You have selected Sauce!");
-                RegularTopping sideChoice = new RegularTopping("Sauce");
-                selectToasted();
+                sideChoice = new RegularTopping("Sauce");
+            }
+            case 3 -> {
+                System.out.println("You have selected no sides!");
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
-        return null;
+        return sideChoice;
     }
 
     private static boolean selectToasted() {
@@ -364,18 +363,18 @@ public class SandwichScreen {
                 2. No thanks.
                 """);
 
+        boolean isToasted = false;
         switch (
                 userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected toasted!");
-                return true;
+                isToasted = true;
             }
             case 2 -> {
                 System.out.println("You have selected not toasted!");
-                return false;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
-        return false;
+        return isToasted;
     }
 }
