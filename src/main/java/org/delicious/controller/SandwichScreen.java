@@ -306,45 +306,38 @@ public class SandwichScreen {
                 7. No Sauce
                 """);
 
+        RegularTopping sauceChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Mayo!");
-                RegularTopping sauceChoice = new RegularTopping("Mayo");
-                selectSide();
+                sauceChoice = new RegularTopping("Mayo");
             }
             case 2 -> {
                 System.out.println("You have selected Mustard!");
-                RegularTopping sauceChoice = new RegularTopping("Mustard");
-                selectSide();
+                sauceChoice = new RegularTopping("Mustard");
             }
             case 3 -> {
                 System.out.println("You have selected Ketchup!");
-                RegularTopping sauceChoice = new RegularTopping("Ketchup");
-                selectSide();
+                sauceChoice = new RegularTopping("Ketchup");
             }
             case 4 -> {
                 System.out.println("You have selected Ranch!");
-                RegularTopping sauceChoice = new RegularTopping("Ranch");
-                selectSide();
+                sauceChoice = new RegularTopping("Ranch");
             }
             case 5 -> {
                 System.out.println("You have selected Thousand Islands!");
-                RegularTopping sauceChoice = new RegularTopping("Thousand Islands");
-                selectSide();
+                sauceChoice = new RegularTopping("Thousand Islands");
             }
             case 6 -> {
                 System.out.println("You have selected Vinaigrette!");
-                RegularTopping sauceChoice = new RegularTopping("Vinaigrette");
-                selectSide();
+                sauceChoice = new RegularTopping("Vinaigrette");
             }
             case 7 -> {
                 System.out.println("You have selected no sauce!");
-                RegularTopping sauceChoice = null;
-                selectSide();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
         }
-        return null;
+        return sauceChoice;
     }
 
     private static RegularTopping selectSide() {
