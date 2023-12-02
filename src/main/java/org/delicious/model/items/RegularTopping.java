@@ -48,6 +48,6 @@ public class RegularTopping extends Topping {
 
     @Override
     public String priceLookupString() {
-        return null;
+        return "";
     }
 }
