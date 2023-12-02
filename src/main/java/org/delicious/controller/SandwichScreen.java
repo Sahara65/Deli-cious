@@ -15,13 +15,12 @@ public class SandwichScreen {
         PremiumTopping meatChoice = selectMeat();
         if (meatChoice != null) {
             sandwich.addTopping(meatChoice);
-            if (selectExtra()){
+            if (selectExtra()) {
                 PremiumTopping extraMeatChoice = new PremiumTopping(meatChoice.getName());
                 extraMeatChoice.setExtra(true);
                 sandwich.addTopping(extraMeatChoice);
             }
         }
-
     }
 
     private static BreadType selectBread() {
@@ -39,7 +38,6 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected White Bread!");
-                type = BreadType.WHITE;
             }
             case 2 -> {
                 System.out.println("You have selected Wheat Bread!");
@@ -47,12 +45,11 @@ public class SandwichScreen {
             }
             case 3 -> {
                 System.out.println("You have selected Rye Bread!");
-               type = BreadType.RYE;
+                type = BreadType.RYE;
             }
             case 4 -> {
                 System.out.println("You have selected Wrap!");
                 type = BreadType.WRAP;
-                // selectBreadSize();
             }
         }
         return type;
@@ -73,17 +70,13 @@ public class SandwichScreen {
             case 1 -> {
                 System.out.println("You have selected 4 inches!");
                 size = BreadSize.FOUR_INCH;
-
             }
             case 2 -> {
                 System.out.println("You have selected 8 inches!");
-                size = BreadSize.EIGHT_INCH;
-
             }
             case 3 -> {
                 System.out.println("You have selected 12 inches!");
                 size = BreadSize.TWELVE_INCH;
-
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-3.");
         }
@@ -113,27 +106,23 @@ public class SandwichScreen {
             }
             case 2 -> {
                 System.out.println("You have selected Ham!");
-               meatChoice = new PremiumTopping("Ham");
-
+                meatChoice = new PremiumTopping("Ham");
             }
             case 3 -> {
                 System.out.println("You have selected Salami!");
-                 meatChoice = new PremiumTopping("Chicken");
-
+                meatChoice = new PremiumTopping("Chicken");
             }
             case 4 -> {
                 System.out.println("You have selected Roast Beef!");
-                 meatChoice = new PremiumTopping("Salami");
+                meatChoice = new PremiumTopping("Salami");
             }
             case 5 -> {
                 System.out.println("You have selected Chicken!");
-                 meatChoice = new PremiumTopping("Roast Beef");
-
+                meatChoice = new PremiumTopping("Roast Beef");
             }
             case 6 -> {
                 System.out.println("You have selected Bacon!");
-               meatChoice = new PremiumTopping("Bacon");
-
+                meatChoice = new PremiumTopping("Bacon");
             }
             case 7 -> {
                 System.out.println("You have selected no meat!");
@@ -183,28 +172,23 @@ public class SandwichScreen {
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected American Cheese!");
-               cheeseChoice = new PremiumTopping("American Cheese");
-
+                cheeseChoice = new PremiumTopping("American Cheese");
             }
             case 2 -> {
                 System.out.println("You have selected Provolone Cheese!");
-               cheeseChoice = new PremiumTopping("Provolone Cheese");
-
+                cheeseChoice = new PremiumTopping("Provolone Cheese");
             }
             case 3 -> {
                 System.out.println("You have selected Cheddar Cheese!");
                 cheeseChoice = new PremiumTopping("Cheddar Cheese");
-
             }
             case 4 -> {
                 System.out.println("You have selected Swiss Cheese!");
-               cheeseChoice = new PremiumTopping("Swiss Cheese");
-
+                cheeseChoice = new PremiumTopping("Swiss Cheese");
             }
             case 5 -> {
                 System.out.println("You have selected no cheese!");
                 cheeseChoice = null;
-
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-5.");
         }

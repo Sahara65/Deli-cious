@@ -6,7 +6,7 @@ import org.delicious.model.order.Order;
 import java.util.Scanner;
 
 import static org.delicious.controller.ChipsScreen.addChips;
-import static org.delicious.controller.DrinkScreen.addDrink;
+import static org.delicious.controller.DrinkScreen.createDrink;
 import static org.delicious.controller.HomeScreen.userInputs;
 import static org.delicious.controller.SandwichScreen.createSandwich;
 import static org.delicious.view.AnsiColorCodes.red;
@@ -39,7 +39,7 @@ public class OrderScreen {
                 """);
             switch (userInputs(scanner)) {
                 case 1 -> createSandwich();
-                case 2 -> addDrink();
+                case 2 -> createDrink();
                 case 3 -> addChips();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
