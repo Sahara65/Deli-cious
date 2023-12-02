@@ -7,6 +7,8 @@ import java.util.Scanner;
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class DrinkScreen {
+    // TODO for Sahara have a createDrink() method similar to the to the createSandwich() method in the SandwichScreen class.
+    //  it should incorporate the addDrinkType() and addDrinkSize() method within them.
     public static DrinkType addDrink() {
         // Drink 🥤
         System.out.println("""

@@ -7,6 +7,8 @@ import java.util.Scanner;
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ChipsScreen {
+
+    // TODO for Sahara have a createChips() method similar to the to the createSandwich() method in the SandwichScreen class.
     public static ChipType addChips() {
         System.out.println("""
                 Please select your chips!
@@ -18,6 +20,7 @@ public class ChipsScreen {
                 5. Nachos
                 """);
 
+        // TODO initialize chipChoice outside of the switch case and have the method return chipChoice instead of null.
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lays!");

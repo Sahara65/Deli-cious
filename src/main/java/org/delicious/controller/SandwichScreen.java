@@ -21,6 +21,7 @@ public class SandwichScreen {
                 sandwich.addTopping(extraMeatChoice);
             }
         }
+
         PremiumTopping cheeseChoice = selectCheese();
         if (cheeseChoice != null) {
             sandwich.addTopping(cheeseChoice);
@@ -30,6 +31,11 @@ public class SandwichScreen {
                 sandwich.addTopping(extraCheeseChoice);
             }
         }
+        // TODO create a choose Regular Topping Screen this Screen will be looped back too until the user selects the
+        //  option "I am happy with my current Topping selections". This screen will allow you to choose between the
+        //  toppings, sauces, or sides. The switch case will cal the existing methods.
+        //  Need to adjust in a way that the Topping Screen will keep adding the topping to the sandwich then allow you
+        //  to choose their next regular topping.
 
         RegularTopping topping = selectTopping();
         RegularTopping sauce = selectSauce();
