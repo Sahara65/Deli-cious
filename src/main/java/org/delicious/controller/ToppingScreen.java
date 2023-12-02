@@ -77,9 +77,8 @@ public class ToppingScreen {
 //                    for (RegularTopping topping : selectedToppings) {
 //                        System.out.println(topping.getName());
 //                    }
-                }
-                case 12 -> {
-                    System.out.println("Exiting topping selection...");
+                    exit = true;
+
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
             }
