@@ -71,21 +71,20 @@ public class ToppingScreen {
                 }
                 case 10 -> {
                     System.out.println("You have selected no toppings!");
-                    selectedToppings = null;
                 }
                 case 11 -> {
                     System.out.println("Your toppings are:");
-                    for (RegularTopping topping : selectedToppings) {
-                        System.out.println(topping.getName());
-                    }
+//                    for (RegularTopping topping : selectedToppings) {
+//                        System.out.println(topping.getName());
+//                    }
                 }
                 case 12 -> {
                     System.out.println("Exiting topping selection...");
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
             }
-            return selectedToppings;
         }
+        return selectedToppings;
     }
 
     static List<RegularTopping> selectSauce() {
@@ -151,22 +150,27 @@ public class ToppingScreen {
                 2. Sauce
                 3. No sides
                 """);
+//        RegularTopping sideChoice = null;
 
-        RegularTopping sideChoice = null;
-        switch (userInputs(new Scanner(System.in))) {
-            case 1 -> {
-                System.out.println("You have selected Au Jus!");
-                sideChoice = new RegularTopping("Au Jus");
+        List<RegularTopping> selectedSides = new ArrayList<>();
+        boolean exit = false;
+
+        while (!exit) {
+            switch (userInputs(new Scanner(System.in))) {
+                case 1 -> {
+                    System.out.println("You have selected Au Jus!");
+                    selectedSides.add(new RegularTopping("Au Jus"));
+                }
+                case 2 -> {
+                    System.out.println("You have selected Sauce!");
+                    selectedSides.add(new RegularTopping("Sauce"));
+                }
+                case 3 -> {
+                    System.out.println("You have selected no sides!");
+                }
+                default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
             }
-            case 2 -> {
-                System.out.println("You have selected Sauce!");
-                sideChoice = new RegularTopping("Sauce");
-            }
-            case 3 -> {
-                System.out.println("You have selected no sides!");
-            }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
         }
-        return sideChoice;
+        return (RegularTopping) selectedSides;
     }
 }
