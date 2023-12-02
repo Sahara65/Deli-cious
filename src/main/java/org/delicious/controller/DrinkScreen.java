@@ -1,20 +1,31 @@
 package org.delicious.controller;
 
+import org.delicious.model.sides.Drink;
+import org.delicious.model.sides.DrinkSize;
 import org.delicious.model.sides.DrinkType;
 
 import java.util.Scanner;
 
+import static org.delicious.controller.HomeScreen.userCharInputs;
 import static org.delicious.controller.HomeScreen.userInputs;
 
+// Updates within code:
+// Created a new method to create a drink
+// And added DrinkSize drinkSizeChoice for user to select size
+
 public class DrinkScreen {
-    // TODO for Sahara have a createDrink() method similar to the to the createSandwich() method in the SandwichScreen class.
-    //  it should incorporate the addDrinkType() and addDrinkSize() method within them.
+    public static void createDrink() {
+        DrinkType drinkType = addDrink();
+        DrinkSize drinkSizeChoice = addDrinkSize();
+
+        Drink drink = new Drink(drinkType, drinkSizeChoice);
+    }
     public static DrinkType addDrink() {
         // Drink 🥤
         System.out.println("""
                 Please select your drink!
                                 
-                1. Coke Cola
+                1. Coca Cola
                 2. Sprite
                 3. Fanta
                 4. Water
@@ -22,33 +33,61 @@ public class DrinkScreen {
                 6. Dr. Pepper
                 """);
 
+        DrinkType drinkChoice = null;
+
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Coke Cola!");
-                DrinkType drinkChoice = DrinkType.COCA_COLA;
+                drinkChoice = DrinkType.COCA_COLA;
             }
             case 2 -> {
                 System.out.println("You have selected Sprite!");
-                DrinkType drinkChoice = DrinkType.SPRITE;
+                drinkChoice = DrinkType.SPRITE;
             }
             case 3 -> {
                 System.out.println("You have selected Fanta!");
-                DrinkType drinkChoice = DrinkType.FANTA;
+                drinkChoice = DrinkType.FANTA;
             }
             case 4 -> {
                 System.out.println("You have selected Water!");
-                DrinkType drinkChoice = DrinkType.WATER;
+                drinkChoice = DrinkType.WATER;
             }
             case 5 -> {
                 System.out.println("You have selected Pepsi!");
-                DrinkType drinkChoice = DrinkType.PEPSI;
+                drinkChoice = DrinkType.PEPSI;
             }
             case 6 -> {
                 System.out.println("You have selected Dr. Pepper!");
-                DrinkType drinkChoice = DrinkType.DR_PEPPER;
+                drinkChoice = DrinkType.DR_PEPPER;
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-6.");
         }
-        return null;
+        return drinkChoice;
+    }
+    public static DrinkSize addDrinkSize() {
+        System.out.println("""
+                Please select your drink size!
+                                
+                1. Small
+                2. Medium
+                3. Large
+                """);
+
+        DrinkSize drinkSizeChoice = null;
+        switch (userInputs(new Scanner(System.in))) {
+            case 1 -> {
+                System.out.println("You have selected Small!");
+                drinkSizeChoice = DrinkSize.SMALL;
+            }
+            case 2 -> {
+                System.out.println("You have selected Medium!");
+                drinkSizeChoice = DrinkSize.MEDIUM;
+            }
+            case 3 -> {
+                System.out.println("You have selected Large!");
+                drinkSizeChoice = DrinkSize.LARGE;
+            }
+        }
+        return drinkSizeChoice;
     }
 }
