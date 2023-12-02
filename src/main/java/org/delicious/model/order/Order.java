@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Order {
+
+    // TODO connect this to the Screens.
     private final List<OrderedItem> items;
 
     public Order() {
