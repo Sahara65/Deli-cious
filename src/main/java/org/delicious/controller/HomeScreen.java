@@ -39,7 +39,7 @@ public class HomeScreen {
         while (true) {
             switch (userInputs(scanner)) {
                 case 1 -> {
-                    progressBar();
+//                    progressBar();
                     OrderScreen.display(scanner);
                 }
                 case 0 -> {

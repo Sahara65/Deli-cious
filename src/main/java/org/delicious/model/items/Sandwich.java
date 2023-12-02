@@ -35,8 +35,12 @@ public class Sandwich implements OrderedItem {
         //finish later, will be used for custom sandwiches
     }
 
-    public void addTopping(Topping topping) {
+    public void addPremiumToppings(Topping topping) {
         this.toppings.add(topping);
+    }
+
+    public void addAllRegularToppings(List<RegularTopping> topping) {
+        this.toppings.addAll(topping);
     }
 
     @Override

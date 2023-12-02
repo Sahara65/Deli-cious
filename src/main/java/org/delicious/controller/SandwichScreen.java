@@ -2,12 +2,10 @@ package org.delicious.controller;
 
 import org.delicious.model.items.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
-import static org.delicious.controller.ToppingScreen.*;
 
 public class SandwichScreen {
     public static void createSandwich() {
@@ -17,21 +15,21 @@ public class SandwichScreen {
 
         PremiumTopping meatChoice = selectMeat();
         if (meatChoice != null) {
-            sandwich.addTopping(meatChoice);
+            sandwich.addPremiumToppings(meatChoice);
             if (selectExtra()) {
                 PremiumTopping extraMeatChoice = new PremiumTopping(meatChoice.getName());
                 extraMeatChoice.setExtra(true);
-                sandwich.addTopping(extraMeatChoice);
+                sandwich.addPremiumToppings(extraMeatChoice);
             }
         }
 
         PremiumTopping cheeseChoice = selectCheese();
         if (cheeseChoice != null) {
-            sandwich.addTopping(cheeseChoice);
+            sandwich.addPremiumToppings(cheeseChoice);
             if (selectExtra()) {
                 PremiumTopping extraCheeseChoice = new PremiumTopping(cheeseChoice.getName());
                 extraCheeseChoice.setExtra(true);
-                sandwich.addTopping(extraCheeseChoice);
+                sandwich.addPremiumToppings(extraCheeseChoice);
             }
         }
         // TODO create a choose Regular Topping Screen this Screen will be looped back too until the user selects the
@@ -39,14 +37,11 @@ public class SandwichScreen {
         //  toppings, sauces, or sides. The switch case will call the existing methods.
         //  Need to adjust in a way that the Topping Screen will keep adding the topping to the sandwich then allow you
         //  to choose their next regular topping.
+        ToppingScreen toppingScreen = new ToppingScreen();
+        List<RegularTopping> toppings = toppingScreen.createToppings();
 
-        RegularTopping topping = (RegularTopping) selectTopping();
-        RegularTopping sauce = (RegularTopping) selectSauce();
-        RegularTopping side = selectSide();
+        sandwich.addAllRegularToppings(toppings);
 
-        sandwich.addTopping(topping);
-        sandwich.addTopping(sauce);
-        sandwich.addTopping(side);
 
         boolean isToasted = selectToasted();
         sandwich.setToasted(isToasted);
@@ -245,8 +240,6 @@ public class SandwichScreen {
         }
         return isExtra;
     }
-
-
 
     private static boolean selectToasted() {
         // Toasted 🔥
