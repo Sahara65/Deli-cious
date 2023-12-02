@@ -236,60 +236,50 @@ public class SandwichScreen {
                 10. No Toppings
                 """);
 
+        RegularTopping toppingChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Lettuce!");
-                RegularTopping toppingChoice = new RegularTopping("Lettuce");
-                selectSauce();
+                toppingChoice = new RegularTopping("Lettuce");
             }
             case 2 -> {
                 System.out.println("You have selected Peppers!");
-                RegularTopping toppingChoice = new RegularTopping("Peppers");
-                selectSauce();
+                toppingChoice = new RegularTopping("Peppers");
             }
             case 3 -> {
                 System.out.println("You have selected Onions!");
-                RegularTopping toppingChoice = new RegularTopping("Onions");
-                selectSauce();
+                toppingChoice = new RegularTopping("Onions");
             }
             case 4 -> {
                 System.out.println("You have selected Tomatoes!");
-                RegularTopping toppingChoice = new RegularTopping("Tomatoes");
-                selectSauce();
+                toppingChoice = new RegularTopping("Tomatoes");
             }
             case 5 -> {
                 System.out.println("You have selected Jalapenos!");
-                RegularTopping toppingChoice = new RegularTopping("Jalapenos");
-                selectSauce();
+                toppingChoice = new RegularTopping("Jalapenos");
             }
             case 6 -> {
                 System.out.println("You have selected Cucumbers!");
-                RegularTopping toppingChoice = new RegularTopping("Cucumbers");
-                selectSauce();
+                toppingChoice = new RegularTopping("Cucumbers");
             }
             case 7 -> {
                 System.out.println("You have selected Pickles!");
-                RegularTopping toppingChoice = new RegularTopping("Pickles");
-                selectSauce();
+                toppingChoice = new RegularTopping("Pickles");
             }
             case 8 -> {
                 System.out.println("You have selected Guacamole!");
-                RegularTopping toppingChoice = new RegularTopping("Guacamole");
-                selectSauce();
+                toppingChoice = new RegularTopping("Guacamole");
             }
             case 9 -> {
                 System.out.println("You have selected Mushrooms!");
-                RegularTopping toppingChoice = new RegularTopping("Mushrooms");
-                selectSauce();
+                toppingChoice = new RegularTopping("Mushrooms");
             }
             case 10 -> {
                 System.out.println("You have selected no toppings!");
-                RegularTopping toppingChoice = null;
-                selectSauce();
             }
             default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
         }
-        return null;
+        return toppingChoice;
     }
 
     private static RegularTopping selectSauce() {
