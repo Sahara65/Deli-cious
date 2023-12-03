@@ -16,7 +16,6 @@ public class OrderScreen {
     private static final Order currentOrder = new Order();
 
     public static void display(Scanner scanner) {
-
         System.out.println("""
                                 
                 ██████╗░██╗░░░░░░█████╗░░█████╗░███████╗░░░░░░░░█████╗░███╗░░██╗░░░░░░░░░█████╗░██████╗░██████╗░███████╗██████╗░██╗
@@ -27,16 +26,17 @@ public class OrderScreen {
                 ╚═╝░░░░░╚══════╝╚═╝░░╚═╝░╚════╝░╚══════╝░░░░░░░░╚═╝░░╚═╝╚═╝░░╚══╝░░░░░░░░░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝
                 """);
 
-
         boolean running = true;
         while (running) {
+
             System.out.println(bold + """
-                    1. Add a Sandwich!
-                    2. Add a Drink!
-                    3. Add Chips!
-                    4. Checkout!
-                    0. Cancel Order and Return to Home.
+                    1. 𝑨𝒅𝒅 𝒂 𝑺𝒂𝒏𝒅𝒘𝒊𝒄𝒉!
+                    2. 𝑨𝒅𝒅 𝒂 𝑫𝒓𝒊𝒏𝒌!
+                    3. 𝑨𝒅𝒅 𝑪𝒉𝒊𝒑𝒔!
+                    4. 𝑪𝒉𝒆𝒄𝒌𝒐𝒖𝒕!
+                    0. 𝑳𝒆𝒕❜𝒔 𝑪𝒂𝒏𝒄𝒆𝒍 𝒕𝒉𝒆 𝑶𝒓𝒅𝒆𝒓 𝒂𝒏𝒅 𝑹𝒆𝒕𝒖𝒓𝒏 𝒃𝒂𝒄𝒌 𝒕𝒐 𝒕𝒉𝒆 𝑯𝒐𝒎𝒆 𝑺𝒄𝒓𝒆𝒆𝒏!
                     """);
+
             switch (userInputs(scanner)) {
                 case 1 -> createSandwich();
                 case 2 -> createDrink();
@@ -61,7 +61,8 @@ public class OrderScreen {
                             """ + reset);
                     running = false;
                 }
-                default -> System.out.println("Invalid Input! Please type only numbers 0-4.");
+                default ->
+                        System.out.println(red + bold + "Invalid Input! Please type only numbers 0-4." + reset + yellow);
             }
         }
     }
@@ -70,7 +71,7 @@ public class OrderScreen {
 
     private static void goCheckout(Scanner scanner) {
         if (currentOrder.getItemsInCart() == null) {
-            System.out.println("You have not ordered anything yet!");
+            System.out.println(red + bold + "You have not ordered anything yet!" + reset + yellow);
         }
         String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
 
@@ -102,7 +103,7 @@ public class OrderScreen {
                     ██║╚████║██║░░██║░░████╔═████║░
                     ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░
                     ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░
-          
+                              
                     ██████╗░███████╗████████╗██╗░░░██╗██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░░░░░░░░░░
                     ██╔══██╗██╔════╝╚══██╔══╝██║░░░██║██╔══██╗████╗░██║██║████╗░██║██╔════╝░░░░░░░░░░
                     ██████╔╝█████╗░░░░░██║░░░██║░░░██║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░░░░░░░░░░
@@ -113,7 +114,7 @@ public class OrderScreen {
 
             HomeScreen.display(scanner);
         } else {
-            System.out.println("Invalid input! Please enter Y or N.");
+            System.out.println(red + bold + "Invalid input! Please enter Y or N." + reset + yellow);
             goCheckout(scanner);
         }
     }
