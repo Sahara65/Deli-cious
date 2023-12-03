@@ -82,5 +82,4 @@ public class HomeScreen {
         Scanner scanner = new Scanner(System.in);
         return scanner.next().charAt(0);
     }
-
 }

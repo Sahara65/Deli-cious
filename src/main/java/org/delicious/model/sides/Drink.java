@@ -1,8 +1,10 @@
 package org.delicious.model.sides;
 
-public class Drink {
-    private DrinkType type;
-    private DrinkSize size;
+import org.delicious.model.order.OrderedItem;
+
+public class Drink implements OrderedItem {
+    private final DrinkType type;
+    private final DrinkSize size;
 
     public Drink(DrinkType type, DrinkSize size) {
         this.type = type;
@@ -15,5 +17,15 @@ public class Drink {
 
     public DrinkSize getSize() {
         return size;
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
+    }
+
+    @Override
+    public String getOrderInformation() {
+        return null;
     }
 }
