@@ -3,6 +3,8 @@ package org.delicious.model.sides;
 import org.delicious.model.io.PriceLoader;
 import org.delicious.model.order.OrderedItem;
 
+import java.util.HashMap;
+
 // TODO: Fix pricing for chips
 
 public class Chips implements OrderedItem {
@@ -14,7 +16,12 @@ public class Chips implements OrderedItem {
 
     @Override
     public double getPrice() {
-        return 0;
+        //Possibly adjustable if we had different chip prices but not necessary for now since all chips
+        // are the same price
+        PriceLoader priceLoader = new PriceLoader("data/price.csv");
+        HashMap<String, Double> prices = priceLoader.getPrices();
+
+        return prices.get("CHIPS");
     }
 
     public String getOrderInformation() {
