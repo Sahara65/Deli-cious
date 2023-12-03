@@ -7,6 +7,7 @@ import java.util.Scanner;
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ChipsScreen {
+    
     public static ChipType addChips() {
         System.out.println("""
                 Please select your chips!

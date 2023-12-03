@@ -19,6 +19,7 @@ public class DrinkScreen {
         DrinkSize drinkSizeChoice = addDrinkSize();
 
         Drink drink = new Drink(drinkType, drinkSizeChoice);
+        System.out.println(drink.getPrice());
     }
     public static DrinkType addDrink() {
         // Drink 🥤
