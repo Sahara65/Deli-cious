@@ -10,12 +10,11 @@ import static org.delicious.controller.HomeScreen.userCharInputs;
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class DrinkScreen {
-    public static void createDrink() {
+    public static Drink createDrink() {
         DrinkType drinkType = addDrink();
         DrinkSize drinkSizeChoice = addDrinkSize();
 
-        Drink drink = new Drink(drinkType, drinkSizeChoice);
-        System.out.println(drink.getPrice());
+        return new Drink(drinkType, drinkSizeChoice);
     }
     public static DrinkType addDrink() {
         // Drink 🥤

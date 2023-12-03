@@ -7,12 +7,10 @@ import java.util.Scanner;
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ChipsScreen {
-    public static void createChip() {
+    public static Chips createChip() {
         ChipType chipChoice = addChips();
 
-        System.out.println(Chips.getPrice());
-
-        Chips chips = new Chips(chipChoice);
+        return new Chips(chipChoice);
     }
 
     public static ChipType addChips() {
