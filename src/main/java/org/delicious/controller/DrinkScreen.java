@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userCharInputs;
 import static org.delicious.controller.HomeScreen.userInputs;
-import static org.delicious.view.AnsiColorCodes.bold;
+import static org.delicious.view.AnsiColorCodes.*;
+import static org.delicious.view.AnsiColorCodes.yellow;
 
 public class DrinkScreen {
     public static Drink createDrink() {
@@ -56,41 +57,41 @@ public class DrinkScreen {
                         ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
                           ████████████████████████████         \s
                                        
-                1. Coca Cola
-                2. Sprite
-                3. Fanta
-                4. Water
-                5. Pepsi
-                6. Dr. Pepper
+                1. 𝑪𝒐𝒄𝒂 𝑪𝒐𝒍𝒂
+                2. 𝑺𝒑𝒓𝒊𝒕𝒆
+                3. 𝑭𝒂𝒏𝒕𝒂
+                4. 𝑾𝒂𝒕𝒆𝒓
+                5. 𝑷𝒆𝒑𝒔𝒊
+                6. 𝑫𝒓. 𝑷𝒆𝒑𝒑𝒆𝒓
                 """);
 
         DrinkType drinkChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
-                System.out.println("You have selected Coke Cola!");
+                System.out.println(italic + "You have selected Coke Cola!"  + reset + yellow);
                 drinkChoice = DrinkType.COCA_COLA;
             }
             case 2 -> {
-                System.out.println("You have selected Sprite!");
+                System.out.println(italic + "You have selected Sprite!" + reset + yellow);
                 drinkChoice = DrinkType.SPRITE;
             }
             case 3 -> {
-                System.out.println("You have selected Fanta!");
+                System.out.println(italic + "You have selected Fanta!" + reset + yellow);
                 drinkChoice = DrinkType.FANTA;
             }
             case 4 -> {
-                System.out.println("You have selected Water!");
+                System.out.println(italic + "You have selected Water!" + reset + yellow);
                 drinkChoice = DrinkType.WATER;
             }
             case 5 -> {
-                System.out.println("You have selected Pepsi!");
+                System.out.println(italic + "You have selected Pepsi!" + reset + yellow);
                 drinkChoice = DrinkType.PEPSI;
             }
             case 6 -> {
-                System.out.println("You have selected Dr. Pepper!");
+                System.out.println(italic + "You have selected Dr. Pepper!" + reset + yellow);
                 drinkChoice = DrinkType.DR_PEPPER;
             }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-6.");
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-6."  + reset + yellow);
         }
         return drinkChoice;
     }
@@ -134,26 +135,26 @@ public class DrinkScreen {
                     ▓▓▓▓▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████▓▓▓▓▓▓     \s
                       ▒▒░░          ░░░░░░░░░░▒▒▒▒▒▒                            ▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░                                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       \s
                                    
-                1. Small
-                2. Medium
-                3. Large
+                1. 𝑺𝒎𝒂𝒍𝒍
+                2. 𝑴𝒆𝒅𝒊𝒖𝒎
+                3. 𝑳𝒂𝒓𝒈𝒆
                 """);
 
         DrinkSize drinkSizeChoice = null;
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
-                System.out.println("You have selected Small!");
+                System.out.println(italic + "You have selected Small!" + reset + yellow);
                 drinkSizeChoice = DrinkSize.SMALL;
             }
             case 2 -> {
-                System.out.println("You have selected Medium!");
+                System.out.println(italic + "You have selected Medium!" + reset + yellow);
                 drinkSizeChoice = DrinkSize.MEDIUM;
             }
             case 3 -> {
-                System.out.println("You have selected Large!");
+                System.out.println(italic + "You have selected Large!" + reset + yellow);
                 drinkSizeChoice = DrinkSize.LARGE;
             }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-3.");
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-3." + reset + yellow);
         }
         return drinkSizeChoice;
     }
