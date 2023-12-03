@@ -2,6 +2,8 @@ package org.delicious.model.sides;
 
 import org.delicious.model.order.OrderedItem;
 
+// TODO: Fix pricing for Drink
+
 public class Drink implements OrderedItem {
     private final DrinkType type;
     private final DrinkSize size;

@@ -13,9 +13,6 @@ public enum ChipType {
         this.chipName = chipName;
     }
 
-    public static void setChipType(ChipType chipType) {
-    }
-
     public String getChipName() {
         return chipName;
     }

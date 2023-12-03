@@ -3,17 +3,13 @@ package org.delicious.model.sides;
 import org.delicious.model.io.PriceLoader;
 import org.delicious.model.order.OrderedItem;
 
-import java.util.HashMap;
+// TODO: Fix pricing for chips
 
 public class Chips implements OrderedItem {
-    private final ChipType type;
+    private final ChipType chipType;
 
-    public Chips(ChipType type) {
-        this.type = type;
-    }
-
-    public ChipType getType() {
-        return type;
+    public Chips(ChipType chipType) {
+        this.chipType = chipType;
     }
 
     @Override
@@ -21,8 +17,7 @@ public class Chips implements OrderedItem {
         return 0;
     }
 
-    @Override
     public String getOrderInformation() {
-        return null;
+        return chipType.getChipName();
     }
 }
