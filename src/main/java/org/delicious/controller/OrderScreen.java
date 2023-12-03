@@ -79,7 +79,6 @@ public class OrderScreen {
         System.out.println("Do you want to proceed with the checkout? (Y/N)");
         char confirmation = (char) HomeScreen.userCharInputs();
 
-
         if (Character.toLowerCase(confirmation) == 'y') {
             System.out.println("""
                     Thank you for your order!
@@ -94,6 +93,24 @@ public class OrderScreen {
             display(scanner);
         }
         if (Character.toLowerCase(confirmation) == 'n') {
+
+            System.out.println("Order had been cancelled. Have a fantastic day!");
+            System.out.println(bold + red + """
+                    ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
+                    ████╗░██║██╔══██╗░██║░░██╗░░██║
+                    ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
+                    ██║╚████║██║░░██║░░████╔═████║░
+                    ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░
+                    ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░
+          
+                    ██████╗░███████╗████████╗██╗░░░██╗██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░░░░░░░░░░
+                    ██╔══██╗██╔════╝╚══██╔══╝██║░░░██║██╔══██╗████╗░██║██║████╗░██║██╔════╝░░░░░░░░░░
+                    ██████╔╝█████╗░░░░░██║░░░██║░░░██║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░░░░░░░░░░
+                    ██╔══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗░░░░░░░░░
+                    ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
+                    ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
+                    """);
+
             HomeScreen.display(scanner);
         } else {
             System.out.println("Invalid input! Please enter Y or N.");
