@@ -8,9 +8,6 @@ import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
-
-// TODO - Combine cases that are for no toppings with the case that is for displaying toppings/moving to next menu
-
 public class ToppingScreen {
 
     private final List<RegularTopping> toppings = new ArrayList<>();
@@ -39,8 +36,6 @@ public class ToppingScreen {
     }
 
     private void selectTopping() {
-
-        // Toppings 🥬
         System.out.println("""
                 Please select your desired toppings!
                                 
@@ -60,7 +55,7 @@ public class ToppingScreen {
         while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
-                    System.out.println("You have selected Lettuce!");
+                    System.out.println("You have selected Lettuce! Please continue selecting!");
                     toppings.add(new RegularTopping("Lettuce"));
                 }
                 case 2 -> {
@@ -109,7 +104,6 @@ public class ToppingScreen {
     }
 
     private void selectSauce() {
-        // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
                                 
@@ -121,7 +115,6 @@ public class ToppingScreen {
                 6. Vinaigrette
                 7. Let's keep it moving!
                 """);
-
 
         boolean exit = false;
 
@@ -166,7 +159,6 @@ public class ToppingScreen {
     }
 
     private void selectSide() {
-        // Sides
         System.out.println("""
                 Please select your desired sides!
                                 

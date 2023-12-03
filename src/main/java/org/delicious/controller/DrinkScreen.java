@@ -9,10 +9,6 @@ import java.util.Scanner;
 import static org.delicious.controller.HomeScreen.userCharInputs;
 import static org.delicious.controller.HomeScreen.userInputs;
 
-// Updates within code:
-// Created a new method to create a drink
-// And added DrinkSize drinkSizeChoice for user to select size
-
 public class DrinkScreen {
     public static void createDrink() {
         DrinkType drinkType = addDrink();
@@ -34,7 +30,6 @@ public class DrinkScreen {
                 """);
 
         DrinkType drinkChoice = null;
-
         switch (userInputs(new Scanner(System.in))) {
             case 1 -> {
                 System.out.println("You have selected Coke Cola!");

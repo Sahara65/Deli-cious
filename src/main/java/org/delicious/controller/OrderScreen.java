@@ -9,8 +9,7 @@ import static org.delicious.controller.ChipsScreen.addChips;
 import static org.delicious.controller.DrinkScreen.createDrink;
 import static org.delicious.controller.HomeScreen.userInputs;
 import static org.delicious.controller.SandwichScreen.createSandwich;
-import static org.delicious.view.AnsiColorCodes.red;
-import static org.delicious.view.AnsiColorCodes.reset;
+import static org.delicious.view.AnsiColorCodes.*;
 
 public class OrderScreen {
     private static final Order currentOrder = new Order();
@@ -30,7 +29,7 @@ public class OrderScreen {
 
         boolean running = true;
         while (running) {
-            System.out.println("""
+            System.out.println(bold + """
                     1. Add a Sandwich!
                     2. Add a Drink!
                     3. Add Chips!
@@ -65,6 +64,8 @@ public class OrderScreen {
             }
         }
     }
+
+    // TODO: Make the first if statement work properly within goCheckout()
 
     private static void goCheckout(Scanner scanner) {
         if (currentOrder.getItemsInCart() == null) {
