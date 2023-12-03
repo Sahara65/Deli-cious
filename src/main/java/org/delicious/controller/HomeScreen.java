@@ -53,7 +53,7 @@ public class HomeScreen {
                     System.exit(0);
                 }
                 default -> {
-                    System.out.println("Invalid Choice. Please input either 1 or 0.");
+                    System.out.println(red + bold + "Invalid Choice. Please input either 1 or 0." + reset + yellow);
                 }
             }
         }

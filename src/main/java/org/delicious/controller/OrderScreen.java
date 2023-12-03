@@ -81,7 +81,7 @@ public class OrderScreen {
         char confirmation = (char) HomeScreen.userCharInputs();
 
         if (Character.toLowerCase(confirmation) == 'y') {
-            System.out.println("""
+            System.out.println(bold + """
                     Thank you for your order!
                     Your food will be prepared and delivered shortly!
                     Here's your receipt and have a fantastic day!

@@ -22,8 +22,10 @@ public class AnsiColorCodes {
     public static final String bgBlue = "\u001B[44m";
     public static final String bgMagenta = "\u001B[45m";
 
-    // Bolden Font
+    // Bold Font
     public static final String bold = "\033[1m";
-    public static final String resetBold = "\033[0m";
+
+    // Italic Font
+    public static final String italic = "\u001b[3m";
 }
 
