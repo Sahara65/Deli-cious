@@ -32,11 +32,7 @@ public class SandwichScreen {
                 sandwich.addPremiumToppings(extraCheeseChoice);
             }
         }
-        // TODO create a choose Regular Topping Screen this Screen will be looped back too until the user selects the
-        //  option "I am happy with my current Topping selections". This screen will allow you to choose between the
-        //  toppings, sauces, or sides. The switch case will call the existing methods.
-        //  Need to adjust in a way that the Topping Screen will keep adding the topping to the sandwich then allow you
-        //  to choose their next regular topping.
+
         ToppingScreen toppingScreen = new ToppingScreen();
         List<RegularTopping> toppings = toppingScreen.createToppings();
 
@@ -50,7 +46,6 @@ public class SandwichScreen {
     }
 
     private static BreadType selectBread() {
-        // Bread 🍞
         System.out.println("""
                 Please select your desired bread!
                                 
@@ -82,7 +77,6 @@ public class SandwichScreen {
     }
 
     private static BreadSize selectBreadSize() {
-        // Size 📏
         System.out.println("""
                 Please select your desired sandwich size!
                                 
@@ -110,7 +104,6 @@ public class SandwichScreen {
     }
 
     private static PremiumTopping selectMeat() {
-        // Meat 🥩
         System.out.println("""
                 Please select your desired meat!
                                 
@@ -158,7 +151,6 @@ public class SandwichScreen {
     }
 
     private static boolean selectExtra() {
-        // Extra Meat
         System.out.println("""
                 Would you like extra?
                                 
@@ -181,7 +173,6 @@ public class SandwichScreen {
     }
 
     private static PremiumTopping selectCheese() {
-        // Cheese 🧀
         System.out.println("""
                 Please select your desired cheese!
                                 
@@ -219,7 +210,6 @@ public class SandwichScreen {
     }
 
     private static boolean selectExtraCheese() {
-        // Extra Meat
         System.out.println("""
                 Would you like extra?
                                 
@@ -242,7 +232,6 @@ public class SandwichScreen {
     }
 
     private static boolean selectToasted() {
-        // Toasted 🔥
         System.out.println("""
                 Would you like your sandwich toasted?
                                 
