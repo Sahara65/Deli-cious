@@ -1,13 +1,23 @@
 package org.delicious.model.sides;
 
-public class Chips {
-    private final ChipType type;
+import org.delicious.model.io.PriceLoader;
+import org.delicious.model.order.OrderedItem;
 
-    public Chips(ChipType type) {
-        this.type = type;
+// TODO: Fix pricing for chips
+
+public class Chips implements OrderedItem {
+    private final ChipType chipType;
+
+    public Chips(ChipType chipType) {
+        this.chipType = chipType;
     }
 
-    public ChipType getType() {
-        return type;
+    @Override
+    public double getPrice() {
+        return 0;
+    }
+
+    public String getOrderInformation() {
+        return chipType.getChipName();
     }
 }

@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
-// Updates in code:
-// Fixed chipChoice to be outside the switch statement
-
 public class ChipsScreen {
     public static ChipType addChips() {
         System.out.println("""

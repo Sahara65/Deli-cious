@@ -35,8 +35,12 @@ public class Sandwich implements OrderedItem {
         //finish later, will be used for custom sandwiches
     }
 
-    public void addTopping(Topping topping) {
+    public void addPremiumToppings(Topping topping) {
         this.toppings.add(topping);
+    }
+
+    public void addAllRegularToppings(List<RegularTopping> topping) {
+        this.toppings.addAll(topping);
     }
 
     @Override
@@ -59,7 +63,7 @@ public class Sandwich implements OrderedItem {
 
         price += prices.get(breadKey);
         for (Topping topping : toppings) {
-            if(topping!= null) {
+            if (topping != null) {
                 String toppingKey = size.toString() + "_" + topping.priceLookupString();
                 price += prices.getOrDefault(toppingKey, 0.0);
             }
@@ -69,18 +73,18 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String getOrderInformation() {
-        String toasted = isToasted? "toasted": "";
+        String toasted = isToasted ? "toasted" : "";
         String header = " -" + toasted + breadType.getName() +
-        "/n " + size;
+                "/n " + size;
         StringBuilder sb = new StringBuilder();
-        for(Topping topping: toppings){
-            if(topping != null){
-                sb.append("/n" + topping.getName()) ;
+        for (Topping topping : toppings) {
+            if (topping != null) {
+                sb.append("/n" + topping.getName());
             }
         }
         String toppings = sb.toString();
         String price = "/n" + String.valueOf(getPrice());
 
-        return header +toppings + price;
+        return header + toppings + price;
     }
 }

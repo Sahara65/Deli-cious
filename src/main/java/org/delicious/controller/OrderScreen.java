@@ -31,19 +31,18 @@ public class OrderScreen {
         boolean running = true;
         while (running) {
             System.out.println("""
-                1. Add a Sandwich!
-                2. Add a Drink!
-                3. Add Chips!
-                4. Checkout!
-                0. Cancel Order and Return to Home.
-                """);
+                    1. Add a Sandwich!
+                    2. Add a Drink!
+                    3. Add Chips!
+                    4. Checkout!
+                    0. Cancel Order and Return to Home.
+                    """);
             switch (userInputs(scanner)) {
                 case 1 -> createSandwich();
                 case 2 -> createDrink();
                 case 3 -> addChips();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
-                    // HomeScreen.display(scanner); // TODO - No , this is a recursive call
                     System.out.println(red + """                 
                                                     
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
@@ -83,9 +82,10 @@ public class OrderScreen {
             System.out.println("""
                     Thank you for your order!
                     Your food will be prepared and delivered shortly!
-                    Have a fantastic day!
+                    Here's your receipt and have a fantastic day!
                     """);
 
+            // TODO - Insert receipt here
             currentOrder.getItemsInCart().clear();
             HomeScreen.display(scanner);
         } else {
@@ -93,8 +93,7 @@ public class OrderScreen {
         }
         if (Character.toLowerCase(confirmation) == 'n') {
             HomeScreen.display(scanner);
-        }
-        else {
+        } else {
             System.out.println("Invalid input! Please enter Y or N.");
             goCheckout(scanner);
         }
