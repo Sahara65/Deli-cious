@@ -1,8 +1,9 @@
-package org.delicious.model.items   ;
+package org.delicious.model.items;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 // TODO - Need to work on pricing
 public class PremiumTopping extends Topping {
     private static final ArrayList<String> MEAT =
@@ -15,7 +16,6 @@ public class PremiumTopping extends Topping {
     private String typeOfTopping;
 
 
-
     //make sure to check that the name exists in the ArrayLists before implementing the constructor
     public PremiumTopping(String name) {
         super(name);
@@ -25,12 +25,6 @@ public class PremiumTopping extends Topping {
         } else {
             this.typeOfTopping = "CHEESE";
         }
-
-        /*
-        if((count.getOrDefault(name, 0) + 1) == 2){
-            isExtra = true;
-        }
-         */
     }
 
     public void setExtra(boolean extra) {

@@ -10,6 +10,4 @@ public class Chips {
     public ChipType getType() {
         return type;
     }
-
-
 }

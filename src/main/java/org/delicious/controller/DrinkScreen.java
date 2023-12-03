@@ -87,6 +87,7 @@ public class DrinkScreen {
                 System.out.println("You have selected Large!");
                 drinkSizeChoice = DrinkSize.LARGE;
             }
+            default -> System.out.println("Invalid Input! Please type only numbers 1-3.");
         }
         return drinkSizeChoice;
     }

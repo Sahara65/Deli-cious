@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Order {
 
     // TODO connect this to the Screens.
+
     private final List<OrderedItem> items;
 
     public Order() {
@@ -20,7 +21,6 @@ public class Order {
         items.remove(item);
     }
 
-    // Getter for itemsInCart
     public List<OrderedItem> getItemsInCart() {
         return items;
     }
