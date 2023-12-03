@@ -1,12 +1,20 @@
 package org.delicious.controller;
 
-import org.delicious.model.sides.ChipType;
+import org.delicious.model.sides.*;
 
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ChipsScreen {
+    public static void createChip() {
+        ChipType chipChoice = addChips();
+
+        System.out.println(Chips.getPrice());
+
+        Chips chips = new Chips(chipChoice);
+    }
+
     public static ChipType addChips() {
         System.out.println("""
                 Please select your chips!

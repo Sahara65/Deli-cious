@@ -38,7 +38,6 @@ public class SandwichScreen {
 
         sandwich.addAllRegularToppings(toppings);
 
-
         boolean isToasted = selectToasted();
         sandwich.setToasted(isToasted);
 
