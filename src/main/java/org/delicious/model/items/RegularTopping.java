@@ -13,8 +13,6 @@ public class RegularTopping extends Topping {
     private static final ArrayList<String> SIDES =
             new ArrayList<>(List.of("Au Jus", "Sauce"));
 
-
-
 //    private String typeOfTopping;
 
 
@@ -22,11 +20,6 @@ public class RegularTopping extends Topping {
     public RegularTopping(String name) {
         super(name);
 
-//        if (MEAT.contains(name)) {
-//            this.typeOfTopping = "MEAT";
-//        } else {
-//            this.typeOfTopping = "CHEESE";
-//        }
 
         /*
         if((count.getOrDefault(name, 0) + 1) == 2){
@@ -38,8 +31,6 @@ public class RegularTopping extends Topping {
     public String toString() {
         return "";
     }
-
-
 
     @Override
     public double getPrice() {

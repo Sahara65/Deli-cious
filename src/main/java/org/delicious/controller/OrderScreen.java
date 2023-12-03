@@ -43,7 +43,6 @@ public class OrderScreen {
                 case 3 -> addChips();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
-                    // HomeScreen.display(scanner); // TODO - No , this is a recursive call
                     System.out.println(red + """                 
                                                     
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
@@ -83,9 +82,10 @@ public class OrderScreen {
             System.out.println("""
                     Thank you for your order!
                     Your food will be prepared and delivered shortly!
-                    Have a fantastic day!
+                    Here's your receipt and have a fantastic day!
                     """);
 
+            // TODO - Insert receipt here
             currentOrder.getItemsInCart().clear();
             HomeScreen.display(scanner);
         } else {

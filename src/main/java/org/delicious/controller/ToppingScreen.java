@@ -1,42 +1,44 @@
 package org.delicious.controller;
 
 import org.delicious.model.items.RegularTopping;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import static org.delicious.controller.HomeScreen.userInputs;
 
 
 // TODO - Combine cases that are for no toppings with the case that is for displaying toppings/moving to next menu
 
 public class ToppingScreen {
+
+    private final List<RegularTopping> toppings = new ArrayList<>();
+
     public List<RegularTopping> createToppings() {
         boolean play = true;
 
-        List<RegularTopping> toppings = new ArrayList<>();
-        while (play){
+        while (play) {
             System.out.println("""
-                Please select your desired sides!
-                                
-                1. Toppings
-                2. Sauces
-                3. Sides
-                4. Continue
-                """);
+                    Please select your desired sides!
+                                    
+                    1. Toppings
+                    2. Sauces
+                    3. Sides
+                    4. Continue
+                    """);
 
-            RegularTopping regularTopping = null;
             switch (userInputs(new Scanner(System.in))) {
-                case 1 -> regularTopping = selectTopping();
-                case 2 -> regularTopping = selectSauce();
-                case 3 -> regularTopping = selectSide();
+                case 1 -> selectTopping();
+                case 2 -> selectSauce();
+                case 3 -> selectSide();
                 case 4 -> play = false;
             }
-            toppings.add(regularTopping);
         }
         return toppings;
     }
 
-    static RegularTopping selectTopping() {
+    private void selectTopping() {
 
         // Toppings 🥬
         System.out.println("""
@@ -54,11 +56,8 @@ public class ToppingScreen {
                 10. Let's move on to the Sauce!
                 """);
 
-        List<RegularTopping> toppings = new ArrayList<>();
         boolean exit = false;
-
-
-
+        while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Lettuce!");
@@ -98,19 +97,18 @@ public class ToppingScreen {
                 }
                 case 10 -> {
                     System.out.println("Moving right along!");
-
-                    System.out.println("Your toppings are:");
+                    System.out.println("Here are all of your toppings:");
                     for (RegularTopping topping : toppings) {
                         System.out.println(topping.getName());
                     }
-                    selectSauce();
+                    exit = true;
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 1-10.");
             }
-        return toppings;
+        }
     }
 
-    static RegularTopping selectSauce() {
+    private void selectSauce() {
         // Sauce 🫙
         System.out.println("""
                 Please select your desired sauce!
@@ -121,77 +119,84 @@ public class ToppingScreen {
                 4. Ranch
                 5. Thousand Islands
                 6. Vinaigrette
-                7. No Sauce
+                7. Let's keep it moving!
                 """);
 
-        List<RegularTopping> selectedSauces = new ArrayList<>();
+
         boolean exit = false;
 
-
+        while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Mayo!");
-                    selectedSauces.add(new RegularTopping("Mayo"));
+                    toppings.add(new RegularTopping("Mayo"));
                 }
                 case 2 -> {
                     System.out.println("You have selected Mustard!");
-                    selectedSauces.add(new RegularTopping("Mustard"));
+                    toppings.add(new RegularTopping("Mustard"));
                 }
                 case 3 -> {
                     System.out.println("You have selected Ketchup!");
-                    selectedSauces.add(new RegularTopping("Ketchup"));
+                    toppings.add(new RegularTopping("Ketchup"));
                 }
                 case 4 -> {
                     System.out.println("You have selected Ranch!");
-                    selectedSauces.add(new RegularTopping("Ranch"));
+                    toppings.add(new RegularTopping("Ranch"));
                 }
                 case 5 -> {
                     System.out.println("You have selected Thousand Islands!");
-                    selectedSauces.add(new RegularTopping("Thousand Islands"));
+                    toppings.add(new RegularTopping("Thousand Islands"));
                 }
                 case 6 -> {
                     System.out.println("You have selected Vinaigrette!");
-                    selectedSauces.add(new RegularTopping("Vinaigrette"));
+                    toppings.add(new RegularTopping("Vinaigrette"));
                 }
                 case 7 -> {
-                    System.out.println("You have selected no sauce!");
+                    System.out.println("Moving on...");
+                    System.out.println("Here are all of your toppings:");
+                    for (RegularTopping sauces : toppings) {
+                        System.out.println(sauces.getName());
+                        exit = true;
+                    }
+
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 1-7.");
             }
-        return selectedSauces;
+        }
     }
 
-    static RegularTopping selectSide() {
+    private void selectSide() {
         // Sides
         System.out.println("""
                 Please select your desired sides!
                                 
                 1. Au Jus
                 2. Sauce
-                3. No sides
+                3. Let's keep it moving!
                 """);
 
-        List<RegularTopping> selectedSides = new ArrayList<>();
         boolean exit = false;
-
+        while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Au Jus!");
-                    selectedSides.add(new RegularTopping("Au Jus"));
+                    toppings.add(new RegularTopping("Au Jus"));
                 }
                 case 2 -> {
                     System.out.println("You have selected Sauce!");
-                    selectedSides.add(new RegularTopping("Sauce"));
+                    toppings.add(new RegularTopping("Sauce"));
                 }
                 case 3 -> {
-                    System.out.println("You have selected no sides!");
+                    System.out.println("Moving on...");
+                    System.out.println("Here are all of your toppings:");
+                    for (RegularTopping sides : toppings)
+                        System.out.println(sides.getName());
 
+                    exit = true;
                     // TODO - move to next menu
-
                 }
                 default -> System.out.println("Invalid Input! Please type only numbers 1-2.");
             }
-
-        return (RegularTopping) selectedSides;
+        }
     }
 }

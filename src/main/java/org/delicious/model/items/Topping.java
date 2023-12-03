@@ -10,13 +10,8 @@ public abstract class Topping {
     }
 // Public Getter for price
 
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public abstract double getPrice();
