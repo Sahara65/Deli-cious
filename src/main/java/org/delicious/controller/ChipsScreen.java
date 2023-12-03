@@ -15,6 +15,7 @@ public class ChipsScreen {
 
     public static ChipType addChips() {
         System.out.println("""
+                
                 Please select your chips!
                                 
                 1. Lays

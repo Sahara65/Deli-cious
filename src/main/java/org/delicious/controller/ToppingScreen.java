@@ -17,6 +17,7 @@ public class ToppingScreen {
 
         while (play) {
             System.out.println("""
+                    
                     Please select your desired sides!
                                     
                     1. Toppings
@@ -37,6 +38,7 @@ public class ToppingScreen {
 
     private void selectTopping() {
         System.out.println("""
+                
                 Please select your desired toppings!
                                 
                 1. Lettuce
@@ -105,6 +107,7 @@ public class ToppingScreen {
 
     private void selectSauce() {
         System.out.println("""
+                
                 Please select your desired sauce!
                                 
                 1. Mayo
@@ -160,6 +163,7 @@ public class ToppingScreen {
 
     private void selectSide() {
         System.out.println("""
+                
                 Please select your desired sides!
                                 
                 1. Au Jus
