@@ -43,7 +43,7 @@ public class OrderScreen {
                 case 3 -> createChip();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
-                    System.out.println(red + """                 
+                    System.out.println(red + bold + """                 
                                                     
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
                             ████╗░██║██╔══██╗░██║░░██╗░░██║

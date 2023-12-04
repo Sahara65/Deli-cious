@@ -42,7 +42,7 @@ public class SandwichScreen {
         boolean isToasted = selectToasted();
         sandwich.setToasted(isToasted);
 
-        System.out.println("Your sandwich will cost:" + sandwich.getPrice());
+        System.out.println(bold + "Your sandwich will cost:" + sandwich.getPrice() + reset + yellow);
     }
 
     private static BreadType selectBread() {
@@ -158,7 +158,7 @@ public class SandwichScreen {
                 System.out.println(italic + "You have selected 12 inches!" + reset + yellow);
                 size = BreadSize.TWELVE_INCH;
             }
-            default -> System.out.println("Invalid Input! Please type only numbers 1-3." + reset + yellow);
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-3." + reset + yellow);
         }
         return size;
     }
