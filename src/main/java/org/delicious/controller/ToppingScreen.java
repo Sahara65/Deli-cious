@@ -2,15 +2,13 @@ package org.delicious.controller;
 
 import org.delicious.model.items.RegularTopping;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static org.delicious.controller.HomeScreen.userInputs;
 
 public class ToppingScreen {
 
-    private final List<RegularTopping> toppings = new ArrayList<>();
+    private final Set<RegularTopping> toppingsSet = new HashSet<>();
 
     public List<RegularTopping> createToppings() {
         boolean play = true;
@@ -38,7 +36,7 @@ public class ToppingScreen {
                 case 4 -> play = false;
             }
         }
-        return toppings;
+        return new ArrayList<>(toppingsSet);
     }
 
     private void selectTopping() {
@@ -104,44 +102,45 @@ public class ToppingScreen {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Lettuce! Please continue selecting!");
-                    toppings.add(new RegularTopping("Lettuce"));
+                    toppingsSet.add(new RegularTopping("Lettuce"));
+                    System.out.println(toppingsSet.add(new RegularTopping("Lettuce")));
                 }
                 case 2 -> {
                     System.out.println("You have selected Peppers!");
-                    toppings.add(new RegularTopping("Peppers"));
+                    toppingsSet.add(new RegularTopping("Peppers"));
                 }
                 case 3 -> {
                     System.out.println("You have selected Onions!");
-                    toppings.add(new RegularTopping("Onions"));
+                    toppingsSet.add(new RegularTopping("Onions"));
                 }
                 case 4 -> {
                     System.out.println("You have selected Tomatoes!");
-                    toppings.add(new RegularTopping("Tomatoes"));
+                    toppingsSet.add(new RegularTopping("Tomatoes"));
                 }
                 case 5 -> {
                     System.out.println("You have selected Jalapenos!");
-                    toppings.add(new RegularTopping("Jalapenos"));
+                    toppingsSet.add(new RegularTopping("Jalapenos"));
                 }
                 case 6 -> {
                     System.out.println("You have selected Cucumbers!");
-                    toppings.add(new RegularTopping("Cucumbers"));
+                    toppingsSet.add(new RegularTopping("Cucumbers"));
                 }
                 case 7 -> {
                     System.out.println("You have selected Pickles!");
-                    toppings.add(new RegularTopping("Pickles"));
+                    toppingsSet.add(new RegularTopping("Pickles"));
                 }
                 case 8 -> {
                     System.out.println("You have selected Guacamole!");
-                    toppings.add(new RegularTopping("Guacamole"));
+                    toppingsSet.add(new RegularTopping("Guacamole"));
                 }
                 case 9 -> {
                     System.out.println("You have selected Mushrooms!");
-                    toppings.add(new RegularTopping("Mushrooms"));
+                    toppingsSet.add(new RegularTopping("Mushrooms"));
                 }
                 case 10 -> {
                     System.out.println("Moving right along!");
                     System.out.println("Here are all of your toppings:");
-                    for (RegularTopping topping : toppings) {
+                    for (RegularTopping topping : toppingsSet) {
                         System.out.println(topping.getName());
                     }
                     exit = true;
@@ -194,32 +193,32 @@ public class ToppingScreen {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Mayo!");
-                    toppings.add(new RegularTopping("Mayo"));
+                    toppingsSet.add(new RegularTopping("Mayo"));
                 }
                 case 2 -> {
                     System.out.println("You have selected Mustard!");
-                    toppings.add(new RegularTopping("Mustard"));
+                    toppingsSet.add(new RegularTopping("Mustard"));
                 }
                 case 3 -> {
                     System.out.println("You have selected Ketchup!");
-                    toppings.add(new RegularTopping("Ketchup"));
+                    toppingsSet.add(new RegularTopping("Ketchup"));
                 }
                 case 4 -> {
                     System.out.println("You have selected Ranch!");
-                    toppings.add(new RegularTopping("Ranch"));
+                    toppingsSet.add(new RegularTopping("Ranch"));
                 }
                 case 5 -> {
                     System.out.println("You have selected Thousand Islands!");
-                    toppings.add(new RegularTopping("Thousand Islands"));
+                    toppingsSet.add(new RegularTopping("Thousand Islands"));
                 }
                 case 6 -> {
                     System.out.println("You have selected Vinaigrette!");
-                    toppings.add(new RegularTopping("Vinaigrette"));
+                    toppingsSet.add(new RegularTopping("Vinaigrette"));
                 }
                 case 7 -> {
                     System.out.println("Moving on...");
                     System.out.println("Here are all of your toppings:");
-                    for (RegularTopping sauces : toppings) {
+                    for (RegularTopping sauces : toppingsSet) {
                         System.out.println(sauces.getName());
                         exit = true;
                     }
@@ -283,16 +282,16 @@ public class ToppingScreen {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
                     System.out.println("You have selected Au Jus!");
-                    toppings.add(new RegularTopping("Au Jus"));
+                    toppingsSet.add(new RegularTopping("Au Jus"));
                 }
                 case 2 -> {
                     System.out.println("You have selected Sauce!");
-                    toppings.add(new RegularTopping("Sauce"));
+                    toppingsSet.add(new RegularTopping("Sauce"));
                 }
                 case 3 -> {
                     System.out.println("Moving on...");
                     System.out.println("Here are all of your toppings:");
-                    for (RegularTopping sides : toppings)
+                    for (RegularTopping sides : toppingsSet)
                         System.out.println(sides.getName());
 
                     exit = true;
