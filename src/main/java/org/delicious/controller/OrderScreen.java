@@ -1,7 +1,10 @@
 package org.delicious.controller;
 
 import org.delicious.model.io.ReceiptManager;
+import org.delicious.model.items.Sandwich;
 import org.delicious.model.order.Order;
+import org.delicious.model.sides.Chip;
+import org.delicious.model.sides.Drink;
 
 import java.util.Scanner;
 
@@ -37,9 +40,9 @@ public class OrderScreen {
                     """);
 
             switch (userInputs(scanner)) {
-                case 1 -> createSandwich();
-                case 2 -> createDrink();
-                case 3 -> createChip();
+                case 1 -> currentOrder.addToCart(createSandwich());
+                case 2 -> currentOrder.addToCart(createDrink());
+                case 3 -> currentOrder.addToCart(createChip());
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
                     System.out.println(red + bold + """                 
@@ -72,14 +75,13 @@ public class OrderScreen {
 
     private static void goCheckout(Scanner scanner) {
 
-        System.out.println("Checking cart contents: " + currentOrder.getItemsInCart());
+
 
         if (currentOrder.getItemsInCart().isEmpty()) {
             System.out.println(red + bold + "You have not ordered anything yet! Please try again. \n" + reset + yellow);
             return;
         }
         String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
-        System.out.println(orderSummary);
 
         System.out.println("Do you want to proceed with the checkout? (Y/N)");
         char confirmation = (char) HomeScreen.userCharInputs();

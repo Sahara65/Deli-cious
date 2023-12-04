@@ -45,27 +45,35 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "size=" + size +
-                ", breadType=" + breadType +
-                ", Toppings=" + toppings +
-                ", isToasted=" + isToasted +
-                '}';
+        String toasted = isToasted ? "toasted" : "";
+        String header = " -" + toasted + breadType.getName() +
+                "/n " + size;
+        StringBuilder sb = new StringBuilder();
+        for (Topping topping : toppings) {
+            if (topping != null) {
+                sb.append("/n" + topping.getName());
+            }
+        }
+        String toppings = sb.toString();
+        String price = "/n" + String.valueOf(getPrice());
+
+        return header + toppings + price;
     }
 
     @Override
     public double getPrice() {
+        if(price == 0) {
+            PriceLoader priceLoader = new PriceLoader("data/price.csv");
+            HashMap<String, Double> prices = priceLoader.getPrices();
 
-        PriceLoader priceLoader = new PriceLoader("data/price.csv");
-        HashMap<String, Double> prices = priceLoader.getPrices();
+            String breadKey = size.toString() + "_BREAD";
 
-        String breadKey = size.toString() + "_BREAD";
-
-        price += prices.get(breadKey);
-        for (Topping topping : toppings) {
-            if (topping != null) {
-                String toppingKey = size.toString() + "_" + topping.priceLookupString();
-                price += prices.getOrDefault(toppingKey, 0.0);
+            price += prices.get(breadKey);
+            for (Topping topping : toppings) {
+                if (topping != null) {
+                    String toppingKey = size.toString() + "_" + topping.priceLookupString();
+                    price += prices.getOrDefault(toppingKey, 0.0);
+                }
             }
         }
         return price;

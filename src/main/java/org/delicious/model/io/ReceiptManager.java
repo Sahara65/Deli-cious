@@ -29,6 +29,7 @@ public class ReceiptManager {
         double totalCost = 0.0;
 
         for (OrderedItem item : currentOrder.getItemsInCart()) {
+            System.out.println(item);
             summary.append(item.getOrderInformation()).append("\n");
             totalCost += item.getPrice();
         }

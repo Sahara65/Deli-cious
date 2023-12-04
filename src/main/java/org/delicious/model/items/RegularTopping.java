@@ -29,6 +29,19 @@ public class RegularTopping extends Topping {
     public double getPrice() {
         return 0;
     }
+    //adding so that the HashSet knows how to check for equivalence. Used GPT for the equals method.
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        RegularTopping that = (RegularTopping) obj;
+        return getName().equals(that.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return getName().hashCode();
+    }
 
     @Override
     public String priceLookupString() {

@@ -13,11 +13,11 @@ public class Order {
         items = new ArrayList<>();
     }
 
-    public void addItemsCart(OrderedItem item) {
+    public void addToCart(OrderedItem item) {
         items.add(item);
     }
 
-    public void removeItemsCart(OrderedItem item) {
+    public void removeFromCart(OrderedItem item) {
         items.remove(item);
     }
 

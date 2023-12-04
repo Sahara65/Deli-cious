@@ -7,10 +7,10 @@ import java.util.HashMap;
 
 // TODO: Fix pricing for chips
 
-public class Chips implements OrderedItem {
+public class Chip implements OrderedItem {
     private final ChipType chipType;
 
-    public Chips(ChipType chipType) {
+    public Chip(ChipType chipType) {
         this.chipType = chipType;
     }
 
