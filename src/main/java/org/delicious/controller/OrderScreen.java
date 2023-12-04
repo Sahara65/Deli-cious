@@ -12,7 +12,7 @@ import static org.delicious.controller.SandwichScreen.createSandwich;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class OrderScreen {
-    private static final Order currentOrder = new Order();
+    static final Order currentOrder = new Order();
 
     public static void display(Scanner scanner) {
         System.out.println("""
@@ -71,8 +71,12 @@ public class OrderScreen {
     // TODO: Make the first if statement work properly within goCheckout()
 
     private static void goCheckout(Scanner scanner) {
-        if (currentOrder.getItemsInCart() == null) {
-            System.out.println(red + bold + "You have not ordered anything yet!" + reset + yellow);
+
+        System.out.println("Checking cart contents: " + currentOrder.getItemsInCart());
+
+        if (currentOrder.getItemsInCart().isEmpty()) {
+            System.out.println(red + bold + "You have not ordered anything yet! Please try again. \n" + reset + yellow);
+            return;
         }
         String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
         System.out.println(orderSummary);

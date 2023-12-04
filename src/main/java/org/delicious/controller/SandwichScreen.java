@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
+import static org.delicious.controller.OrderScreen.currentOrder;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class SandwichScreen {
