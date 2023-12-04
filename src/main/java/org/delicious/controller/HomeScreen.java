@@ -69,9 +69,13 @@ public class HomeScreen {
     }
 
     public static int userInputs(Scanner scanner) {
-        int val = scanner.nextInt();
-        scanner.nextLine();
-        return val;
+        if(scanner.hasNextInt()) {
+            return scanner.nextInt();
+        } else {
+            scanner.next();
+            System.out.println("Please enter a number!!");
+            return userInputs(scanner);
+        }
     }
 
     public static int userCharInputs() {
