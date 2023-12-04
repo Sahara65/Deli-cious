@@ -5,6 +5,7 @@ import org.delicious.model.items.RegularTopping;
 import java.util.*;
 
 import static org.delicious.controller.HomeScreen.userInputs;
+import static org.delicious.view.AnsiColorCodes.*;
 
 public class ToppingScreen {
 
@@ -101,45 +102,44 @@ public class ToppingScreen {
         while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
-                    System.out.println("You have selected Lettuce! Please continue selecting!");
+                    System.out.println(italic + "You have selected Lettuce! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Lettuce"));
-                    System.out.println(toppingsSet.add(new RegularTopping("Lettuce")));
                 }
                 case 2 -> {
-                    System.out.println("You have selected Peppers!");
+                    System.out.println(italic + "You have selected Peppers! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Peppers"));
                 }
                 case 3 -> {
-                    System.out.println("You have selected Onions!");
+                    System.out.println(italic + "You have selected Onions! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Onions"));
                 }
                 case 4 -> {
-                    System.out.println("You have selected Tomatoes!");
+                    System.out.println(italic + "You have selected Tomatoes! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Tomatoes"));
                 }
                 case 5 -> {
-                    System.out.println("You have selected Jalapenos!");
+                    System.out.println(italic + "You have selected Jalapenos! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Jalapenos"));
                 }
                 case 6 -> {
-                    System.out.println("You have selected Cucumbers!");
+                    System.out.println(italic + "You have selected Cucumbers! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Cucumbers"));
                 }
                 case 7 -> {
-                    System.out.println("You have selected Pickles!");
+                    System.out.println(italic + "You have selected Pickles! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Pickles"));
                 }
                 case 8 -> {
-                    System.out.println("You have selected Guacamole!");
+                    System.out.println(italic + "You have selected Guacamole! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Guacamole"));
                 }
                 case 9 -> {
-                    System.out.println("You have selected Mushrooms!");
+                    System.out.println(italic + "You have selected Mushrooms! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Mushrooms"));
                 }
                 case 10 -> {
-                    System.out.println("Moving right along!");
-                    System.out.println("Here are all of your toppings:");
+                    System.out.println(italic + "Moving right along!");
+                    System.out.println("Here are all of your toppings:" + reset + yellow);
                     for (RegularTopping topping : toppingsSet) {
                         System.out.println(topping.getName());
                     }
@@ -192,32 +192,32 @@ public class ToppingScreen {
         while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
-                    System.out.println("You have selected Mayo!");
+                    System.out.println(italic + "You have selected Mayo! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Mayo"));
                 }
                 case 2 -> {
-                    System.out.println("You have selected Mustard!");
+                    System.out.println(italic + "You have selected Mustard! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Mustard"));
                 }
                 case 3 -> {
-                    System.out.println("You have selected Ketchup!");
+                    System.out.println(italic + "You have selected Ketchup! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Ketchup"));
                 }
                 case 4 -> {
-                    System.out.println("You have selected Ranch!");
+                    System.out.println(italic + "You have selected Ranch! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Ranch"));
                 }
                 case 5 -> {
-                    System.out.println("You have selected Thousand Islands!");
+                    System.out.println(italic + "You have selected Thousand Islands! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Thousand Islands"));
                 }
                 case 6 -> {
-                    System.out.println("You have selected Vinaigrette!");
+                    System.out.println(italic + "You have selected Vinaigrette! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Vinaigrette"));
                 }
                 case 7 -> {
-                    System.out.println("Moving on...");
-                    System.out.println("Here are all of your toppings:");
+                    System.out.println(italic + "Moving on...");
+                    System.out.println("Here are all of your toppings:" + reset + yellow);
                     for (RegularTopping sauces : toppingsSet) {
                         System.out.println(sauces.getName());
                         exit = true;
@@ -281,16 +281,16 @@ public class ToppingScreen {
         while (!exit) {
             switch (userInputs(new Scanner(System.in))) {
                 case 1 -> {
-                    System.out.println("You have selected Au Jus!");
+                    System.out.println(italic + "You have selected Au Jus! Please continue selecting!"  + reset + yellow);
                     toppingsSet.add(new RegularTopping("Au Jus"));
                 }
                 case 2 -> {
-                    System.out.println("You have selected Sauce!");
+                    System.out.println(italic + "You have selected Sauce! Please continue selecting!" + reset + yellow);
                     toppingsSet.add(new RegularTopping("Sauce"));
                 }
                 case 3 -> {
-                    System.out.println("Moving on...");
-                    System.out.println("Here are all of your toppings:");
+                    System.out.println(italic + "Moving on...");
+                    System.out.println("Here are all of your toppings:" + reset + yellow);
                     for (RegularTopping sides : toppingsSet)
                         System.out.println(sides.getName());
 

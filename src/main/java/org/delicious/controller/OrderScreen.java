@@ -5,7 +5,6 @@ import org.delicious.model.order.Order;
 
 import java.util.Scanner;
 
-import static org.delicious.controller.ChipsScreen.addChips;
 import static org.delicious.controller.ChipsScreen.createChip;
 import static org.delicious.controller.DrinkScreen.createDrink;
 import static org.delicious.controller.HomeScreen.userInputs;
@@ -13,7 +12,7 @@ import static org.delicious.controller.SandwichScreen.createSandwich;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class OrderScreen {
-    private static final Order currentOrder = new Order();
+    static final Order currentOrder = new Order();
 
     public static void display(Scanner scanner) {
         System.out.println("""
@@ -43,7 +42,7 @@ public class OrderScreen {
                 case 3 -> createChip();
                 case 4 -> goCheckout(scanner);
                 case 0 -> {
-                    System.out.println(red + """                 
+                    System.out.println(red + bold + """                 
                                                     
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
                             ████╗░██║██╔══██╗░██║░░██╗░░██║
@@ -59,6 +58,8 @@ public class OrderScreen {
                             ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
                             ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                             """ + reset);
+
+//                    progressBar();
                     running = false;
                 }
                 default ->
@@ -70,11 +71,14 @@ public class OrderScreen {
     // TODO: Make the first if statement work properly within goCheckout()
 
     private static void goCheckout(Scanner scanner) {
-        if (currentOrder.getItemsInCart() == null) {
-            System.out.println(red + bold + "You have not ordered anything yet!" + reset + yellow);
+
+        System.out.println("Checking cart contents: " + currentOrder.getItemsInCart());
+
+        if (currentOrder.getItemsInCart().isEmpty()) {
+            System.out.println(red + bold + "You have not ordered anything yet! Please try again. \n" + reset + yellow);
+            return;
         }
         String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
-
         System.out.println(orderSummary);
 
         System.out.println("Do you want to proceed with the checkout? (Y/N)");
@@ -88,15 +92,18 @@ public class OrderScreen {
                     """);
 
             // TODO - Insert receipt here
+
             currentOrder.getItemsInCart().clear();
+
             HomeScreen.display(scanner);
+
         } else {
             display(scanner);
         }
         if (Character.toLowerCase(confirmation) == 'n') {
-
-            System.out.println("Order had been cancelled. Have a fantastic day!");
             System.out.println(bold + red + """
+                    Order had been cancelled. Have a fantastic day!
+                    
                     ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
                     ████╗░██║██╔══██╗░██║░░██╗░░██║
                     ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
@@ -111,7 +118,7 @@ public class OrderScreen {
                     ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
                     ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                     """);
-
+//            progressBar();
             HomeScreen.display(scanner);
         } else {
             System.out.println(red + bold + "Invalid input! Please enter Y or N." + reset + yellow);

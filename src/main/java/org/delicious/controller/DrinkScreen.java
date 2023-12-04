@@ -6,7 +6,6 @@ import org.delicious.model.sides.DrinkType;
 
 import java.util.Scanner;
 
-import static org.delicious.controller.HomeScreen.userCharInputs;
 import static org.delicious.controller.HomeScreen.userInputs;
 import static org.delicious.view.AnsiColorCodes.*;
 import static org.delicious.view.AnsiColorCodes.yellow;
@@ -154,7 +153,6 @@ public class DrinkScreen {
                 System.out.println(italic + "You have selected Large!" + reset + yellow);
                 drinkSizeChoice = DrinkSize.LARGE;
             }
-            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-3." + reset + yellow);
         }
         return drinkSizeChoice;
     }
