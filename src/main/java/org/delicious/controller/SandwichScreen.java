@@ -10,7 +10,7 @@ import static org.delicious.controller.OrderScreen.currentOrder;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class SandwichScreen {
-    public static void createSandwich() {
+    public static Sandwich createSandwich() {
         BreadType breadChoice = selectBread();
         BreadSize breadSizeChoice = selectBreadSize();
         Sandwich sandwich = new Sandwich(breadSizeChoice, breadChoice);
@@ -44,6 +44,7 @@ public class SandwichScreen {
         sandwich.setToasted(isToasted);
 
         System.out.println(bold + "Your sandwich will cost:" + sandwich.getPrice() + reset + yellow);
+        return sandwich;
     }
 
     private static BreadType selectBread() {

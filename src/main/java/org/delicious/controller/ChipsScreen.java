@@ -8,10 +8,10 @@ import static org.delicious.controller.HomeScreen.userInputs;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class ChipsScreen {
-    public static Chips createChip() {
+    public static Chip createChip() {
         ChipType chipChoice = addChips();
 
-        return new Chips(chipChoice);
+        return new Chip(chipChoice);
     }
 
     public static ChipType addChips() {
