@@ -5,7 +5,6 @@ import org.delicious.model.order.Order;
 
 import java.util.Scanner;
 
-import static org.delicious.controller.ChipsScreen.addChips;
 import static org.delicious.controller.ChipsScreen.createChip;
 import static org.delicious.controller.DrinkScreen.createDrink;
 import static org.delicious.controller.HomeScreen.userInputs;
@@ -59,6 +58,8 @@ public class OrderScreen {
                             ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
                             ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                             """ + reset);
+
+//                    progressBar();
                     running = false;
                 }
                 default ->
@@ -74,7 +75,6 @@ public class OrderScreen {
             System.out.println(red + bold + "You have not ordered anything yet!" + reset + yellow);
         }
         String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
-
         System.out.println(orderSummary);
 
         System.out.println("Do you want to proceed with the checkout? (Y/N)");
@@ -88,15 +88,18 @@ public class OrderScreen {
                     """);
 
             // TODO - Insert receipt here
+
             currentOrder.getItemsInCart().clear();
+
             HomeScreen.display(scanner);
+
         } else {
             display(scanner);
         }
         if (Character.toLowerCase(confirmation) == 'n') {
-
-            System.out.println("Order had been cancelled. Have a fantastic day!");
             System.out.println(bold + red + """
+                    Order had been cancelled. Have a fantastic day!
+                    
                     ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
                     ████╗░██║██╔══██╗░██║░░██╗░░██║
                     ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
@@ -111,7 +114,7 @@ public class OrderScreen {
                     ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
                     ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                     """);
-
+//            progressBar();
             HomeScreen.display(scanner);
         } else {
             System.out.println(red + bold + "Invalid input! Please enter Y or N." + reset + yellow);

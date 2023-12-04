@@ -1,7 +1,6 @@
 package org.delicious.model.items;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 // TODO - Need to work on pricing

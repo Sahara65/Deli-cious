@@ -3,13 +3,13 @@ package org.delicious.model.items;
 // Dipesh's Code
 public abstract class Topping {
 
-    private String name;
+    private final String name;
 
     public Topping(String name) {
         this.name = name;
     }
-// Public Getter for price
 
+    // Public Getter for price
     public String getName() {
         return name;
     }

@@ -2,7 +2,6 @@ package org.delicious.controller;
 
 import java.util.Scanner;
 
-import org.delicious.view.AnimatedPrompts;
 import org.delicious.view.ProgressBar;
 
 import static org.delicious.view.AnsiColorCodes.*;
@@ -42,7 +41,7 @@ public class HomeScreen {
                     OrderScreen.display(scanner);
                 }
                 case 0 -> {
-                    System.out.println(red+ bold + """                 
+                    System.out.println(red + bold + """                 
                             ███╗░░██╗░█████╗░░██╗░░░░░░░██╗░░░░░███████╗██╗░░██╗██╗████████╗██╗███╗░░██╗░██████╗░░░░░░░░░░
                             ████╗░██║██╔══██╗░██║░░██╗░░██║░░░░░██╔════╝╚██╗██╔╝██║╚══██╔══╝██║████╗░██║██╔════╝░░░░░░░░░░
                             ██╔██╗██║██║░░██║░╚██╗████╗██╔╝░░░░░█████╗░░░╚███╔╝░██║░░░██║░░░██║██╔██╗██║██║░░██╗░░░░░░░░░░
@@ -51,9 +50,6 @@ public class HomeScreen {
                             ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
                             """ + reset);
                     System.exit(0);
-                }
-                default -> {
-                    System.out.println(red + bold + "Invalid Choice. Please input either 1 or 0." + reset + yellow);
                 }
             }
         }
@@ -69,11 +65,11 @@ public class HomeScreen {
     }
 
     public static int userInputs(Scanner scanner) {
-        if(scanner.hasNextInt()) {
+        if (scanner.hasNextInt()) {
             return scanner.nextInt();
         } else {
             scanner.next();
-            System.out.println("Please enter a number!!");
+            System.out.println("Please enter a number from the menu!!");
             return userInputs(scanner);
         }
     }
