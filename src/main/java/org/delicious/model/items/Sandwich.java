@@ -45,19 +45,19 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String toString() {
-        String toasted = isToasted ? "toasted" : "";
-        String header = " -" + toasted + breadType.getName() +
-                "/n " + size;
+        String toasted = isToasted ? "Toasted" : "";
+        String header = String.format("%s %s\n%s", toasted, breadType.getName(), size);
+
         StringBuilder sb = new StringBuilder();
         for (Topping topping : toppings) {
             if (topping != null) {
-                sb.append("/n" + topping.getName());
+                sb.append(String.format("\n%s", topping.getName()));
             }
         }
         String toppings = sb.toString();
-        String price = "/n" + String.valueOf(getPrice());
+        String price = String.format("\n%s", getPrice());
 
-        return header + toppings + price;
+        return String.format("%s\n%s\n%s", header, toppings, price);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Sandwich implements OrderedItem {
             for (Topping topping : toppings) {
                 if (topping != null) {
                     String toppingKey = size.toString() + "_" + topping.priceLookupString();
-                    price += prices.getOrDefault(toppingKey, 0.0);
+                    price += prices.getOrDefault(toppingKey, 0.00);
                 }
             }
         }
@@ -81,18 +81,17 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String getOrderInformation() {
-        String toasted = isToasted ? "toasted" : "";
-        String header = " -" + toasted + breadType.getName() +
-                "/n " + size;
+        String toasted = isToasted ? "Toasted" : "";
+        String header = String.format("- %s %s\n %s", toasted, breadType.getName(), size);
         StringBuilder sb = new StringBuilder();
         for (Topping topping : toppings) {
             if (topping != null) {
-                sb.append("/n" + topping.getName());
+                sb.append(String.format("\n%s", topping.getName()));
             }
         }
         String toppings = sb.toString();
-        String price = "/n" + String.valueOf(getPrice());
+        String price = String.format("\n%s", getPrice());
 
-        return header + toppings + price;
+        return String.format("%s\n%s\n%s", header, toppings, price);
     }
 }

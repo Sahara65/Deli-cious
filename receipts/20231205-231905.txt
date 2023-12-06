@@ -1,0 +1,6 @@
+ -WHITE
+ EIGHT_INCH
+Chicken
+Chicken
+10.0
+Total Cost: $10.0

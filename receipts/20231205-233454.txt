@@ -1,0 +1,13 @@
+ -toastedWHITE
+ FOUR_INCH
+Steak
+Steak
+American Cheese
+Lettuce
+Sauce
+Au Jus
+Peppers
+Mustard
+Mayo
+7.75
+Total Cost: $7.75

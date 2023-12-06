@@ -5,13 +5,19 @@ import org.delicious.model.order.OrderedItem;
 
 import java.util.HashMap;
 
-// TODO: Fix pricing for chips
-
 public class Chip implements OrderedItem {
     private final ChipType chipType;
 
     public Chip(ChipType chipType) {
         this.chipType = chipType;
+    }
+
+    @Override
+    public String toString() {
+        String header = String.format("\n%s", chipType);
+        String price = String.format("\n%s", getPrice());
+
+        return String.format("%s\n%s", header, price);
     }
 
     @Override

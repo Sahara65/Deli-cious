@@ -1,0 +1,14 @@
+ -toastedWHITE
+ FOUR_INCH
+Steak
+Steak
+American Cheese
+American Cheese
+Lettuce
+Onions
+Jalapenos
+Peppers
+Tomatoes
+Cucumbers
+8.05
+Total Cost: $8.05

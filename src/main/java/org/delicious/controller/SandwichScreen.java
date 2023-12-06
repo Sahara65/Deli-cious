@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import static org.delicious.controller.HomeScreen.userInputs;
-import static org.delicious.controller.OrderScreen.currentOrder;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class SandwichScreen {
@@ -95,6 +94,7 @@ public class SandwichScreen {
                 System.out.println(italic + "You have selected Wrap!" + reset + yellow);
                 type = BreadType.WRAP;
             }
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-4." + reset + yellow);
         }
         return type;
     }
@@ -156,6 +156,7 @@ public class SandwichScreen {
                 System.out.println(italic + "You have selected 12 inches!" + reset + yellow);
                 size = BreadSize.TWELVE_INCH;
             }
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-3." + reset + yellow);
         }
         return size;
     }
@@ -237,6 +238,7 @@ public class SandwichScreen {
                 meatChoice = new PremiumTopping("Bacon");
             }
             case 7 -> System.out.println(italic + green + "You have selected no meat!" + reset + yellow);
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-7." + reset + yellow);
         }
         return meatChoice;
     }
@@ -262,6 +264,7 @@ public class SandwichScreen {
                 isExtra = true;
             }
             case 2 -> System.out.println(italic + "You have selected no extra!" + reset + yellow);
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-2." + reset + yellow);
         }
         return isExtra;
     }
@@ -332,6 +335,7 @@ public class SandwichScreen {
                 cheeseChoice = new PremiumTopping("Swiss Cheese");
             }
             case 5 -> System.out.println(italic + "You have selected no cheese!" + reset + yellow);
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-5." + reset + yellow);
         }
         return cheeseChoice;
     }
@@ -357,6 +361,7 @@ public class SandwichScreen {
                 isExtra = true;
             }
             case 2 -> System.out.println("You have selected no extra!");
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-2." + reset + yellow);
         }
         return isExtra;
     }
@@ -403,6 +408,7 @@ public class SandwichScreen {
                 isToasted = true;
             }
             case 2 -> System.out.println(italic + "You have selected not toasted!" + reset + yellow);
+            default -> System.out.println(red + bold + "Invalid Input! Please type only numbers 1-2." + reset + yellow);
         }
         return isToasted;
     }

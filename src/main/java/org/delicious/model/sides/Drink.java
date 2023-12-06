@@ -8,6 +8,13 @@ import java.util.HashMap;
 // TODO: Fix pricing for Drink
 
 public record Drink(DrinkType type, DrinkSize size) implements OrderedItem {
+    @Override
+    public String toString() {
+        String header = String.format("%s: %s", type, size);
+        String price = String.format("%s", getPrice());
+
+        return String.format("%s\n%s", header, price);
+    }
 
     @Override
     public double getPrice() {
@@ -19,6 +26,6 @@ public record Drink(DrinkType type, DrinkSize size) implements OrderedItem {
 
     @Override
     public String getOrderInformation() {
-        return null;
+        return String.format("%s: %s", type().getDrinkName(), size().name());
     }
 }

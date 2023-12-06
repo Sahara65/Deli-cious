@@ -1,0 +1,19 @@
+ -toastedWHITE
+ EIGHT_INCH
+Chicken
+American Cheese
+Onions
+Mushrooms
+Jalapenos
+Mayo
+Lettuce
+Guacamole
+Sauce
+Au Jus
+Peppers
+Tomatoes
+Mustard
+Cucumbers
+Pickles
+10.5
+Total Cost: $10.5

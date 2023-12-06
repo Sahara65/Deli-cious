@@ -51,6 +51,7 @@ public class HomeScreen {
                             """ + reset);
                     System.exit(0);
                 }
+                default -> System.out.println(red + bold + "Invalid input! Please enter 1 or 0." + reset + yellow);
             }
         }
     }
@@ -65,12 +66,13 @@ public class HomeScreen {
     }
 
     public static int userInputs(Scanner scanner) {
-        if (scanner.hasNextInt()) {
-            return scanner.nextInt();
-        } else {
-            scanner.next();
-            System.out.println("Please enter a number from the menu!!");
-            return userInputs(scanner);
+        while (true) {
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                scanner.next();
+                System.out.println("Please enter a number from the menu!!");
+            }
         }
     }
 
