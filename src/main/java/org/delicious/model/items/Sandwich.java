@@ -44,6 +44,9 @@ public class Sandwich implements OrderedItem {
         this.toppings.addAll(topping);
     }
 
+//    System.out.printf("│ %15s     │ %-30s │ %-10.2f |\n",
+//            " ", " "," ");
+
     @Override
     public String toString() {
         String toasted = isToasted ? "Toasted" : "";
@@ -79,5 +82,4 @@ public class Sandwich implements OrderedItem {
         }
         return price;
     }
-
 }

@@ -3,6 +3,7 @@ package org.delicious.controller;
 import org.delicious.model.io.ReceiptManager;
 import org.delicious.model.items.Sandwich;
 import org.delicious.model.order.Order;
+import org.delicious.model.order.OrderedItem;
 import org.delicious.model.sides.Chip;
 import org.delicious.model.sides.Drink;
 
@@ -15,7 +16,7 @@ import static org.delicious.controller.SandwichScreen.createSandwich;
 import static org.delicious.view.AnsiColorCodes.*;
 
 public class OrderScreen {
-    static final Order currentOrder = new Order();
+    public static final Order currentOrder = new Order();
 
     public static void display(Scanner scanner) {
         System.out.println("""
@@ -92,6 +93,8 @@ public class OrderScreen {
                         """);
 
                 // TODO - Insert receipt here
+
+
 
                 currentOrder.getItemsInCart().clear();
 
