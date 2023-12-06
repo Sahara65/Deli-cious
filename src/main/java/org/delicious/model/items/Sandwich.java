@@ -54,11 +54,11 @@ public class Sandwich implements OrderedItem {
         StringBuilder sb = new StringBuilder();
         for (Topping topping : toppings) {
             if (topping != null) {
-                sb.append(String.format("\n%s", topping.getName()));
+                sb.append(String.format("\n    -%s", topping.getName()));
             }
         }
         String toppings = sb.toString();
-        String price = String.format("\n%s", getPrice());
+        String price = String.format("%s", getPrice());
 
         return String.format("%s\n%s\n%s", header, toppings, price);
     }

@@ -4,5 +4,5 @@ public interface OrderedItem {
 
     double getPrice();
 
-    String getOrderInformation();
+    String toString();
 }

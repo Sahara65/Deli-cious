@@ -31,15 +31,19 @@ public class PremiumTopping extends Topping {
         return this.isExtra;
     }
 
-    public String toString() {
-        return "";
-    }
-
     public String priceLookupString() {
         if (isExtra) {
             return "EXTRA_" + typeOfTopping;
         } else {
             return typeOfTopping;
+        }
+    }
+    @Override
+    public String toString() {
+        if(isExtra){
+            return "Extra " + getName();
+        }else{
+            return getName();
         }
     }
 
