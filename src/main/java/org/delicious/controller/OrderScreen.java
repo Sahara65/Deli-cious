@@ -74,57 +74,57 @@ public class OrderScreen {
     // TODO: Make the first if statement work properly within goCheckout()
 
     private static void goCheckout(Scanner scanner) {
+        while (true) {
+            if (currentOrder.getItemsInCart().isEmpty()) {
+                System.out.println(red + bold + "You have not ordered anything yet! Please try again. \n" + reset + yellow);
+                return;
+            }
+            ReceiptManager.finalizeOrder(currentOrder);
 
+            System.out.println("Do you want to proceed with the checkout? (Y/N)");
+            char confirmation = (char) HomeScreen.userCharInputs();
 
+            if (Character.toLowerCase(confirmation) == 'y') {
+                System.out.println(bold + """
+                        Thank you for your order!
+                        Your food will be prepared and delivered shortly!
+                        Here's your receipt and have a fantastic day!
+                        """);
 
-        if (currentOrder.getItemsInCart().isEmpty()) {
-            System.out.println(red + bold + "You have not ordered anything yet! Please try again. \n" + reset + yellow);
-            return;
-        }
-        String orderSummary = ReceiptManager.finalizeOrder(currentOrder);
+                // TODO - Insert receipt here
 
-        System.out.println("Do you want to proceed with the checkout? (Y/N)");
-        char confirmation = (char) HomeScreen.userCharInputs();
+                currentOrder.getItemsInCart().clear();
 
-        if (Character.toLowerCase(confirmation) == 'y') {
-            System.out.println(bold + """
-                    Thank you for your order!
-                    Your food will be prepared and delivered shortly!
-                    Here's your receipt and have a fantastic day!
-                    """);
+                HomeScreen.display(scanner);
 
-            // TODO - Insert receipt here
-
-            currentOrder.getItemsInCart().clear();
-
-            HomeScreen.display(scanner);
-
-        } else {
-            display(scanner);
-        }
-        if (Character.toLowerCase(confirmation) == 'n') {
-            System.out.println(bold + red + """
-                    Order had been cancelled. Have a fantastic day!
-                    
-                    ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
-                    ████╗░██║██╔══██╗░██║░░██╗░░██║
-                    ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
-                    ██║╚████║██║░░██║░░████╔═████║░
-                    ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░
-                    ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░
-                              
-                    ██████╗░███████╗████████╗██╗░░░██╗██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░░░░░░░░░░
-                    ██╔══██╗██╔════╝╚══██╔══╝██║░░░██║██╔══██╗████╗░██║██║████╗░██║██╔════╝░░░░░░░░░░
-                    ██████╔╝█████╗░░░░░██║░░░██║░░░██║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░░░░░░░░░░
-                    ██╔══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗░░░░░░░░░
-                    ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
-                    ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
-                    """);
+            } else {
+                display(scanner);
+            }
+            if (Character.toLowerCase(confirmation) == 'n') {
+                System.out.println(bold + red + """
+                        Order had been cancelled. Have a fantastic day!
+                                            
+                        ███╗░░██╗░█████╗░░██╗░░░░░░░██╗
+                        ████╗░██║██╔══██╗░██║░░██╗░░██║
+                        ██╔██╗██║██║░░██║░╚██╗████╗██╔╝
+                        ██║╚████║██║░░██║░░████╔═████║░
+                        ██║░╚███║╚█████╔╝░░╚██╔╝░╚██╔╝░
+                        ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝░░
+                                  
+                        ██████╗░███████╗████████╗██╗░░░██╗██████╗░███╗░░██╗██╗███╗░░██╗░██████╗░░░░░░░░░░
+                        ██╔══██╗██╔════╝╚══██╔══╝██║░░░██║██╔══██╗████╗░██║██║████╗░██║██╔════╝░░░░░░░░░░
+                        ██████╔╝█████╗░░░░░██║░░░██║░░░██║██████╔╝██╔██╗██║██║██╔██╗██║██║░░██╗░░░░░░░░░░
+                        ██╔══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔══██╗██║╚████║██║██║╚████║██║░░╚██╗░░░░░░░░░
+                        ██║░░██║███████╗░░░██║░░░╚██████╔╝██║░░██║██║░╚███║██║██║░╚███║╚██████╔╝██╗██╗██╗
+                        ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═╝╚═╝
+                        """);
 //            progressBar();
-            HomeScreen.display(scanner);
-        } else {
-            System.out.println(red + bold + "Invalid input! Please enter Y or N." + reset + yellow);
-            goCheckout(scanner);
+                HomeScreen.display(scanner);
+            } else {
+                System.out.println(red + bold + "Invalid input! Please enter Y or N." + reset + yellow);
+                continue;
+            }
+            return;
         }
     }
 }

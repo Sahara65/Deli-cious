@@ -68,6 +68,7 @@ public class ChipsScreen {
                 System.out.println(italic + "You have selected Nachos!" + reset + yellow);
                 chipChoice = ChipType.NACHOS;
             }
+            default -> System.out.println(red + bold + "Invalid input! Please enter numbers 1-5." + reset + yellow);
         }
         return chipChoice;
     }

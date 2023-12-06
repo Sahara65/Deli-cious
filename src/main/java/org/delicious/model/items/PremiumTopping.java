@@ -3,7 +3,6 @@ package org.delicious.model.items;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO - Need to work on pricing
 public class PremiumTopping extends Topping {
     private static final ArrayList<String> MEAT =
             new ArrayList<>(List.of("Steak", "Ham", "Chicken", "Salami", "Roast Beef", "Bacon"));
@@ -18,7 +17,6 @@ public class PremiumTopping extends Topping {
     //make sure to check that the name exists in the ArrayLists before implementing the constructor
     public PremiumTopping(String name) {
         super(name);
-        // TODO for this test to work, make sure that contains works properly
         if (MEAT.contains(name)) {
             this.typeOfTopping = "MEAT";
         } else {
@@ -52,7 +50,6 @@ public class PremiumTopping extends Topping {
 
     @Override
     public double getPrice() {
-        // TODO must return a price
         return 0;
     }
 }
