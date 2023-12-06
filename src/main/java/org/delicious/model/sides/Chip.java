@@ -30,7 +30,5 @@ public class Chip implements OrderedItem {
         return prices.get("CHIPS");
     }
 
-    public String getOrderInformation() {
-        return chipType.getChipName();
-    }
+
 }

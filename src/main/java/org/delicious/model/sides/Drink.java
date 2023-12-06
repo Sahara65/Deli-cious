@@ -24,8 +24,4 @@ public record Drink(DrinkType type, DrinkSize size) implements OrderedItem {
         return prices.get(size().name() + "_DRINK");
     }
 
-    @Override
-    public String getOrderInformation() {
-        return String.format("%s: %s", type().getDrinkName(), size().name());
-    }
 }
