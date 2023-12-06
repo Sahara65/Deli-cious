@@ -11,8 +11,7 @@ public class PremiumTopping extends Topping {
     // Making it so that reference can not be reassigned for the hashmap, not making it immutable
 
     private boolean isExtra;
-    private String typeOfTopping;
-
+    private final String typeOfTopping;
 
     //make sure to check that the name exists in the ArrayLists before implementing the constructor
     public PremiumTopping(String name) {

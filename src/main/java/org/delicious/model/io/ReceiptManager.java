@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import static org.delicious.controller.OrderScreen.currentOrder;
+
 public class ReceiptManager {
 
     public static String finalizeOrder(Order currentOrder) {
@@ -20,7 +22,6 @@ public class ReceiptManager {
             System.out.println("Error saving receipt: " + e.getMessage());
             return "Failed to save receipt.";
         }
-
         return orderSummary;
     }
 
@@ -30,7 +31,7 @@ public class ReceiptManager {
 
         for (OrderedItem item : currentOrder.getItemsInCart()) {
             System.out.println(item);
-            summary.append(item.getOrderInformation()).append("\n");
+            summary.append(item.toString()).append("\n");
             totalCost += item.getPrice();
         }
         summary.append("Total Cost: $").append(totalCost);
@@ -42,6 +43,20 @@ public class ReceiptManager {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String formattedDateTime = now.format(formatter);
         String fileName = "Receipts/" + formattedDateTime + ".txt";
+
+        System.out.println("""
+                ┌────────────────────┬─────────────────────────────────────┬────────────────┐
+                │       Time         │          Ordered Items              │  Total Price   │
+                ├────────────────────┼─────────────────────────────────────┼────────────────┤
+                """);
+        for (OrderedItem item : currentOrder.getItemsInCart()) {
+            System.out.printf("│ %15s     │ %-30s │ %-10.2f |\n",
+                    formatter.format(now), " ",item.getPrice());
+
+        }
+        System.out.println("""
+                └────────────────────┴─────────────────────────────────────┴────────────────┘
+                """);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(orderSummary);
