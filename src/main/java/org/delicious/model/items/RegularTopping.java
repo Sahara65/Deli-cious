@@ -21,8 +21,10 @@ public class RegularTopping extends Topping {
         super(name);
     }
 
+
+
     public String toString() {
-        return "";
+        return getName();
     }
 
     @Override

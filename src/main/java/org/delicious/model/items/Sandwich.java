@@ -45,19 +45,19 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String toString() {
-        String toasted = isToasted ? "toasted" : "";
-        String header = " -" + toasted + breadType.getName() +
-                "/n " + size;
+        String header = size +
+                (isToasted ? " toasted" : "") +
+                " " + breadType.getName() + " BREAD " + "         " + getPrice();
+
         StringBuilder sb = new StringBuilder();
         for (Topping topping : toppings) {
             if (topping != null) {
-                sb.append("/n" + topping.getName());
+                sb.append("\n    -" + topping.getName());
             }
         }
-        String toppings = sb.toString();
-        String price = "/n" + String.valueOf(getPrice());
+        String toppingsList = sb.toString();
 
-        return header + toppings + price;
+        return header + toppingsList + "\n" + price;
     }
 
     @Override
@@ -81,18 +81,19 @@ public class Sandwich implements OrderedItem {
 
     @Override
     public String getOrderInformation() {
-        String toasted = isToasted ? "toasted" : "";
-        String header = " -" + toasted + breadType.getName() +
-                "/n " + size;
+        String header = size +
+                (isToasted ? " toasted" : "") +
+                " " + breadType.getName();
+
         StringBuilder sb = new StringBuilder();
         for (Topping topping : toppings) {
             if (topping != null) {
-                sb.append("/n" + topping.getName());
+                sb.append("\n" + topping.getName());
             }
         }
-        String toppings = sb.toString();
-        String price = "/n" + String.valueOf(getPrice());
+        String toppingsList = sb.toString();
 
+        String price = String.valueOf(getPrice());
         return header + toppings + price;
     }
 }
