@@ -16,21 +16,21 @@ public class SandwichScreen {
 
         PremiumTopping meatChoice = selectMeat();
         if (meatChoice != null) {
-            sandwich.addPremiumToppings(meatChoice);
+            sandwich.addPremiumTopping(meatChoice);
             if (selectExtra()) {
                 PremiumTopping extraMeatChoice = new PremiumTopping(meatChoice.getName());
                 extraMeatChoice.setExtra(true);
-                sandwich.addPremiumToppings(extraMeatChoice);
+                sandwich.addPremiumTopping(extraMeatChoice);
             }
         }
 
         PremiumTopping cheeseChoice = selectCheese();
         if (cheeseChoice != null) {
-            sandwich.addPremiumToppings(cheeseChoice);
+            sandwich.addPremiumTopping(cheeseChoice);
             if (selectExtra()) {
                 PremiumTopping extraCheeseChoice = new PremiumTopping(cheeseChoice.getName());
                 extraCheeseChoice.setExtra(true);
-                sandwich.addPremiumToppings(extraCheeseChoice);
+                sandwich.addPremiumTopping(extraCheeseChoice);
             }
         }
 
@@ -45,6 +45,41 @@ public class SandwichScreen {
         System.out.println(bold + "Your sandwich will cost:" + sandwich.getPrice() + reset + yellow);
         return sandwich;
     }
+    /*
+    public static Sandwich createCustomSandwich() {
+        System.out.println(bold + """
+                                
+                ▒███████╗███████╗██╗     ███████╗ ██████╗████████╗    ██╗   ██╗ ██████╗ ██╗   ██╗██████╗     ██████╗ ██████╗ ███████╗ █████╗ ██████╗ ██╗
+                 ██╔════╝██╔════╝██║     ██╔════╝██╔════╝╚══██╔══╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██║
+                 ███████╗█████╗  ██║     █████╗  ██║        ██║        ╚████╔╝ ██║   ██║██║   ██║██████╔╝    ██████╔╝██████╔╝█████╗  ███████║██║  ██║██║
+                 ╚════██║██╔══╝  ██║     ██╔══╝  ██║        ██║         ╚██╔╝  ██║   ██║██║   ██║██╔══██╗    ██╔══██╗██╔══██╗██╔══╝  ██╔══██║██║  ██║╚═╝
+                 ███████║███████╗███████╗███████╗╚██████╗   ██║          ██║   ╚██████╔╝╚██████╔╝██║  ██║    ██████╔╝██║  ██║███████╗██║  ██║██████╔╝██╗
+                 ╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝
+                                
+                                                                ██████████████                         \s
+                                                        ████████▓▓▓▓██░░░░██▓▓████                     \s
+                                                ████████░░░░░░░░██▓▓██░░░░██▓▓▓▓▓▓██                   \s
+                                            ████░░██▓▓▓▓██░░░░░░██▓▓▓▓██░░██▓▓▓▓▓▓▓▓██                 \s
+                                        ████░░░░░░░░██▓▓▓▓██░░░░██▓▓▓▓██░░██▓▓▓▓▓▓▓▓██                 \s
+                                      ██▓▓▓▓██░░░░░░░░██▓▓▓▓██░░██▓▓▓▓██░░██▓▓▓▓▓▓██                   \s
+                                    ██▓▓▓▓▓▓▓▓██░░░░░░██▓▓▓▓██░░██▓▓▓▓██░░██▓▓▓▓▓▓██                   \s
+                                    ██▓▓▓▓▓▓▓▓▓▓██░░░░██▓▓▓▓██░░██▓▓▓▓▓▓██▓▓▓▓▓▓▓▓██                   \s
+                                    ██▓▓▓▓▓▓▓▓▓▓▓▓██░░██▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██                     \s
+                                    ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████                       \s
+                                    ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████                           \s
+                                      ████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████                               \s
+                                          ████████▓▓▓▓▓▓▓▓▓▓▓▓██████                                   \s
+                                                  ████████████                                         \s
+                                
+                                
+
+                1. BLT
+                2. Philly Cheese Steak
+                """);
+        return new Sandwich(BreadSize.FOUR_INCH, BreadType.RYE);
+    }
+    */
+
 
     private static BreadType selectBread() {
         System.out.println(bold + """

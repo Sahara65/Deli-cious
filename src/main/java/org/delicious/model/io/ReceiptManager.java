@@ -30,7 +30,7 @@ public class ReceiptManager {
 
         for (OrderedItem item : currentOrder.getItemsInCart()) {
             System.out.println(item);
-            summary.append(item.getOrderInformation()).append("\n");
+            summary.append(item.toString()).append("\n");
             totalCost += item.getPrice();
         }
         summary.append("Total Cost: $").append(totalCost);
